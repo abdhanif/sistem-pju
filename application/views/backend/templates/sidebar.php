@@ -64,6 +64,13 @@
                     <i class="fas fa-fw fa-users"></i>
                     <span>Bobot Jarak</span></a>
             </li>
+			
+			<!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Cari Rute</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
