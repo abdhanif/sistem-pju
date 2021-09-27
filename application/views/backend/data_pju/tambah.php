@@ -51,7 +51,7 @@
                                     <div id="googleMap" style="width:1100px;height:450px;"></div>
 
                                     <head>
-                                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1MgLuZuyqR_OGY3ob3M52N46TDBRI_9k&callback=initialize" async defer></script>
+                                        <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initialize" async defer></script>
                                         <script type="text/javascript">
                                             // variabel global marker
                                             var marker;
