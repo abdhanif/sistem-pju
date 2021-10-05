@@ -23,26 +23,27 @@
                              </div>
                              <br>
                              <div class="card-text">
-                                 <form>
+                                 <form class="user" method="post" action="<?= base_url('C_landingpage/tambah') ?>">
                                      <div class="form-row">
                                          <div class="form-group col-md-6">
                                              <div class="font-weight-bold">
                                                  <label for="inputNama">Nama Lengkap *</label>
                                              </div>
-                                             <input type="text" class="form-control" id="name" placeholder="Contoh : Abdurrahman Hanif">
+                                             <input type="text" class="form-control" id="nama" name="nama" placeholder="Contoh : Abdurrahman Hanif">
+                                             <?= form_error('nama', ' <small class="text-danger pl-3">', '</small>'); ?>
                                          </div>
                                          <div class="form-group col-md-6">
                                              <div class="font-weight-bold">
                                                  <label for="inputWA">Nomor WhatsApp *</label>
                                              </div>
-                                             <input type="text" class="form-control" id="nowa" placeholder="Contoh : 0878xxxxxxxx">
+                                             <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="Contoh : 0878xxxxxxxx"> <?= form_error('whatsapp', ' <small class="text-danger pl-3">', '</small>'); ?>
                                          </div>
                                      </div>
                                      <div class="form-group">
                                          <div class="font-weight-bold">
                                              <label for="alamat">Alamat Kerusakan *</label>
                                          </div>
-                                         <textarea type="text" class="form-control" rows="2" id="alamat" placeholder="Contoh : Jl. Hr.Muhammad, Depan Pom Bensin"></textarea>
+                                         <textarea type="text" class="form-control" rows="2" id="alamat" name="alamat" placeholder="Contoh : Jl. Hr.Muhammad, Depan Pom Bensin"></textarea><?= form_error('alamat', ' <small class="text-danger pl-3">', '</small>'); ?>
                                      </div>
 
                                      <div class="form-row">
@@ -50,7 +51,7 @@
                                              <div class="font-weight-bold">
                                                  <label for="kecamatan">Kecamatan *</label>
                                              </div>
-                                             <select class="form-control" id="kecamatan">
+                                             <select class="form-control" id="kecamatan" name="kecamatan">
                                                  <option>Pilih Kecamatan</option>
                                                  <option>Sukomanunggal</option>
                                                  <option>Sawahan</option>
@@ -61,7 +62,7 @@
                                              <div class="font-weight-bold">
                                                  <label for="kelurahan">Kelurahan *</label>
                                              </div>
-                                             <select class="form-control" id="kelurahan">
+                                             <select class="form-control" id="kelurahan" name="kelurahan">
                                                  <option>Pilih Kelurahan</option>
                                                  <option>Putat Gede</option>
                                                  <option>Pradah</option>
@@ -74,14 +75,22 @@
                                          <div class="font-weight-bold">
                                              <label for="laporan">Laporan Anda *</label>
                                          </div>
-                                         <textarea type="text" class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder="Contoh : Lampu PJU mati di ruas jalan Hr.Muhammad depan Pom Bensin Hr.Muhammad arah ke Mayjend Sungkono sampai dengan depan Daihatsu Hr.Muhammad"></textarea>
+                                         <textarea type="text" class="form-control" id="laporan" name="laporan" rows="6" placeholder="Contoh : Lampu PJU mati di ruas jalan Hr.Muhammad depan Pom Bensin Hr.Muhammad arah ke Mayjend Sungkono sampai dengan depan Daihatsu Hr.Muhammad"></textarea><?= form_error('laporan', ' <small class="text-danger pl-3">', '</small>'); ?>
                                      </div>
+
+
+                                     <!-- <div class="form-group">
+                                         <div class="font-weight-bold">
+                                             <label for="laporan">lampiran *</label>
+                                         </div>
+                                         <textarea type="text" class="form-control" id="gambar" name="gambar" rows="6" placeholder="Contoh : Lampu PJU mati di ruas jalan Hr.Muhammad depan Pom Bensin Hr.Muhammad arah ke Mayjend Sungkono sampai dengan depan Daihatsu Hr.Muhammad"></textarea><?= form_error('gambar', ' <small class="text-danger pl-3">', '</small>'); ?>
+                                     </div> -->
                                      <div class="form-group">
                                          <div class="font-weight-bold">
                                              <label for="laporan">Lampiran Foto *</label>
                                          </div>
                                          <div class="custom-file">
-                                             <input type="file" class="custom-file-input" id="file" required>
+                                             <input type="file" class="custom-file-input" id="gambar" name="gambar" required>
                                              <label class="custom-file-label" for="validatedCustomFile">Masukan Lampiran Foto...</label>
                                          </div>
                                      </div>

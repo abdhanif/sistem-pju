@@ -26,7 +26,7 @@
 
             <div class="table-responsive">
                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
-                    <thead class="font-italic">
+                    <thead>
                         <tr>
                             <th width="5%">No</th>
                             <th>Kode Kelompok</th>
@@ -45,7 +45,7 @@
                                 <td><?php echo $row->kode_kelompok; ?></td>
                                 <td><?php echo $row->nama_kelompok; ?></td>
                                 <td>
-                                    <a href="<?= base_url(); ?>C_kelompok/edit/<?php echo $row->id_kelompok; ?>" class="badge badge-warning" data-toggle="modal" data-target="#update<?php echo $row->id_kelompok; ?>"></i> edit</a>
+                                    <a href="<?= base_url(); ?>C_kelompok/edit/<?php echo $row->id_kelompok; ?>" class="badge badge-warning" data-toggle="modal" data-target="#update<?php echo $row->id_kelompok; ?>"></i> Edit</a>
                                     <a href="<?php echo base_url(); ?>C_kelompok/hapus/<?php echo $row->id_kelompok; ?>" class="badge badge-danger" data-toggle="modal" data-target="#delete<?php echo $row->id_kelompok; ?>"></i> Hapus</a>
                                 </td>
                             </tr>

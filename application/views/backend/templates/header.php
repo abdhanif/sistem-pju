@@ -28,4 +28,6 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/') ?>css/sb-admin-2.min.css" rel="stylesheet">
 
+    <link href="<?php echo base_url() . 'assets/css/boostrap.css' ?>" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url() . 'assets/css/datatables.css' ?>" rel="stylesheet" type="text/css">
 </head>

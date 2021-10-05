@@ -17,13 +17,13 @@ foreach ($karyawan as $kry) {
 
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label class="form-label">NIK</label>
+                                    <label class="font-weight-bold form-label">NIK</label>
                                     <input type="text" class="form-control" id="nik" name="nik" value="<?php echo $kry->nik; ?>">
                                     <?= form_error('nik', ' <small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label">Nama</label>
+                                    <label class="font-weight-bold form-label">Nama</label>
                                     <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $kry->nama; ?>">
                                     <?= form_error('nama', ' <small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
@@ -33,7 +33,7 @@ foreach ($karyawan as $kry) {
 
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label for="exampleFormControlSelect1">Jenis Kelamin</label>
+                                    <label class="font-weight-bold">Jenis Kelamin</label>
                                     <select class="form-control" id="gender" name="gender" value="<?php echo set_value('gender'); ?>">
                                         <option value="Laki-laki" <?php if ($kry->gender == "Laki-laki") {
                                                                         echo "selected";
@@ -45,7 +45,7 @@ foreach ($karyawan as $kry) {
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label">Tanggal Lahir</label>
+                                    <label class="font-weight-bold form-label">Tanggal Lahir</label>
                                     <input type="text" class="form-control" id="tgl_lahir" name="tgl_lahir" value="<?php echo $kry->tgl_lahir; ?>">
                                     <?= form_error('tgl_lahir', ' <small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
@@ -55,13 +55,13 @@ foreach ($karyawan as $kry) {
 
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label class="form-label">No.Telepon</label>
+                                    <label class="font-weight-bold form-label">No.Telepon</label>
                                     <input type="text" class="form-control" id="no_tlpn" name="no_tlpn" value="<?php echo $kry->no_tlpn; ?>">
                                     <?= form_error('no_tlpn', ' <small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label">Email</label>
+                                    <label class="font-weight-bold form-label">Email</label>
                                     <input type="text" class="form-control" id="email" name="email" value="<?php echo $kry->email; ?>">
                                     <?= form_error('email', ' <small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
@@ -71,7 +71,7 @@ foreach ($karyawan as $kry) {
 
                             <div class="row g-3">
                                 <div class="col-md">
-                                    <label class="form-label">Alamat</label>
+                                    <label class="font-weight-bold form-label">Alamat</label>
                                     <input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo $kry->alamat; ?>">
                                     <?= form_error('alamat', ' <small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
@@ -82,13 +82,13 @@ foreach ($karyawan as $kry) {
                             <div class="row g-3">
 
                                 <div class="col-md-6">
-                                    <label class="form-label">Jabatan</label>
+                                    <label class="font-weight-bold form-label">Jabatan</label>
                                     <input type="text" class="form-control" id="jabatan" name="jabatan" value="<?php echo $kry->jabatan; ?>">
                                     <?= form_error('jabatan', ' <small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label for="exampleFormControlSelect1">Status Donatur</label>
+                                    <label class="font-weight-bold">Status Donatur</label>
                                     <select class="form-control" id="status_karyawan" name="status_karyawan" value="<?php echo set_value('status_karyawan'); ?>">
                                         <option value="Tetap" <?php if ($kry->status_karyawan == "Tetap") {
                                                                     echo "selected";

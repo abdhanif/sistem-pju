@@ -16,7 +16,7 @@ foreach ($kelompok as $kl) {
 
                             <div class="row g-3">
                                 <div class="col-md">
-                                    <label class="form-label">Kode Kelompok</label>
+                                    <label class="font-weight-bold form-label">Kode Kelompok</label>
                                     <input type="text" class="form-control" id="kode_kelompok" name="kode_kelompok" value="<?php echo $kl->kode_kelompok; ?>">
                                     <?= form_error('kode_kelompok', ' <small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
@@ -26,7 +26,7 @@ foreach ($kelompok as $kl) {
 
                             <div class="row g-3">
                                 <div class="col-md">
-                                    <label class="form-label">Nama Kelompok</label>
+                                    <label class="font-weight-bold form-label">Nama Kelompok</label>
                                     <input type="text" class="form-control" id="nama_kelompok" name="nama_kelompok" value="<?php echo $kl->nama_kelompok; ?>">
                                     <?= form_error('nama_kelompok', ' <small class="text-danger pl-3">', '</small>'); ?>
                                 </div>

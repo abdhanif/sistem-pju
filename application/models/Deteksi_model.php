@@ -20,19 +20,21 @@ class Deteksi_model extends CI_Model
     //     return $this->db->get()->result();
     // }
 
-    // public function tambah()
-    // {
-    //     $data = [
-    //         'kode_kelompok'  => htmlspecialchars($this->input->post('kode_kelompok', true)),
-    //         'kode_pju'  => htmlspecialchars($this->input->post('kode_pju', true)),
-    //         'alamat_pju'  => htmlspecialchars($this->input->post('alamat_pju', true)),
-    //         'lat'  => htmlspecialchars($this->input->post('lat', true)),
-    //         'lng'  => htmlspecialchars($this->input->post('lng', true))
-    //     ];
+    public function tambah()
+    {
+        $data = [
+            'nama'  => htmlspecialchars($this->input->post('nama', true)),
+            'whatsapp'  => htmlspecialchars($this->input->post('whatsapp', true)),
+            'alamat'  => htmlspecialchars($this->input->post('alamat', true)),
+            'kecamatan'  => htmlspecialchars($this->input->post('kecamatan', true)),
+            'kelurahan'  => htmlspecialchars($this->input->post('kelurahan', true)),
+            'laporan'  => htmlspecialchars($this->input->post('laporan', true)),
+            'gambar'  => 'default.jpg'
+        ];
 
-    //     $this->db->insert('data_pju', $data);
-    //     redirect('C_data_pju');
-    // }
+        $this->db->insert('deteksi_pju', $data);
+        redirect('C_landingpage');
+    }
 
     // public function hapus($id_pju, $data_pju)
     // {
@@ -40,30 +42,46 @@ class Deteksi_model extends CI_Model
     //     $this->db->delete($data_pju);
     // }
 
-    // public function update()
-    // {
-    //     $id_pju =  htmlspecialchars($this->input->post('id_pju', true));
-    //     $data = [
-    //         'kode_kelompok'  => htmlspecialchars($this->input->post('kode_kelompok', true)),
-    //         'kode_pju'  => htmlspecialchars($this->input->post('kode_pju', true)),
-    //         'alamat_pju'  => htmlspecialchars($this->input->post('alamat_pju', true)),
-    //         'lat'  => htmlspecialchars($this->input->post('lat', true)),
-    //         'lng'  => htmlspecialchars($this->input->post('lng', true))
-    //     ];
+    public function update()
+    {
+        $id_deteksi =  htmlspecialchars($this->input->post('id_deteksi', true));
+        $data = [
 
-    //     $this->db->where('id_pju', $id_pju);
-    //     $this->db->update('data_pju', $data);
+            'verifikasi'  => htmlspecialchars($this->input->post('verifikasi', true))
+        ];
 
-    //     redirect('C_data_pju');
-    // }
+        $this->db->where('id_deteksi', $id_deteksi);
+        $this->db->update('deteksi_pju', $data);
 
-    // public function getById($id_pju)
-    // {
-    //     return $this->db->get_where('data_pju', ['id_pju' => $id_pju]);
-    // }
+        redirect('C_deteksi');
+    }
 
-    // public function getDataPjuById($id_pju)
-    // {
-    //     return $this->db->get_where('data_pju', ['id_pju' => $id_pju])->row_array();
-    // }
+    public function getById($id_deteksi)
+    {
+        return $this->db->get_where('deteksi_pju', ['id_deteksi' => $id_deteksi]);
+    }
+
+    public function getDeteksiPjuById($id_deteksi)
+    {
+        return $this->db->get_where('deteksi_pju', ['id_deteksi' => $id_deteksi])->row_array();
+    }
+
+    private function _uploadImage()
+    {
+        $config['upload_path']          = './upload/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['file_name']            = $this->id_deteksi;
+        $config['overwrite']            = true;
+        $config['max_size']             = 1024; // 1MB
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('gambar')) {
+            return $this->upload->data("file_name");
+        }
+
+        return "default.jpg";
+    }
 }

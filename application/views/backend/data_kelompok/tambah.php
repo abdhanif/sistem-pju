@@ -11,7 +11,7 @@
                     <form class="user" method="post" action="<?= base_url('C_kelompok/tambah') ?>">
                         <div class="row g-3">
                             <div class="col-md">
-                                <label class="form-label">Kode Kelompok</label>
+                                <label class="font-weight-bold form-label">Kode Kelompok</label>
                                 <input type="text" class="form-control" id="kode_kelompok" name="kode_kelompok" value="<?= set_value('nomor_meter'); ?>" autocomplete="off" autofocus>
                                 <?= form_error('kode_kelompok', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
@@ -21,7 +21,7 @@
 
                         <div class="row g-3">
                             <div class="col-md">
-                                <label class="form-label">Nama Kelompok</label>
+                                <label class="font-weight-bold form-label">Nama Kelompok</label>
                                 <input type="text" class="form-control" id="nama_kelompok" name="nama_kelompok" value="<?= set_value('alamat_pju'); ?>" autocomplete="off" autofocus>
                                 <?= form_error('nama_kelompok', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>

@@ -10,7 +10,7 @@
                 <form class="user" method="post" action="<?= base_url('C_data_pju/tambah') ?>">
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <label for="exampleFormControlSelect1">Kode Kelompok</label>
+                            <label class="font-weight-bold form-label">Kode Kelompok</label>
                             <select class="form-control" id="kode_kelompok" name="kode_kelompok" autofocus>
                                 <option value="">- Pilih -</option>
                                 <?php
@@ -21,26 +21,26 @@
                                 }
                                 ?>
                             </select>
-                            </br>
+                            <br>
 
-                            <label class="form-label">Kode</label>
+                            <label class="font-weight-bold form-label">Kode</label>
                             <input type="text" class="form-control form-control" id="kode_pju" name="kode_pju" autocomplete="off" autofocus>
                             <?= form_error('kode_pju', ' <small class="text-danger pl-3">', '</small>'); ?>
 
                             </br>
 
-                            <label class="form-label">Alamat</label>
+                            <label class="font-weight-bold form-label">Alamat</label>
                             <input type="text" class="form-control form-control" id="alamat_pju" name="alamat_pju" autocomplete="off" autofocus>
                             <?= form_error('alamat_pju', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </br>
 
-                            <label class="form-label">Latitude</label>
+                            <label class="font-weight-bold form-label">Latitude</label>
                             <input type="text" class="form-control form-control" id="lat" name="lat" autocomplete="off" autofocus>
                             <?= form_error('lat', ' <small class="text-danger pl-3">', '</small>'); ?>
 
                             </br>
 
-                            <label class="form-label">Longitude</label>
+                            <label class="font-weight-bold form-label">Longitude</label>
                             <input type="text" class="form-control form-control" id="lng" name="lng" autocomplete="off" autofocus>
                             <?= form_error('lng', ' <small class="text-danger pl-3">', '</small>'); ?>
                         </div>

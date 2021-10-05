@@ -53,21 +53,14 @@
                     <span>Data PJU</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="<?= base_url('C_jadwal') ?>">
                     <i class="fas fa-fw fa-book-open"></i>
                     <span>Jadwal Pengerjaan</span></a>
             </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Bobot Jarak</span></a>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="<?= base_url('C_rute') ?>">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Cari Rute</span></a>
             </li>

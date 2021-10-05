@@ -7,7 +7,7 @@ class DataPju_model extends CI_Model
         $this->db->select();
         $this->db->from('data_pju');
         $this->db->join('data_kelompok', 'data_kelompok.kode_kelompok = data_pju.kode_kelompok');
-        $this->db->order_by("data_pju.id_pju", "DESC");
+        $this->db->order_by("id_pju", "DESC");
         $query = $this->db->get();
         return $query->result();
     }
@@ -67,4 +67,18 @@ class DataPju_model extends CI_Model
     {
         return $this->db->get_where('data_pju', ['id_pju' => $id_pju])->row_array();
     }
+
+    function getDataPjuByKodeKelompok($kode_kelompok)
+    {
+        $query = $this->db->get_where('data_pju', array('kode_kelompok' => $kode_kelompok));
+        return $query;
+    }
+
+    // public function getSelectPju()
+    // {
+    //     $query = $this->db->query("SELECT kode_pju AS selectcodepju, kode_kelompok AS selectkelompok
+    //     FROM data_pju
+    //     WHERE selectkelompok = selectcodepju");
+    //     return $query->result();
+    // }
 }

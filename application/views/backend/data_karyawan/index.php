@@ -26,7 +26,7 @@
 
             <div class="table-responsive">
                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
-                    <thead class="font-italic">
+                    <thead>
                         <tr>
                             <th width="5%">No</th>
                             <th>NIK</th>
@@ -59,7 +59,7 @@
                                 <td><?php echo $row->email; ?></td>
                                 <td><?php echo $row->status_karyawan; ?></td>
                                 <td>
-                                    <a href="<?= base_url(); ?>C_karyawan/edit/<?php echo $row->id_karyawan; ?>" class="badge badge-warning" data-toggle="modal" data-target="#updatekaryawan<?php echo $row->id_karyawan; ?>"></i> edit</a>
+                                    <a href="<?= base_url(); ?>C_karyawan/edit/<?php echo $row->id_karyawan; ?>" class="badge badge-warning" data-toggle="modal" data-target="#updatekaryawan<?php echo $row->id_karyawan; ?>"></i> Edit</a>
                                     <a href="<?php echo base_url(); ?>C_karyawan/hapus/<?php echo $row->id_karyawan; ?>" class="badge badge-danger" data-toggle="modal" data-target="#delete<?php echo $row->id_karyawan; ?>"></i> Hapus</a>
                                 </td>
                             </tr>

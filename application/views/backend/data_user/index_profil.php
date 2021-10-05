@@ -1,4 +1,3 @@
-<!-- Begin Page Content -->
 <div class="container-fluid">
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -7,8 +6,22 @@
         </div>
 
         <div class="card-body">
+            <div class="container col-md">
+                <div class="row">
+                    <div class="row col-md-4 text-right">
+                        <!-- <form action="<?= base_url('C_data_pju/search'); ?>" method="post">
+                            <div class=" input-group mb">
+                                <input type="text" class="form-control" placeholder="Keyword..." name="keyword" autocomplete="off" autofocus>
+                                <button class="btn btn-primary" type="submit" name="submit">Search</button>
+                            </div>
+                        </form> -->
+                    </div>
+                </div>
+            </div>
+            </br>
+
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th width="5%">No</th>

@@ -12,13 +12,13 @@
                     <form class="user" method="post" action="<?= base_url('C_Karyawan/tambah') ?>">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label class="form-label">NIK</label>
+                                <label class="font-weight-bold form-label">NIK</label>
                                 <input type="text" class="form-control form-control" id="nik" name="nik" value="<?= set_value('nik'); ?>">
                                 <?= form_error('nik', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
 
                             <div class="col-md-6">
-                                <label class="form-label">Nama</label>
+                                <label class="font-weight-bold form-label">Nama</label>
                                 <input type="text" class="form-control form-control" id="nama" name="nama" value="<?= set_value('nama'); ?>">
                                 <?= form_error('nama', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
@@ -28,7 +28,7 @@
 
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label for="exampleFormControlSelect1">Jenis Kelamin</label>
+                                <label class="font-weight-bold">Jenis Kelamin</label>
                                 <select class="form-control" id="gender" name="gender" value="<?= set_value('gender'); ?>">
                                     <option>-Pilih-</option>
                                     <option value='Lakilaki'>Laki-Laki</option>
@@ -37,7 +37,7 @@
                             </div>
 
                             <div class=" col-md-6">
-                                <label class="form-label">Tanggal Lahir</label>
+                                <label class="font-weight-bold form-label">Tanggal Lahir</label>
                                 <input type="text" class="form-control form-control" id="tgl_lahir" name="tgl_lahir" value="<?= set_value('tgl_lahir'); ?>">
                                 <?= form_error('tgl_lahir', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
@@ -47,13 +47,13 @@
 
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label class="form-label">No.Tlpn</label>
+                                <label class="font-weight-bold form-label">No.Tlpn</label>
                                 <input type="text" class="form-control form-control" id="no_tlpn" name="no_tlpn" value="<?= set_value('no_tlpn'); ?>">
                                 <?= form_error('no_tlpn', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
 
                             <div class="col-md-6">
-                                <label class="form-label">Email</label>
+                                <label class="font-weight-bold form-label">Email</label>
                                 <input type="text" class="form-control form-control" id="email" name="email" value="<?= set_value('email'); ?>">
                                 <?= form_error('email', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
@@ -63,7 +63,7 @@
 
                         <div class="row">
                             <div class="col-md">
-                                <label class="form-label">Alamat</label>
+                                <label class="font-weight-bold form-label">Alamat</label>
                                 <input type="text" class="form-control form-control" id="alamat" name="alamat" value="<?= set_value('alamat'); ?>">
                                 <?= form_error('alamat', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
@@ -73,13 +73,13 @@
 
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label class="form-label">Jabatan</label>
+                                <label class="font-weight-bold form-label">Jabatan</label>
                                 <input type="text" class="form-control form-control" id="jabatan" name="jabatan" value="<?= set_value('jabatan'); ?>">
                                 <?= form_error('jabatan', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
 
                             <div class="col-md-6">
-                                <label class="form-label">Status</label>
+                                <label class="font-weight-bold form-label">Status</label>
                                 <select class="form-control" id="status_karyawan" name="status_karyawan" value="<?= set_value('status_karyawan'); ?>">
                                     <option>-Pilih-</option>
                                     <option value='Tetap'>Tetap</option>

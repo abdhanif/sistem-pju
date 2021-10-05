@@ -30,7 +30,7 @@
                 </button>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button>
                 <a class="btn btn-primary" href="<?= base_url('auth/logout') ?>">Logout</a>
             </div>
         </div>
@@ -68,6 +68,15 @@
 <script src="assets/plugins/flot/jquery.flot.js"></script>
 <script src="assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
 <script src="assets/js/pages/dashboards/dashboard1.js"></script>
+
+<script type="text/javascript" src="<?php echo base_url() . 'assets/js/jquery-3.3.1.js' ?>"></script>
+<!-- <script type="text/javascript" src="<?php echo base_url() . 'assets/js/bootstrap.js' ?>"></script> -->
+<script type="text/javascript" src="<?php echo base_url() . 'assets/js/datatables.js' ?>"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#mytable').DataTable();
+    });
+</script>
 
 </body>
 

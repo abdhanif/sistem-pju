@@ -2,7 +2,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h5 class="m-0 text-info font-weight-bold">PJU / DATA PJU</h5>
+            <h5 class="m-0 text-info font-weight-bold">PENGELOLAAN / DATA PJU</h5>
         </div>
 
         <div class="card-body">
@@ -26,7 +26,7 @@
 
             <div class="table-responsive">
                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
-                    <thead class="font-italic">
+                    <thead>
                         <tr>
                             <th width="5%">No</th>
                             <th>Kelompok</th>
@@ -51,7 +51,7 @@
                                 <td><?php echo $row->lat; ?></td>
                                 <td><?php echo $row->lng; ?></td>
                                 <td>
-                                    <a href="<?php echo base_url(); ?>C_data_pju/edit/<?php echo $row->id_pju; ?>" class="badge badge-warning">edit</a>
+                                    <a href="<?php echo base_url(); ?>C_data_pju/edit/<?php echo $row->id_pju; ?>" class="badge badge-warning">Edit</a>
                                     <a href="<?php echo base_url(); ?>C_data_pju/hapus/<?php echo $row->id_pju; ?>" class="badge badge-danger" data-toggle="modal" data-target="#delete<?php echo $row->id_pju; ?>"></i> Hapus</a>
                                 </td>
                             </tr>

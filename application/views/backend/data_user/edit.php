@@ -7,7 +7,7 @@ foreach ($profile as $pr) {
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5>Edit Data User </h5>
+                        <h5 class="font-weight-bold">EDIT DATA USER</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
@@ -26,7 +26,7 @@ foreach ($profile as $pr) {
                             <input type="hidden" class="form-control" name="id" value="<?php echo $pr->id; ?>">
                             <div class="row g-3">
                                 <div class="col-md">
-                                    <label class="form-label">Nama</label>
+                                    <label class="font-weight-bold form-label">Nama</label>
                                     <input type="text" class="form-control" id="name" name="name" value="<?php echo $pr->name; ?>">
                                     <?= form_error('name', ' <small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
@@ -36,7 +36,7 @@ foreach ($profile as $pr) {
 
                             <div class="row g-3">
                                 <div class="col-md">
-                                    <label class="form-label">Email</label>
+                                    <label class="font-weight-bold form-label">Email</label>
                                     <input type="text" class="form-control" id="email" name="email" value="<?php echo $pr->email; ?>">
                                     <?= form_error('email', ' <small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
@@ -46,7 +46,7 @@ foreach ($profile as $pr) {
 
                             <div class="row g-3">
                                 <div class="col-md">
-                                    <label class="form-label">Password</label>
+                                    <label class="font-weight-bold form-label">Password</label>
                                     <input type="text" class="form-control" id="password" name="password" value="<?php echo $pr->password; ?>">
                                     <?= form_error('password', ' <small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
@@ -56,7 +56,7 @@ foreach ($profile as $pr) {
 
                             <div class="row g-3">
                                 <div class="col-md">
-                                    <label for="exampleFormControlSelect1">Hak Akses</label>
+                                    <label for="exampleFormControlSelect1 font-weight-bold">Hak Akses</label>
                                     <select class="form-control" id="role_id" name="role_id">
                                         <?php
                                         $user_role;
