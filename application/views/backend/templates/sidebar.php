@@ -38,7 +38,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="<?= base_url('C_deteksi') ?>">
                     <i class="fas fa-fw fa-book-open"></i>
                     <span>Deteksi PJU</span></a>
             </li>
@@ -63,6 +63,13 @@
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Bobot Jarak</span></a>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Cari Rute</span></a>
             </li>
 
             <!-- Divider -->
