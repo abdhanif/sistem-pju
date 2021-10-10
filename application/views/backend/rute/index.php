@@ -96,8 +96,9 @@
         for (var i = 0; i < objDB.length; i++) {
             if (i == 0) { //Start Cari Rute Terpendek Dari Kantor
                 for (var j = 0; j < objDB.length; j++) { //Loop utk setiap point
-                    var jarakDariKantorKeRuteJ = L.GeometryUtil.distance(map, latLangDKRTH,
-                        objDB[j]); //Ini Nanti Dari LeafletJS nya hasil nya berapa
+                    var jarakDariKantorKeRuteJ = L.GeometryUtil.distance(map, latLangDKRTH, objDB[j]);
+                    //Ini Nanti Dari LeafletJS nya hasil nya berapa
+                    console.log(objDB[j]);
                     console.log(jarakDariKantorKeRuteJ);
 
                     if (j == 0) { //Jika Start Dari Kantor ke Rute 1 Maka Simpan dulu ke jarakPendekTemp
@@ -113,12 +114,10 @@
                 objPasti.push(objTemp); //Push Rute Tercepat Dari Kantor ke Lokasi 1
                 jarakPendekTemp = 0;
             } else { //Start Cari Rute Dari Rute2 Selanjutnya
-                // console.log(i);
-                console.log(objTemp);
+
                 for (var j = 0; j < objDB.length; j++) { //Loop Setiap Point
-                    // console.log(j);
                     var latLangTerakhir = L.latLng(objTemp);
-                    var latLangPJu = L.latLng(objDB[j]);;
+                    var latLangPJu = L.latLng(objDB[j]);
                     var jarakDariRuteTerakhirKeRuteJ = L.GeometryUtil.distance(map, latLangTerakhir,
                         latLangPJu
                     ); //Ini Nanti Dari LeafletJS nya hasil nya berapa (Lat Lang dari Lokasi terakhir disimpen di objTemp)
@@ -133,14 +132,28 @@
                         }
                     }
                 }
-                console.log(objTemp)
-                objPasti.push(objTemp2); //Push Rute Tercepat Dari Rute 1 ke lokasi Selanjutnya
-                jarakPendekTemp = 0;
-                objTemp = objTemp2; // Mengubah Lat Lang Last Rute
+
+                //Push Rute Terjauh
+                var objDiff = [];
+                objDiff.push(objTemp2);
+                let difference = objDiff.filter(x => !objPasti.includes(x));
+
+                if(difference.length != 0){
+                  objPasti.push(objTemp2); //Push Rute Tercepat Dari Rute 1 ke lokasi Selanjutnya
+                  jarakPendekTemp = 0;
+                  objTemp = objTemp2; // Mengubah Lat Lang Last Rute
+                }else {
+                  let difference2 = objDB.filter(x => !objPasti.includes(x));
+                  if(difference2.length != 0){
+                    objPasti.push(difference2[0]);
+                  }
+                }
+                //END Terjauh
             }
         }
-        // console.log(objPasti);
-        // console.log(objDB);
+
+        objPasti.push(latLangDKRTH); //Push Lat Lang Kantor lagi utk balik
+        console.log(objPasti);
 
         for (var i = 0; i < objPasti.length; i++) {
             var wayPoint = new L.Routing.Waypoint(objPasti[i]);
