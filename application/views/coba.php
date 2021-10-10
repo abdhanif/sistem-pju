@@ -1,89 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latihan Membuat Peta</title>
-
-    <!-- leaflet css  -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-
-    <!-- bootstrap cdn  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <meta name="viewport" content="width-device-width, initial-scal">
     <style>
-        /* ukuran peta */
-        #mapid {
-            height: 100%;
-        }
+    body {
+        margin: 0;
+    }
 
-        .jumbotron {
-            height: 100%;
-            border-radius: 0;
-        }
-
-        body {
-            background-color: #ebe7e1;
-        }
+    #map {
+        width: 1100px;
+        height: 450px;
+    }
     </style>
 </head>
 
-<body>
-    <div class="row">
-        <!-- class row digunakan sebelum membuat column  -->
-        <div class="col-4">
-            <!-- ukuruan layar dengan bootstrap adalah 12 kolom, bagian kiri dibuat sebesar 4 kolom-->
-            <div class="jumbotron">
-                <!-- untuk membuat semacam container berwarna abu -->
-                <h1>Add Location</h1>
-                <hr>
-                <form action="proses.php" method="post">
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Latitude, Longitude</label>
-                        <input type="text" class="form-control" id="latlong" name="latlong">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Nama Tempat</label>
-                        <input type="text" class="form-control" name="nama_tempat">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Kategori Tempat</label>
-                        <select class="form-control" name="kategori" id="">
-                            <option value="">--Kategori Tempat--</option>
-                            <option value="rumah makan">Rumah Makan</option>
-                            <option value="pom bensin">Pom Bensin</option>
-                            <option value="Fasilitas Umum">Fasilitas Umum</option>
-                            <option value="Pasar/Mall">Pasar/Mall</option>
-                            <option value="rumah sakit">Rumah Sakit</option>
-                            <option value="Sekolah">Sekolah</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Keterangan</label>
-                        <textarea class="form-control" name="keterangan" cols="30" rows="5"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-info">Add</button>
-                    </div>
-                </form>
+<div class="container-fluid">
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h5 class="m-0 text-info font-weight-bold">PENGELOLAAN / CARI RUTE</h5>
+        </div>
+        <div class="card-body">
+            <div class="container col-md">
+                <div>
+                    <form class="row" action="<?= base_url('C_rute/search'); ?>" method="post">
+                        <div class="form-row align-items-center">
+                            <div class="col-auto">
+                                <label class="mr-sm-2 sr-only" for="kelompok">Preference</label>
+                                <select class="custom-select mr-sm-2" id="kelompok" name="kelompok">
+                                    <option selected>Pilih Kelompok...</option>
+                                    <?php
+                                    foreach ($rute as $rt) {
+                                    ?>
+                                    <option value="<?php echo $rt->kode_kelompok ?>"><?php echo $rt->nama_kelompok ?>
+                                    </option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="col-auto my-1">
+                                <button type="submit" class="btn btn-primary">Cari Rute</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="container col-md">
+                <div class="row">
+                    <div id="map"></div>
+                </div>
             </div>
         </div>
-        <div class="col-8">
-            <!-- ukuruan layar dengan bootstrap adalah 12 kolom, bagian kiri dibuat sebesar 4 kolom-->
-            <!-- peta akan ditampilkan dengan id = mapid -->
-            <div id="mapid"></div>
-        </div>
-    </div>
 
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css">
+        <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+        <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 
+        <script>
+        let map = L.map('map').setView([-7.260520077866812, 112.75429319352317], 5);
 
-    <!-- leaflet js  -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+        // let latLng1 = L.latLng(-7.2373039632982525, 112.75540898723467);
+        // let latLng2 = L.latLng(-7.253538340531229, 112.7417619077669);
+        // let latLng3 = L.latLng(-7.26047750662601, 112.7510101690341);
+        // let wp1 = new L.Routing.Waypoint(latLng1);
+        // let wp2 = new L.Routing.Waypoint(latLng2);
+        // let wp3 = new L.Routing.Waypoint(latLng3);
+        var obj = [];
+        var obj2 = [];
+        let latLang;
+        let wp;
+        let latLangDKRTH = L.latLng(-7.2805328, 112.7518904);
+        let wpDKRTH = new L.Routing.Waypoint(latLangDKRTH);
+        obj.push(latLangDKRTH);
+        obj2.push(wpDKRTH);
 
-    <script>
-        // set lokasi latitude dan longitude, lokasinya kota palembang 
-        var mymap = L.map('mapid').setView([-6.869544, 109.3948958], 13);
-        //setting maps menggunakan api mapbox bukan google maps, daftar dan dapatkan token      
+        <?php for ($i = 0; $i < count($arre); $i++) { ?>
+        latLang = L.latLng(<?php echo $arre[$i]->lat ?>, <?php echo $arre[$i]->lang ?>);
+        wp = new L.Routing.Waypoint(latLang);
+        obj.push(latLang);
+        obj2.push(wp);
+
+        <?php if (($i + 1) == count($arre)) { ?> //Biar balik ke titik start lagi
+
+        obj2.push(wpDKRTH);
+        <?php } ?>
+
+        <?php } ?>
+
         L.tileLayer(
             'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmFiaWxjaGVuIiwiYSI6ImNrOWZzeXh5bzA1eTQzZGxpZTQ0cjIxZ2UifQ.1YMI-9pZhxALpQ_7x2MxHw', {
                 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -92,10 +97,35 @@
                 tileSize: 512,
                 zoomOffset: -1,
                 accessToken: 'your.mapbox.access.token'
-            }).addTo(mymap);
 
+            }).addTo(map);
 
-        // buat variabel berisi fugnsi L.popup 
+        L.Routing.control({
+            waypoints: obj
+        }).addTo(map);
+
+        let routeUs = L.Routing.osrmv1();
+        routeUs.route(obj2, (err, routes) => {
+            if (!err) {
+                let best = 10000000000000000;
+                let bestRoute = 0;
+                for (i in routes) {
+                    if (routes[i].summary.totalDistance < best) {
+                        bestRoute = i;
+                        best = routes[i].summary.totalDistance;
+                    }
+                }
+                console.log('best route', routes[bestRoute]);
+                L.Routing.line(routes[bestRoute], {
+                    styles: [{
+                        color: 'red',
+                        opacity: '0.3',
+                        weight: '5'
+                    }]
+                }).addTo(map);
+            }
+        });
+
         var popup = L.popup();
 
         // buat fungsi popup saat map diklik
@@ -105,12 +135,10 @@
                 .setContent("koordinatnya adalah " + e.latlng
                     .toString()
                 ) //set isi konten yang ingin ditampilkan, kali ini kita akan menampilkan latitude dan longitude
-                .openOn(mymap);
-
-            document.getElementById('latlong').value = e.latlng //value pada form latitde, longitude akan berganti secara otomatis
+                .openOn(map);
         }
-        mymap.on('click', onMapClick); //jalankan fungsi
-    </script>
-</body>
-
-</html>
+        map.on('click', onMapClick); //jalankan fungsi
+        </script>
+    </div>
+</div>
+</div>

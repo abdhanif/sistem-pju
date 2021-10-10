@@ -21,6 +21,12 @@
                 Administrator
             </div>
 
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('C_dashboard') ?>">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('C_profile') ?>">
@@ -61,13 +67,6 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('C_rute') ?>">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Cari Rute</span></a>
-            </li>
-			
-			<!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Cari Rute</span></a>
             </li>

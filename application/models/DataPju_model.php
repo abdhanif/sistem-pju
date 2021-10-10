@@ -9,7 +9,7 @@ class DataPju_model extends CI_Model
         $this->db->join('data_kelompok', 'data_kelompok.kode_kelompok = data_pju.kode_kelompok');
         $this->db->order_by("id_pju", "DESC");
         $query = $this->db->get();
-        return $query->result();
+        return $query;
     }
 
     public function search($keyword)
@@ -33,6 +33,24 @@ class DataPju_model extends CI_Model
 
         $this->db->insert('data_pju', $data);
         redirect('C_data_pju');
+    }
+
+    public function kode()
+    {
+        $this->db->select('RIGHT(data_pju.kode_pju,2) as kode_pju', FALSE);
+        $this->db->order_by('kode_pju', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('data_pju');  //cek dulu apakah ada sudah ada kode di tabel.    
+        if ($query->num_rows() <> 0) {
+            //cek kode jika telah tersedia    
+            $data = $query->row();
+            $kode = intval($data->kode_pju) + 1;
+        } else {
+            $kode = 1;  //cek jika kode belum terdapat pada table
+        }
+        $batas = str_pad($kode, 3, "0", STR_PAD_LEFT);
+        $kodetampil = "PJU" . "-" . $batas;  //format kode
+        return $kodetampil;
     }
 
     public function hapus($id_pju, $data_pju)
@@ -74,11 +92,13 @@ class DataPju_model extends CI_Model
         return $query;
     }
 
-    // public function getSelectPju()
-    // {
-    //     $query = $this->db->query("SELECT kode_pju AS selectcodepju, kode_kelompok AS selectkelompok
-    //     FROM data_pju
-    //     WHERE selectkelompok = selectcodepju");
-    //     return $query->result();
-    // }
+    function getDataPjuRute($kode_kelompok)
+    {
+        $this->db->select('*');
+        $this->db->from('jadwal');
+        $this->db->join('data_pju', 'data_pju.kode_pju = jadwal.kode_pju');
+        $this->db->where('jadwal.kode_kelompok', $kode_kelompok);
+        $query = $this->db->get();
+        return $query;
+    }
 }

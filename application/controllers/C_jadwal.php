@@ -16,6 +16,7 @@ class C_jadwal extends CI_Controller
     public function index()
     {
         $data['jadwal'] = $this->Jadwal_model->getAllJadwal();
+        // $data['kode'] = $this->Jadwal_model->kode();
         $data_pju['data_kelompok'] = $this->Kelompok_model->getAllKelompok();
         $data_pju['data_pju'] = $this->DataPju_model->getAllDataPju();
 
@@ -27,16 +28,17 @@ class C_jadwal extends CI_Controller
         $this->load->view('backend/jadwal/edit');
         $this->load->view('backend/templates/footer');
     }
-    // public function search()
-    // {
-    //     $keyword = $this->input->post('keyword');
-    //     $data['transaksi'] = $this->Transaksi_model->search($keyword);
-    //     $this->load->view('templates/header');
-    //     $this->load->view('templates/sidebar');
-    //     $this->load->view('templates/topbar');
-    //     $this->load->view('transaksi/index_trans', $data);
-    //     $this->load->view('templates/footer');
-    // }
+
+    public function search()
+    {
+        $keyword = $this->input->post('keyword');
+        $data['jadwal'] = $this->Jadwal_model->search($keyword);
+        $this->load->view('backend/templates/header');
+        $this->load->view('backend/templates/sidebar');
+        $this->load->view('backend/templates/topbar');
+        $this->load->view('backend/jadwal/index', $data);
+        $this->load->view('backend/templates/footer');
+    }
 
     public function tambah()
     {

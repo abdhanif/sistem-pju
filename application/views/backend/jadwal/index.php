@@ -8,14 +8,14 @@
         <div class="card-body">
             <div class="container col-md">
                 <div class="row">
-                    <!-- <div class="row col-md-4 text-right">
-                        <form action="<?= base_url('C_data_pju/search'); ?>" method="post">
+                    <div class="row col-md-4 text-right">
+                        <form action="<?= base_url('C_jadwal/search'); ?>" method="post">
                             <div class=" input-group mb">
                                 <input type="text" class="form-control" placeholder="Keyword..." name="keyword" autocomplete="off" autofocus>
                                 <button class="btn btn-primary" type="submit" name="submit">Search</button>
                             </div>
                         </form>
-                    </div> -->
+                    </div>
                     <div class="col text-right">
 
                         <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#tambahjadwal"></i> Tambah Data</a>

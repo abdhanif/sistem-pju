@@ -13,7 +13,7 @@ class C_data_pju extends CI_Controller
     }
     public function index()
     {
-        $data['data_pju'] = $this->DataPju_model->getAllDataPju();
+        $data['data_pju'] = $this->DataPju_model->getAllDataPju()->result();
         $kelompok['data_kelompok'] = $this->Kelompok_model->getAllKelompok();
 
         $this->load->view('backend/templates/header');
@@ -42,13 +42,14 @@ class C_data_pju extends CI_Controller
         $this->form_validation->set_rules('lat', 'Lat', 'required');
         $this->form_validation->set_rules('lng', 'Lng', 'required');
         $kelompok['data_kelompok'] = $this->Kelompok_model->getAllKelompok();
+        $data['kode'] = $this->DataPju_model->kode();
 
         if ($this->form_validation->run() == false) {
 
 
             $this->load->view('backend/templates/header');
             $this->load->view('backend/templates/sidebar');
-            $this->load->view('backend/templates/topbar');
+            $this->load->view('backend/templates/topbar', $data);
             $this->load->view('backend/data_pju/tambah', $kelompok);
             $this->load->view('backend/templates/footer');
             $this->load->library('form_validation');

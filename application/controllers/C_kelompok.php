@@ -13,6 +13,7 @@ class C_kelompok extends CI_Controller
     public function index()
     {
         $data['kelompok'] = $this->Kelompok_model->getAllKelompok();
+        $data['kode'] = $this->Kelompok_model->kode();
 
         $this->load->view('backend/templates/header');
         $this->load->view('backend/templates/sidebar');

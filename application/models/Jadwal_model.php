@@ -30,6 +30,16 @@ class Jadwal_model extends CI_Model
         $this->db->delete($jadwal);
     }
 
+    public function search($keyword)
+    {
+        $this->db->select('*');
+        $this->db->from('jadwal');
+        $this->db->join('data_kelompok', 'data_kelompok.kode_kelompok = jadwal.kode_kelompok');
+        $this->db->join('data_pju', 'data_pju.kode_pju = jadwal.kode_pju');
+        $this->db->like('id_jadwal', $keyword);
+        return $this->db->get()->result();
+    }
+
     public function update()
     {
         $id_jadwal =  htmlspecialchars($this->input->post('id_jadwal', true));
@@ -68,12 +78,21 @@ class Jadwal_model extends CI_Model
         return $query;
     }
 
-    // function getDataPJU($kodeKelompok)
+    // public function kode()
     // {
-    //     $this->db->select();
-    //     $this->db->from('data_pju');
-    //     $this->db->where("data_pju.kode_kelompok", $kodeKelompok);
-    //     $query = $this->db->get();
-    //     return $query->result();
+    //     $this->db->select('RIGHT(jadwal.kode_jadwal,2) as kode_jadwal', FALSE);
+    //     $this->db->order_by('kode_jadwal', 'DESC');
+    //     $this->db->limit(1);
+    //     $query = $this->db->get('jadwal');  //cek dulu apakah ada sudah ada kode di tabel.    
+    //     if ($query->num_rows() <> 0) {
+    //         //cek kode jika telah tersedia    
+    //         $data = $query->row();
+    //         $kode = intval($data->kode_kelompok) + 1;
+    //     } else {
+    //         $kode = 1;  //cek jika kode belum terdapat pada table
+    //     }
+    //     $batas = str_pad($kode, 3, "0", STR_PAD_LEFT);
+    //     $kodetampil = "J" . "-" . $batas;  //format kode
+    //     return $kodetampil;
     // }
 }
