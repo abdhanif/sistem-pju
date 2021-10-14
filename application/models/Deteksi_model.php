@@ -20,18 +20,8 @@ class Deteksi_model extends CI_Model
     //     return $this->db->get()->result();
     // }
 
-    public function tambah()
+    public function tambah($data)
     {
-        $data = [
-            'nama'  => htmlspecialchars($this->input->post('nama', true)),
-            'whatsapp'  => htmlspecialchars($this->input->post('whatsapp', true)),
-            'alamat'  => htmlspecialchars($this->input->post('alamat', true)),
-            'kecamatan'  => htmlspecialchars($this->input->post('kecamatan', true)),
-            'kelurahan'  => htmlspecialchars($this->input->post('kelurahan', true)),
-            'laporan'  => htmlspecialchars($this->input->post('laporan', true)),
-            'gambar'  => 'default.jpg'
-        ];
-
         $this->db->insert('deteksi_pju', $data);
         redirect('C_landingpage');
     }

@@ -168,15 +168,14 @@
                 tileSize: 512,
                 zoomOffset: -1,
                 accessToken: 'your.mapbox.access.token'
-
             }).addTo(map);
 
         L.Routing.control({
-            waypoints: objWP
+            waypoints: objPasti
         }).addTo(map);
 
         let routeUs = L.Routing.osrmv1();
-        routeUs.route(objPasti, (err, routes) => {
+        routeUs.route(objWP, (err, routes) => {
             if (!err) {
                 let best = 10000000000000000;
                 let bestRoute = 0;

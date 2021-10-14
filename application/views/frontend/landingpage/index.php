@@ -23,7 +23,7 @@
                              </div>
                              <br>
                              <div class="card-text">
-                                 <form class="user" method="post" action="<?= base_url('C_landingpage/tambah') ?>">
+                                 <form class="user" method="post" action="<?= base_url('C_landingpage/insert') ?>" enctype="multipart/form-data">
                                      <div class="form-row">
                                          <div class="form-group col-md-6">
                                              <div class="font-weight-bold">
@@ -83,7 +83,7 @@
                                          <div class="font-weight-bold">
                                              <label for="laporan">lampiran *</label>
                                          </div>
-                                         <textarea type="text" class="form-control" id="gambar" name="gambar" rows="6" placeholder="Contoh : Lampu PJU mati di ruas jalan Hr.Muhammad depan Pom Bensin Hr.Muhammad arah ke Mayjend Sungkono sampai dengan depan Daihatsu Hr.Muhammad"></textarea><?= form_error('gambar', ' <small class="text-danger pl-3">', '</small>'); ?>
+                                         <textarea type="text" class="form-control" id="gambar" name="gambar" rows="6" placeholder="Contoh : Lampu PJU mati di ruas jalan Hr.Muhammad depan Pom Bensin Hr.Muhammad arah ke Mayjend Sungkono sampai dengan depan Daihatsu Hr.Muhammad"></textarea>
                                      </div> -->
                                      <div class="form-group">
                                          <div class="font-weight-bold">
