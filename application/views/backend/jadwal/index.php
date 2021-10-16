@@ -17,10 +17,25 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col text-right"><a href="#" class="btn btn-primary" data-toggle="modal"
-                            data-target="#tambahjadwal"></i> Tambah Data</a>
+                    <div class="col text-right">
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#tambahjadwal"></i> Tambah
+                            Data</a>
                         <a href="<?= base_url('C_jadwal/cetak') ?>" class="btn btn-success" target="_blank">Export
                             PDF</a>
+                    </div>
+
+                    <div class="row col-lg-3 text-right">
+                        <form action="<?= base_url('C_jadwal/filter'); ?>" method="post">
+                            <div class=" input-group mb">
+                                <select class="form-control" id="filter" name="filter">
+                                    <option>Filter...</option>
+                                    <option>Today</option>
+                                    <option>Month</option>
+                                    <option>Year</option>
+                                </select>
+                                <button class="btn btn-primary" type="submit" name="submit">Search</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

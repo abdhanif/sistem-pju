@@ -154,4 +154,16 @@ class C_jadwal extends CI_Controller
         $this->load->library('mypdf');
         $this->mypdf->generate('backend/jadwal/cetak', $data, 'Laporan-Data-Jadwal', 'A4', 'portrait');
     }
+
+    public function filter($id)
+    {
+        if ($id == 0) {
+            $data = $this->db->get('tb_mahasiswa')->result();
+        } else {
+            $data = $this->db->get_where('tb_mahasiswa', ['angkatan_id' => $id])->result();
+        }
+        $dt['mahasiswa'] = $data;
+        $dt['angkatan_id'] = $id;
+        $this->load->view('laporan/result', $dt);
+    }
 }
