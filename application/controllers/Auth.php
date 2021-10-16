@@ -27,13 +27,13 @@ class Auth extends CI_Controller
             if ($user) {
                 if (password_verify($password, $user['password'])) {
 
-                    if ($user['role_id'] == 1) {
-                        redirect('C_dashboard');
-                    } else {
-                        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Minta Verifikasi Admin !
-                    </div>');
-                        redirect('auth');
-                    }
+                    $arraydata = array(
+                        'Name'  => $user['name'],
+                        'RoleID'     => $user['role_id']
+                    );
+
+                    $this->session->set_userdata($arraydata);
+                    redirect('C_dashboard');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!
                     </div>');

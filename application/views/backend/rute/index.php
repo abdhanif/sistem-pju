@@ -11,6 +11,7 @@
         height: 450px;
     }
     </style>
+    <script src=" <?= base_url('assets\js\jquery-3.3.1.js'); ?>"></script>
 </head>
 
 <div class="container-fluid">
@@ -123,10 +124,24 @@
         var jarakPendekTemp = 0; //Nyimpen Temp jarak terpendek
         var objTemp = []; // Nyimpen lat lang temp
         var objTemp2 = []; // Nyimpen lat lang temp rute ke 2 dst
+        var objDBArr = [];
+        var tableData = [];
 
         <?php for ($i = 0; $i < count($arre); $i++) { ?>
         latLang = L.latLng(<?php echo $arre[$i]->lat ?>, <?php echo $arre[$i]->lang ?>);
         objDB.push(latLang);
+
+        //Push Data Detail PJU
+        var arr = {
+            lat: '<?php echo $arre[$i]->lat ?>',
+            kode_jadwal: '<?php echo $arre[$i]->kode_jadwal ?>',
+            kode_pju: '<?php echo $arre[$i]->kode_pju ?>',
+            kode_kelompok: '<?php echo $arre[$i]->kode_kelompok ?>',
+            status: '<?php echo $arre[$i]->status ?>',
+            create_at: '<?php echo $arre[$i]->create_at ?>'
+        }
+        objDBArr.push(arr);
+
         <?php } ?>
 
         for (var i = 0; i < objDB.length; i++) {
@@ -195,6 +210,16 @@
             var wayPoint = new L.Routing.Waypoint(objPasti[i]);
             objWP.push(wayPoint);
         }
+
+        //Urut Data Table PJU By Jarak Terdekat
+        for (var i = 0; i < objPasti.length; i++) {
+            var key = objDBArr.findIndex(x => x.lat == objPasti[i]['lat']);
+
+            if (objDBArr[key] != null) {
+                tableData.push(objDBArr[key]);
+            }
+        }
+
 
         L.tileLayer(
             'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmFiaWxjaGVuIiwiYSI6ImNrOWZzeXh5bzA1eTQzZGxpZTQ0cjIxZ2UifQ.1YMI-9pZhxALpQ_7x2MxHw', {

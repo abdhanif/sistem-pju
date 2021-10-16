@@ -16,6 +16,9 @@ class C_dashboard extends CI_Controller
     }
     public function index()
     {
+        $role = $this->session->userdata('RoleID');
+        var_dump($role);
+
         $pju['data_pju'] = $this->DataPju_model->getAllDataPju()->result();
         $data['markerdata'] = array();
 
@@ -32,7 +35,7 @@ class C_dashboard extends CI_Controller
         // var_dump($data['markerdata']);
 
         $this->load->view('backend/templates/header');
-        $this->load->view('backend/templates/sidebar');
+        $this->load->view('backend/templates/sidebar', $role);
         $this->load->view('backend/templates/topbar');
         $this->load->view('backend/dashboard/index', $data);
         $this->load->view('backend/templates/footer');
