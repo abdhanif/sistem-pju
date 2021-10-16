@@ -174,15 +174,15 @@
                 objDiff.push(objTemp2);
                 let difference = objDiff.filter(x => !objPasti.includes(x));
 
-                if(difference.length != 0){
-                  objPasti.push(objTemp2); //Push Rute Tercepat Dari Rute 1 ke lokasi Selanjutnya
-                  jarakPendekTemp = 0;
-                  objTemp = objTemp2; // Mengubah Lat Lang Last Rute
-                }else {
-                  let difference2 = objDB.filter(x => !objPasti.includes(x));
-                  if(difference2.length != 0){
-                    objPasti.push(difference2[0]);
-                  }
+                if (difference.length != 0) {
+                    objPasti.push(objTemp2); //Push Rute Tercepat Dari Rute 1 ke lokasi Selanjutnya
+                    jarakPendekTemp = 0;
+                    objTemp = objTemp2; // Mengubah Lat Lang Last Rute
+                } else {
+                    let difference2 = objDB.filter(x => !objPasti.includes(x));
+                    if (difference2.length != 0) {
+                        objPasti.push(difference2[0]);
+                    }
                 }
                 //END Terjauh
             }
@@ -208,11 +208,11 @@
             }).addTo(map);
 
         L.Routing.control({
-            waypoints: objWP
+            waypoints: objPasti
         }).addTo(map);
 
         let routeUs = L.Routing.osrmv1();
-        routeUs.route(objPasti, (err, routes) => {
+        routeUs.route(objWP, (err, routes) => {
             if (!err) {
                 let best = 10000000000000000;
                 let bestRoute = 0;
