@@ -8,9 +8,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon">
-                    <i class="fas fa-traffic-light"></i>
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SISTEM PJU</div>
+                <div class="sidebar-brand-text mx-3">SIM PJU</div>
             </a>
 
             <!-- Divider -->

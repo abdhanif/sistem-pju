@@ -26,6 +26,7 @@ class C_jadwal extends CI_Controller
         $this->load->view('backend/jadwal/index', $data);
         $this->load->view('backend/jadwal/tambah', $data_pju);
         $this->load->view('backend/jadwal/edit');
+        $this->load->view('backend/jadwal/form_filter');
         $this->load->view('backend/templates/footer');
     }
 
@@ -149,21 +150,17 @@ class C_jadwal extends CI_Controller
 
     public function cetak()
     {
-        $data['jadwal'] = $this->Jadwal_model->getAllJadwal();
+        $mulai = $this->input->post('mulai');
+        $sampai = $this->input->post('sampai');
+        $data['jadwal'] = $this->Jadwal_model->filter($mulai, $sampai);
 
+        $jd['jadwal'] = $this->Jadwal_model->getAllJadwal();
         $this->load->library('mypdf');
-        $this->mypdf->generate('backend/jadwal/cetak', $data, 'Laporan-Data-Jadwal', 'A4', 'portrait');
-    }
 
-    public function filter($id)
-    {
-        if ($id == 0) {
-            $data = $this->db->get('tb_mahasiswa')->result();
+        if ($this->form_validation->run() == false) {
+            $this->mypdf->generate('backend/jadwal/cetak', $data, 'Laporan-Data-Jadwal', 'A4', 'portrait');
         } else {
-            $data = $this->db->get_where('tb_mahasiswa', ['angkatan_id' => $id])->result();
+            $this->mypdf->generate('backend/jadwal/cetak', $jd, 'Laporan-Data-Jadwal', 'A4', 'portrait');
         }
-        $dt['mahasiswa'] = $data;
-        $dt['angkatan_id'] = $id;
-        $this->load->view('laporan/result', $dt);
     }
 }

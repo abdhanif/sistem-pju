@@ -11,7 +11,7 @@
         height: 450px;
     }
     </style>
-    <script src=" <?= base_url('assets\js\jquery-3.3.1.js'); ?>"></script>
+    <script src=" <?= base_url('assets/js/jquery-3.3.1.js'); ?>"></script>
 </head>
 
 <div class="container-fluid">
@@ -236,27 +236,27 @@
             waypoints: objPasti
         }).addTo(map);
 
-        let routeUs = L.Routing.osrmv1();
-        routeUs.route(objWP, (err, routes) => {
-            if (!err) {
-                let best = 10000000000000000;
-                let bestRoute = 0;
-                for (i in routes) {
-                    if (routes[i].summary.totalDistance < best) {
-                        bestRoute = i;
-                        best = routes[i].summary.totalDistance;
-                    }
-                }
-                console.log('best route', routes[bestRoute]);
-                L.Routing.line(routes[bestRoute], {
-                    styles: [{
-                        color: 'red',
-                        opacity: '0.3',
-                        weight: '5'
-                    }]
-                }).addTo(map);
-            }
-        });
+        // let routeUs = L.Routing.osrmv1();
+        // routeUs.route(objWP, (err, routes) => {
+        //     if (!err) {
+        //         let best = 10000000000000000;
+        //         let bestRoute = 0;
+        //         for (i in routes) {
+        //             if (routes[i].summary.totalDistance < best) {
+        //                 bestRoute = i;
+        //                 best = routes[i].summary.totalDistance;
+        //             }
+        //         }
+        //         console.log('best route', routes[bestRoute]);
+        //         L.Routing.line(routes[bestRoute], {
+        //             styles: [{
+        //                 color: 'red',
+        //                 opacity: '0.3',
+        //                 weight: '5'
+        //             }]
+        //         }).addTo(map);
+        //     }
+        // });
 
         var popup = L.popup();
 

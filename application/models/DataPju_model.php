@@ -7,7 +7,7 @@ class DataPju_model extends CI_Model
         $this->db->select();
         $this->db->from('data_pju');
         $this->db->join('data_kelompok', 'data_kelompok.kode_kelompok = data_pju.kode_kelompok');
-        $this->db->order_by("id_pju", "DESC");
+        $this->db->order_by("data_pju.kode_pju", "DESC");
         $query = $this->db->get();
         return $query;
     }

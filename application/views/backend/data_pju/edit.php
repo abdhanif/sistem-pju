@@ -137,7 +137,7 @@
                         </script>
                     </div>
                     <a type="button" href="<?= base_url('C_data_pju') ?>" class="btn btn-danger pull-left">Batal</a>
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>
         </div>

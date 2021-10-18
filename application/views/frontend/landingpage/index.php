@@ -1,8 +1,8 @@
  <!-- ======= Hero Section ======= -->
  <section id="hero" class="d-flex align-items-center">
      <div class="container">
-         <h1>Welcome to PJU Sistem</h1>
-         <h2>Layanan Pengaduan Penerangan Jalan Umum Kabupaten Bojonegoro</h2>
+         <h1>Welcome to SIM-PJU</h1>
+         <h2>Layanan Informasi & Pengaduan Lampu Penerangan Jalan Umum</h2>
          <a href="#about" class="btn-get-started scrollto">Get Started</a>
      </div>
  </section><!-- End Hero -->
@@ -18,7 +18,7 @@
                      <div class="shadow p-3 mb-5 bg-white rounded">
                          <div class="card-body">
                              <div class="card-header text-info">
-                                 <h2 class="text-center font-weight-bold">SAMPAIKAN LAPORAN ANDA LANGSUNG KE DINAS
+                                 <h2 class="text-center font-weight-bold">SAMPAIKAN LAPORAN ANDA LANGSUNG KE INSTANSI
                                      PENERANGAN JALAN UMUM
                                  </h2>
                              </div>

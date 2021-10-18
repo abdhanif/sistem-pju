@@ -56,7 +56,6 @@ class C_landingpage extends CI_Controller
 
     public function insert()
     {
-
         //Input
         $nama = $this->input->post('nama');
         $whatsapp = $this->input->post('whatsapp');

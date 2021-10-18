@@ -8,7 +8,7 @@ class Jadwal_model extends CI_Model
         $this->db->from('jadwal');
         $this->db->join('data_kelompok', 'data_kelompok.kode_kelompok = jadwal.kode_kelompok');
         $this->db->join('data_pju', 'data_pju.kode_pju = jadwal.kode_pju');
-        $this->db->order_by("jadwal.id_jadwal", "DESC");
+        $this->db->order_by("jadwal.kode_jadwal", "DESC");
         $query = $this->db->get();
         return $query->result();
     }
@@ -95,5 +95,15 @@ class Jadwal_model extends CI_Model
         $batas = str_pad($kode, 3, "0", STR_PAD_LEFT);
         $kodetampil = "J" . "-" . $batas;  //format kode
         return $kodetampil;
+    }
+
+    public function filter($mulai, $sampai)
+    {
+        $query = $this->db->query("SELECT *
+        FROM `jadwal`
+        JOIN `data_kelompok` ON data_kelompok.`kode_kelompok` = jadwal.`kode_kelompok`
+        JOIN `data_pju` ON data_pju.`kode_pju` = jadwal.`kode_pju`
+        WHERE (jadwal.create_at BETWEEN '$mulai' AND '$sampai')");
+        return $query->result();
     }
 }
