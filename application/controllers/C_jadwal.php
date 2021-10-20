@@ -46,8 +46,6 @@ class C_jadwal extends CI_Controller
         $this->form_validation->set_rules('kode_jadwal', 'Kode Jadwal', 'required');
         $this->form_validation->set_rules('kode_kelompok', 'Kode Kelompok', 'required');
         $this->form_validation->set_rules('kode_pju', 'Kode_Pju', 'required');
-        // $data_pju['data_pju'] = $this->DataPju_model->getAllDataPju();
-        // $kelompok['kelompok'] = $this->Kelompok_model->getAllKelompok();
 
         if ($this->form_validation->run() == false) {
 
@@ -102,7 +100,6 @@ class C_jadwal extends CI_Controller
             $this->Jadwal_model->edit();
             redirect('C_jadwal');
         }
-        // var_dump($data['data_pju']->id_pju);
     }
 
     function get_data_edit()
@@ -112,7 +109,6 @@ class C_jadwal extends CI_Controller
         $dataKelompok = json_encode($data[0]->kode_kelompok);
         $dataPJU = $this->Jadwal_model->getDataPJU($dataKelompok);
         var_dump(json_encode($dataPJU));
-        // echo json_encode($data);
     }
 
     function get_pju_edit()

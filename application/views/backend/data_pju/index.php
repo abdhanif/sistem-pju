@@ -17,11 +17,17 @@
                             </div>
                         </form>
                     </div>
+
+                    <?php if ($this->session->userdata('access') == 'Administrator') { ?>
+
                     <div class="col text-right">
                         <a href="<?= base_url('C_data_pju/tambah'); ?>" class="btn btn-primary"></i> Tambah Data</a>
                         <a href="<?= base_url('C_data_pju/cetak') ?>" class="btn btn-success" target="_blank">Export
                             PDF</a>
                     </div>
+
+                    <?php } ?>
+
                 </div>
             </div>
             </br>

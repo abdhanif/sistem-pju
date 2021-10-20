@@ -4,27 +4,25 @@ class Profile_model extends CI_Model
 
     public function index()
     {
-        $query = $this->db->query("SELECT user.id, user.name, user.email, user.password, user_role.role, user_role.role_id
-        FROM user
-        JOIN user_role ON user_role.role_id = user.role_id");
+        $query = $this->db->query("SELECT *
+        FROM table_user
+        JOIN user_role ON user_role.role_id = table_user.user_akses");
         return $query->result();
     }
 
     public function update()
     {
-        $id =  htmlspecialchars($this->input->post('id', true));
+        $user_id =  htmlspecialchars($this->input->post('user_id', true));
         $data = [
-            'name'  => htmlspecialchars($this->input->post('name', true)),
-            'email' => htmlspecialchars($this->input->post('email', true)),
-            'image' => 'default.jpg',
-            'password' => htmlspecialchars($this->input->post('password'), true),
-            'role_id'  => htmlspecialchars($this->input->post('role_id', true)),
-            'is_active' => 1,
-            'date_created' => time()
+            'user_name'  => htmlspecialchars($this->input->post('user_name', true)),
+            'user_email' => htmlspecialchars($this->input->post('user_email', true)),
+            'user_password' => htmlspecialchars($this->input->post('user_password'), true),
+            'user_akses'  => htmlspecialchars($this->input->post('user_akses', true)),
+            'user_status' => 1,
         ];
 
-        $this->db->where('id', $id);
-        $this->db->update('user', $data);
+        $this->db->where('user_id', $user_id);
+        $this->db->update('table_user', $data);
 
         redirect('C_profile');
     }
@@ -36,19 +34,19 @@ class Profile_model extends CI_Model
         return $query->result();
     }
 
-    public function getById($id)
+    public function getById($user_id)
     {
-        return $this->db->get_where('user', ['id' => $id]);
+        return $this->db->get_where('table_user', ['user_id' => $user_id]);
     }
 
-    public function getProfileById($id)
+    public function getProfileById($user_id)
     {
-        return $this->db->get_where('user', ['id' => $id])->row_array();
+        return $this->db->get_where('table_user', ['user_id' => $user_id])->row_array();
     }
 
-    public function hapus($id, $user)
+    public function hapus($user_id, $user)
     {
-        $this->db->where($id);
+        $this->db->where($user_id);
         $this->db->delete($user);
     }
 }

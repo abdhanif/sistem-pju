@@ -1,55 +1,52 @@
-<link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap-datepicker/css/bootstrap-datepicker.min.css'); ?>">
+<head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-<div class="example-modal">
-    <div id="filterjadwal" class="modal fade" role="dialog" style="display:none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="font-weight-bold">CETAK DATA JADWAL</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
+    <script>
+    $(function() {
+        $("#date").datepicker({
+            dateFormat: "yy-mm-dd"
+        });
+    });
+    </script>
+</head>
 
-                    <form class="user" method="post" action="<?= base_url('C_jadwal/cetak') ?>" target="_blank">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label class="font-weight-bold form-label">Mulai Bulan</label>
-                                <input type="text" class="form-control datepicker" id="datepicker"
-                                    data-date-format="yyyy-mm-dd" name="mulai">
-                            </div>
+<body>
+    <div class="example-modal">
+        <div id="filterjadwal" class="modal fade" role="dialog" style="display:none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="font-weight-bold">CETAK DATA JADWAL</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
 
-                            <div class="col-md-6">
-                                <label class="font-weight-bold form-label">Sampai Bulan</label>
-                                <input type="text" class="form-control datepicker" id="datepicker" name="sampai"
-                                    data-date-format="yyyy-mm-dd">
-                            </div>
+                        <form class="user" method="post" action="<?= base_url('C_jadwal/cetak') ?>" target="_blank">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="font-weight-bold form-label">Mulai Bulan</label>
+                                    <input type="text" id="date">
+                                </div>
 
-                            </br>
+                                <div class="col-md-6">
+                                    <label class="font-weight-bold form-label">Sampai Bulan</label>
+                                    <input type="text" id="date">
+                                </div>
 
-                            <div class="modal-footer">
-                                <button id="nosave" type="button" class="btn btn-danger pull-left"
-                                    data-dismiss="modal">Batal</button>
-                                <button type="submit" class="btn btn-primary" target="_blank">Cetak</button>
-                            </div>
-                    </form>
+                                </br>
+
+                                <div class="modal-footer">
+                                    <button id="nosave" type="button" class="btn btn-danger pull-left"
+                                        data-dismiss="modal">Batal</button>
+                                    <button type="submit" class="btn btn-primary" target="_blank">Cetak</button>
+                                </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<script src="<?php echo base_url(); ?>assets/bootstrap.min.js"></script>
-<script src="<?php echo base_url('assets/js/jQuery-2.1.4.min.js'); ?>"></script>
-<script type="text/javascript"
-    src="<?php echo base_url('assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js'); ?>"></script>
-<script>
-$(document).ready(function() {
-    $('.datepicker').datepicker({
-        format: 'yyyy-mm-dd',
-        autoclose: true,
-        todayHighlight: true,
-    });
-});
-</script>
+</body>

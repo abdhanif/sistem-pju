@@ -17,8 +17,13 @@
                         </form>
                     </div>
                     <div class="col text-right">
+                        <?php if ($this->session->userdata('access') == 'Administrator') { ?>
+
                         <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#tambahjadwal"></i> Tambah
                             Data</a>
+
+                        <?php } ?>
+
                         <a href="<?= base_url('C_jadwal/cetak') ?>" class="btn btn-success" data-toggle="modal"
                             data-target="#filterjadwal">Export PDF</a>
                     </div>

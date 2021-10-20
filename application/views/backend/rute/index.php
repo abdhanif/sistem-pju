@@ -11,7 +11,6 @@
         height: 450px;
     }
     </style>
-    <script src=" <?= base_url('assets/js/jquery-3.3.1.js'); ?>"></script>
 </head>
 
 <div class="container-fluid">

@@ -30,6 +30,8 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
+            <?php if ($this->session->userdata('access') == 'Administrator') { ?>
+
             <!-- Heading -->
             <div class="sidebar-heading">
                 Pengelolaan
@@ -85,6 +87,45 @@
                     <i class="far fa-fw fa-clipboard"></i>
                     <span>Jadwal Pemeliharaan</span></a>
             </li>
+
+            <?php }
+            if ($this->session->userdata('access') == 'Teknisi') { ?>
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Pengelolaan
+            </div>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('C_deteksi') ?>">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Deteksi PJU</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('C_kelompok') ?>">
+                    <i class="fas fa-fw fa-layer-group"></i>
+                    <span>Data Kelompok</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('C_data_pju') ?>">
+                    <i class="fas fa-fw fa-database"></i>
+                    <span>Data PJU</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('C_jadwal') ?>">
+                    <i class="far fa-fw fa-calendar-alt"></i>
+                    <span>Jadwal Pengerjaan</span></a>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('C_rute') ?>">
+                    <i class="fas fa-fw fa-map-marked-alt"></i>
+                    <span>Cari Rute</span></a>
+            </li>
+
+            <?php }; ?>
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

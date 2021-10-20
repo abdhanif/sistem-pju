@@ -36,19 +36,23 @@
                     $no = 1;
                     foreach ($profile as $row) {
                     ?>
-                        <tbody>
-                            <tr>
-                                <td><?php echo $no++; ?></td>
-                                <td><?php echo $row->name; ?></td>
-                                <td><?php echo $row->email; ?></td>
-                                <td><?php echo $row->role; ?></td>
-                                <td>
-                                    <a href="<?= base_url(); ?>C_profile/edit/<?php echo $row->id; ?>" class="badge badge-warning" data-toggle="modal" data-target="#update<?php echo $row->id; ?>"></i>Edit</a>
+                    <tbody>
+                        <tr>
+                            <td><?php echo $no++; ?></td>
+                            <td><?php echo $row->user_name; ?></td>
+                            <td><?php echo $row->user_email; ?></td>
+                            <td><?php echo $row->role; ?></td>
+                            <td>
+                                <a href="<?= base_url(); ?>C_profile/edit/<?php echo $row->user_id; ?>"
+                                    class="badge badge-warning" data-toggle="modal"
+                                    data-target="#update<?php echo $row->user_id; ?>"></i>Edit</a>
 
-                                    <a href="<?= base_url(); ?>C_profile/hapus/<?php echo $row->id; ?>" class="badge badge-danger" data-toggle="modal" data-target="#delete<?php echo $row->id; ?>"></i>Hapus</a>
-                                </td>
-                            </tr>
-                        </tbody>
+                                <a href="<?= base_url(); ?>C_profile/hapus/<?php echo $row->user_id; ?>"
+                                    class="badge badge-danger" data-toggle="modal"
+                                    data-target="#delete<?php echo $row->user_id; ?>"></i>Hapus</a>
+                            </td>
+                        </tr>
+                    </tbody>
 
                     <?php
                     }
@@ -65,24 +69,25 @@
 <?php
 foreach ($profile as $prf) {
 ?>
-    <div class="modal fade" id="delete<?php echo $prf->id; ?>" role="dialog" style="display: none;">
-        <div class="modal-dialog" style="margin-top: 260.5px;">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h5>Anda yakin mau menghapus <b><?php echo $prf->name; ?></b> ?</h5>
-                </div>
-                <form role="form" method="post" id="delete_data" action="<?php echo base_url(); ?>C_profile/hapus/<?php echo $prf->id; ?>">
-                    <input type="hidden" id="delete_item_id" name="id" value="<?php echo $prf->id; ?>">
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-danger">Hapus</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
-                    </div>
-                </form>
+<div class="modal fade" id="delete<?php echo $prf->user_id; ?>" role="dialog" style="display: none;">
+    <div class="modal-dialog" style="margin-top: 260.5px;">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h5>Anda yakin mau menghapus <b><?php echo $prf->user_name; ?></b> ?</h5>
             </div>
-
+            <form role="form" method="post" id="delete_data"
+                action="<?php echo base_url(); ?>C_profile/hapus/<?php echo $prf->user_id; ?>">
+                <input type="hidden" id="delete_item_id" name="id" value="<?php echo $prf->user_id; ?>">
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Hapus</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
+                </div>
+            </form>
         </div>
+
     </div>
+</div>
 <?php
 }
 ?>

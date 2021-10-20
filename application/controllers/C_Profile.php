@@ -22,15 +22,16 @@ class C_profile extends CI_Controller
         $this->load->view('backend/templates/footer');
     }
 
-    public function edit($id)
+    public function edit($user_id)
     {
 
-        $data['profile'] = $this->Profile_model->getById($id)->row();
+        $data['profile'] = $this->Profile_model->getById($user_id)->row();
         $role['user_role'] = $this->Profile_model->getAllUserRole();
 
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('user_name', 'User_Name', 'required');
+        $this->form_validation->set_rules('user_email', 'User_Email', 'required');
+        $this->form_validation->set_rules('user_password', 'User_Password', 'required');
+        $this->form_validation->set_rules('user_akses', 'User_Akses', 'required');
 
         if ($this->form_validation->run() == false) {
 
@@ -49,14 +50,15 @@ class C_profile extends CI_Controller
 
     public function update()
     {
-        $id = $this->input->post("id");
+        $user_id = $this->input->post("user_id");
 
-        $data['profile'] = $this->Profile_model->getProfileById($id);
+        $data['profile'] = $this->Profile_model->getProfileById($user_id);
         $role['user_role'] = $this->Profile_model->getAllUserRole();
 
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('user_name', 'User_Name', 'required');
+        $this->form_validation->set_rules('user_email', 'User_Email', 'required');
+        $this->form_validation->set_rules('user_password', 'User_Password', 'required');
+        $this->form_validation->set_rules('user_akses', 'User_Akses', 'required');
 
 
         if ($this->form_validation->run() == false) {
