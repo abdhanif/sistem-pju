@@ -79,7 +79,7 @@ foreach ($deteksi_pju as $dt) {
                         <div class="font-weight-bold">
                             <label for="laporan">Gambar</label>
                         </div>
-                        <input type="text" class="form-control" readonly placeholder="<?php echo $dt->gambar; ?>">
+                        <img width="150px" src="<?php echo base_url(); ?>upload_dir/<?php echo $dt->gambar; ?>">
                     </div>
                     </form>
                 </div>

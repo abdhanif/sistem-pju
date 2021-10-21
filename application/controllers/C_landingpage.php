@@ -64,7 +64,7 @@ class C_landingpage extends CI_Controller
         $kelurahan = $this->input->post('kelurahan');
         $laporan = $this->input->post('laporan');
 
-        $key = 'Laporan' + $nama;
+        $key = $nama;
 
         //Config Upload
         $file_ext = pathinfo($_FILES["gambar"]['name'], PATHINFO_EXTENSION);
@@ -73,9 +73,8 @@ class C_landingpage extends CI_Controller
         $config['file_name'] = $new_name;
         $config['upload_path'] = './upload_dir/';
         $config['allowed_types'] = 'gif|jpg|png|mp4|mkv|jpeg';
-        $config['max_size']  = 1000000;
-        $config['max_width']  = 10240;
-        $config['max_height']  = 7680;
+        $config['max_size']  = 100000;
+        $config['remove_space'] = TRUE;
 
         $this->load->library('upload', $config);
 
@@ -109,7 +108,8 @@ class C_landingpage extends CI_Controller
             );
 
             $this->Deteksi_model->tambah($res);
-            redirect(base_url('C_landingpage'));
+            $this->session->set_flashdata('deteksi');
+            redirect('C_landingpage');
         }
     }
 }

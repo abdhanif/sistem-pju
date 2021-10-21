@@ -9,6 +9,8 @@
                             aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
+
+                    <?php echo validation_errors(); ?>
                     <form class="user" method="post" action="<?= base_url('C_kelompok/tambah') ?>">
 
                         <div class="row g-3">
@@ -16,7 +18,6 @@
                                 <label class="font-weight-bold form-label">Kode Kelompok</label>
                                 <input type="text" class="form-control" id="kode_kelompok" name="kode_kelompok"
                                     value="<?php echo $kode; ?>" autocomplete="off" readonly="readonly">
-                                <?= form_error('kode_kelompok', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
 
@@ -26,8 +27,8 @@
                             <div class="col-md">
                                 <label class="font-weight-bold form-label">Nama Kelompok</label>
                                 <input type="text" class="form-control" id="nama_kelompok" name="nama_kelompok"
-                                    value="<?= set_value('alamat_pju'); ?>" autocomplete="off" autofocus>
-                                <?= form_error('nama_kelompok', ' <small class="text-danger pl-3">', '</small>'); ?>
+                                    value="<?php echo set_value('nama_kelompok'); ?>" autocomplete="off" autofocus>
+                                <?php echo form_error('nama_kelompok', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
 

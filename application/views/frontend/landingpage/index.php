@@ -23,6 +23,19 @@
                                  </h2>
                              </div>
                              <br>
+                             <?php if ($this->session->flashdata('deteksi')) : ?>
+                             <div class="row mt-3">
+                                 <div class="col-md-6">
+                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                         Data <strong>Berhasil</strong> <?= $this->session->flashdata('deteksi'); ?>
+                                         <button type="button" class="close" data-dismiss="alert">
+                                             <span aria-hidden="true">$times;</span>
+                                         </button>
+                                     </div>
+                                 </div>
+                             </div>
+                             <?php endif; ?>
+
                              <div class="card-text">
                                  <form class="user" method="post" action="<?= base_url('C_landingpage/insert') ?>"
                                      enctype="multipart/form-data">
@@ -85,23 +98,11 @@
                                              placeholder="Contoh : Lampu PJU mati di ruas jalan Hr.Muhammad depan Pom Bensin Hr.Muhammad arah ke Mayjend Sungkono sampai dengan depan Daihatsu Hr.Muhammad"></textarea><?= form_error('laporan', ' <small class="text-danger pl-3">', '</small>'); ?>
                                      </div>
 
-
-                                     <!-- <div class="form-group">
-                                         <div class="font-weight-bold">
-                                             <label for="laporan">lampiran *</label>
-                                         </div>
-                                         <textarea type="text" class="form-control" id="gambar" name="gambar" rows="6" placeholder="Contoh : Lampu PJU mati di ruas jalan Hr.Muhammad depan Pom Bensin Hr.Muhammad arah ke Mayjend Sungkono sampai dengan depan Daihatsu Hr.Muhammad"></textarea>
-                                     </div> -->
                                      <div class="form-group">
                                          <div class="font-weight-bold">
                                              <label for="laporan">Lampiran Foto *</label>
                                          </div>
-                                         <div class="custom-file">
-                                             <input type="file" class="custom-file-input" id="gambar" name="gambar"
-                                                 required>
-                                             <label class="custom-file-label" for="validatedCustomFile">Masukan Lampiran
-                                                 Foto...</label>
-                                         </div>
+                                         <input type="file" id="gambar" name="gambar" required>
                                      </div>
                                      <br>
                                      <div class="text-center">

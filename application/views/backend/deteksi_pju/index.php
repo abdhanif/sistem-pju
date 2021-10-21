@@ -8,14 +8,6 @@
         <div class="card-body">
             <div class="container col-md">
                 <div class="row">
-                    <div class="row col-md-4 text-right">
-                        <!-- <form action="<?= base_url('C_data_pju/search'); ?>" method="post">
-                            <div class=" input-group mb">
-                                <input type="text" class="form-control" placeholder="Keyword..." name="keyword" autocomplete="off" autofocus>
-                                <button class="btn btn-primary" type="submit" name="submit">Search</button>
-                            </div>
-                        </form> -->
-                    </div>
                     <div class="col text-right">
                         <a href="<?= base_url('C_deteksi/cetak') ?>" class="btn btn-success" target="_blank">Export
                             PDF</a>
@@ -32,7 +24,6 @@
                             <th>Nama</th>
                             <th>Alamat</th>
                             <th>Laporan</th>
-                            <th>Bukti</th>
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>
@@ -47,8 +38,7 @@
                             <td><?php echo $no++; ?></td>
                             <td><?php echo $row->nama; ?></td>
                             <td><?php echo $row->alamat; ?></td>
-                            <td><?php echo character_limiter($row->laporan, 10); ?></td>
-                            <td><?php echo $row->gambar; ?></td>
+                            <td><?php echo character_limiter($row->laporan, 20); ?></td>
                             <td class="font-weight-bold"><?php echo $row->verifikasi; ?></td>
                             <td>
                                 <a href="<?= base_url(); ?>C_deteksi/edit/<?php echo $row->id_deteksi; ?>"

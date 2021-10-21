@@ -36,7 +36,9 @@
                             <th width="5%">No</th>
                             <th>Kode Kelompok</th>
                             <th>Nama Kelompok</th>
+                            <?php if ($this->session->userdata('access') == 'Administrator') { ?>
                             <th>Action</th>
+                            <?php } ?>
                         </tr>
                     </thead>
 
@@ -49,6 +51,7 @@
                             <td><?php echo $no++; ?></td>
                             <td><?php echo $row->kode_kelompok; ?></td>
                             <td><?php echo $row->nama_kelompok; ?></td>
+                            <?php if ($this->session->userdata('access') == 'Administrator') { ?>
                             <td>
                                 <a href="<?= base_url(); ?>C_kelompok/edit/<?php echo $row->id_kelompok; ?>"
                                     class="badge badge-warning" data-toggle="modal"
@@ -57,6 +60,7 @@
                                     class="badge badge-danger" data-toggle="modal"
                                     data-target="#delete<?php echo $row->id_kelompok; ?>"></i> Hapus</a>
                             </td>
+                            <?php } ?>
                         </tr>
                     </tbody>
 

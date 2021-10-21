@@ -1,17 +1,3 @@
-<head>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-    <script>
-    $(function() {
-        $("#date").datepicker({
-            dateFormat: "yy-mm-dd"
-        });
-    });
-    </script>
-</head>
-
 <body>
     <div class="example-modal">
         <div id="filterjadwal" class="modal fade" role="dialog" style="display:none;">
@@ -27,13 +13,15 @@
                         <form class="user" method="post" action="<?= base_url('C_jadwal/cetak') ?>" target="_blank">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label class="font-weight-bold form-label">Mulai Bulan</label>
-                                    <input type="text" id="date">
+                                    <label class="font-weight-bold form-label">Mulai</label>
+                                    <input type="date" class="font-weight-boldform-control form-control" id="mulai"
+                                        name="mulai">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="font-weight-bold form-label">Sampai Bulan</label>
-                                    <input type="text" id="date">
+                                    <label class="font-weight-bold form-label">Sampai</label>
+                                    <input type="date" class="font-weight-boldform-control form-control" id="sampai"
+                                        name="sampai">
                                 </div>
 
                                 </br>

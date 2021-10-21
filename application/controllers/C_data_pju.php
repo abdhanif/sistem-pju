@@ -10,6 +10,8 @@ class C_data_pju extends CI_Controller
         $this->load->model('DataPju_model');
         $this->load->model('Kelompok_model');
         $this->load->library('form_validation');
+        $this->load->model("Mlogin");
+        $this->Mlogin->Check_Login();
     }
     public function index()
     {

@@ -41,7 +41,9 @@
                             <th>Kode PJU</th>
                             <th>Status</th>
                             <th>Dibuat</th>
+                            <?php if ($this->session->userdata('access') == 'Administrator') { ?>
                             <th>Aksi</th>
+                            <?php } ?>
                         </tr>
                     </thead>
 
@@ -59,6 +61,7 @@
                             <td><?php echo $row->kode_pju; ?></td>
                             <td class="font-weight-bold"><?php echo $row->status; ?></td>
                             <td><?php echo $row->create_at; ?></td>
+                            <?php if ($this->session->userdata('access') == 'Administrator') { ?>
                             <td>
                                 <a href="<?= base_url(); ?>C_jadwal/edit/<?php echo $row->id_jadwal; ?>"
                                     class="badge badge-warning" data-toggle="modal"
@@ -67,6 +70,7 @@
                                     class="badge badge-danger" data-toggle="modal"
                                     data-target="#delete<?php echo $row->id_jadwal; ?>"></i> Hapus</a>
                             </td>
+                            <?php } ?>
                         </tr>
                     </tbody>
 

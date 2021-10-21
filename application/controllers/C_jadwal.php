@@ -11,6 +11,8 @@ class C_jadwal extends CI_Controller
         $this->load->model('DataPju_model');
         $this->load->library('form_validation');
         $this->load->library('session');
+        $this->load->model("Mlogin");
+        $this->Mlogin->Check_Login();
     }
 
     public function index()

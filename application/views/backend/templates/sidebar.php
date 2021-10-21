@@ -96,12 +96,6 @@
                 Pengelolaan
             </div>
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('C_deteksi') ?>">
-                    <i class="fas fa-fw fa-envelope"></i>
-                    <span>Deteksi PJU</span></a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('C_kelompok') ?>">
                     <i class="fas fa-fw fa-layer-group"></i>

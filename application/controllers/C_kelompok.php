@@ -9,6 +9,8 @@ class C_kelompok extends CI_Controller
         parent::__construct();
         $this->load->model('Kelompok_model');
         $this->load->library('form_validation');
+        $this->load->model("Mlogin");
+        $this->Mlogin->Check_Login();
     }
     public function index()
     {
@@ -51,6 +53,7 @@ class C_kelompok extends CI_Controller
             $this->load->library('form_validation');
         } else {
             $this->Kelompok_model->tambah();
+            $this->session->set_flashdata('notif', '<div class="alert alert-success" role="alert"> Data Berhasil ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
             redirect('C_kelompok');
         }
     }

@@ -7,6 +7,8 @@ class C_profile extends CI_Controller
         $this->load->model('Profile_model');
         $this->load->library('form_validation');
         $this->load->helper('text');
+        $this->load->model("Mlogin");
+        $this->Mlogin->Check_Login();
     }
 
     public function index()

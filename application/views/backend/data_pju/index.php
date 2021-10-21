@@ -42,7 +42,9 @@
                             <th>Alamat</th>
                             <th>Latitude</th>
                             <th>Longitue</th>
+                            <?php if ($this->session->userdata('access') == 'Administrator') { ?>
                             <th>Action</th>
+                            <?php } ?>
                         </tr>
                     </thead>
 
@@ -58,6 +60,8 @@
                             <td><?php echo $row->alamat_pju; ?></td>
                             <td><?php echo $row->lat; ?></td>
                             <td><?php echo $row->lng; ?></td>
+
+                            <?php if ($this->session->userdata('access') == 'Administrator') { ?>
                             <td>
                                 <a href="<?php echo base_url(); ?>C_data_pju/edit/<?php echo $row->id_pju; ?>"
                                     class="badge badge-warning">Edit</a>
@@ -65,6 +69,7 @@
                                     class="badge badge-danger" data-toggle="modal"
                                     data-target="#delete<?php echo $row->id_pju; ?>"></i> Hapus</a>
                             </td>
+                            <?php } ?>
                         </tr>
                     </tbody>
 

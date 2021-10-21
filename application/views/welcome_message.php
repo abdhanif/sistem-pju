@@ -2,31 +2,151 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap Elegant Success Modal</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <style>
+    body {
+        font-family: 'Varela Round', sans-serif;
+    }
+
+    .modal-confirm {
+        color: #434e65;
+        width: 525px;
+    }
+
+    .modal-confirm .modal-content {
+        padding: 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .modal-confirm .modal-header {
+        background: #47c9a2;
+        border-bottom: none;
+        position: relative;
+        text-align: center;
+        margin: -20px -20px 0;
+        border-radius: 5px 5px 0 0;
+        padding: 35px;
+    }
+
+    .modal-confirm h4 {
+        text-align: center;
+        font-size: 36px;
+        margin: 10px 0;
+    }
+
+    .modal-confirm .form-control,
+    .modal-confirm .btn {
+        min-height: 40px;
+        border-radius: 3px;
+    }
+
+    .modal-confirm .close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: #fff;
+        text-shadow: none;
+        opacity: 0.5;
+    }
+
+    .modal-confirm .close:hover {
+        opacity: 0.8;
+    }
+
+    .modal-confirm .icon-box {
+        color: #fff;
+        width: 95px;
+        height: 95px;
+        display: inline-block;
+        border-radius: 50%;
+        z-index: 9;
+        border: 5px solid #fff;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .modal-confirm .icon-box i {
+        font-size: 64px;
+        margin: -4px 0 0 -4px;
+    }
+
+    .modal-confirm.modal-dialog {
+        margin-top: 80px;
+    }
+
+    .modal-confirm .btn,
+    .modal-confirm .btn:active {
+        color: #fff;
+        border-radius: 4px;
+        background: #eeb711 !important;
+        text-decoration: none;
+        transition: all 0.4s;
+        line-height: normal;
+        border-radius: 30px;
+        margin-top: 10px;
+        padding: 6px 20px;
+        border: none;
+    }
+
+    .modal-confirm .btn:hover,
+    .modal-confirm .btn:focus {
+        background: #eda645 !important;
+        outline: none;
+    }
+
+    .modal-confirm .btn span {
+        margin: 1px 3px 0;
+        float: left;
+    }
+
+    .modal-confirm .btn i {
+        margin-left: 1px;
+        font-size: 20px;
+        float: right;
+    }
+
+    .trigger-btn {
+        display: inline-block;
+        margin: 100px auto;
+    }
+    </style>
 </head>
 
 <body>
-    <div class="w3-bar w3-border w3-light-grey w3-card-4">
-        <a href="#" class="w3-bar-item w3-blue w3-button">Home</a>
-        <?php if ($this->session->userdata('access') == 'Administrator') { ?>
-        <a href="#" class="w3-bar-item w3-button">Daftar Dosen</a>
-        <a href="#" class="w3-bar-item w3-button">Daftar Mahasiswa</a>
-        <a href="#" class="w3-bar-item w3-button">Daftar Mata Kuliah</a>
-        <?php }
-        if ($this->session->userdata('access') == 'Dosen') { ?>
-        <a href="#" class="w3-bar-item w3-button">Daftar Mahasiswa</a>
-        <?php }
-        if ($this->session->userdata('access') == 'Mahasiswa') { ?>
-        <a href="#" class="w3-bar-item w3-button">Daftar Mata Kuliah</a>
-        <?php }; ?>
-        <a href="<?php echo site_url('login/logout'); ?>" class="w3-bar-item w3-button w3-red w3-right">Keluar</a>
+    <div class="text-center">
+        <!-- Button HTML (to Trigger Modal) -->
+        <a href="#myModal" class="trigger-btn" data-toggle="modal">Click to Open Success Modal</a>
     </div>
-    <div class="w3-container">
-        <h1>Hai <?php echo $this->session->userdata('name'); ?></h1>
-        <h3>Ini adalah halaman untuk <?php echo $this->session->userdata('access'); ?></h3>
+
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body text-center">
+                    <h4>Great!</h4>
+                    <p>Your account has been created successfully.</p>
+                    <button class="btn btn-success" data-dismiss="modal"><span>Start Exploring</span> <i
+                            class="material-icons">&#xE5C8;</i></button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

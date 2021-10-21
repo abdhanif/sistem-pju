@@ -1,5 +1,6 @@
 <br>
-</br>
+<br>
+<br>
 
 <head>
     <meta charset="UTF-8">
@@ -11,14 +12,6 @@
 </head>
 
 <body>
-    <!-- partial:index.partial.html -->
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Yinka Enoch Adedokun">
-        <title>Login Page</title>
-    </head>
 
     <body>
         <!-- Main Content -->
