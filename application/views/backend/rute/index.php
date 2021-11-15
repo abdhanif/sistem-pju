@@ -61,7 +61,7 @@
                             <th>Kelompok</th>
                             <th>Kode PJU</th>
                             <th>Status</th>
-                            <th>Dibuat</th>
+                            <th>Alamat PJU</th>
                         </tr>
                     </thead>
 
@@ -78,7 +78,7 @@
                             <td><?php echo $row->nama_kelompok; ?></td>
                             <td><?php echo $row->kode_pju; ?></td>
                             <td class="font-weight-bold"><?php echo $row->status; ?></td>
-                            <td><?php echo $row->create_at; ?></td>
+                            <td><?php echo $row->alamat_pju; ?></td>
                         </tr>
                     </tbody>
 

@@ -91,7 +91,7 @@
                     <tr>
                         <th scope="row" width="5%">No</th>
                         <th scope="row">Nama</th>
-                        <th scope="row">Nomor</th>
+                        <th scope="row">Whatsapp</th>
                         <th scope="row">Alamat</th>
                         <th scope="row">Laporan</th>
                     </tr>

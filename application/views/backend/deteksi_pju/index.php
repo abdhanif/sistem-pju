@@ -21,8 +21,8 @@
                     <thead>
                         <tr>
                             <th width="5%">No</th>
-                            <th>Nama</th>
-                            <th>Alamat</th>
+                            <th>Nama Pengadu</th>
+                            <th>PJU Diadukan</th>
                             <th>Laporan</th>
                             <th>Status</th>
                             <th>Aksi</th>
@@ -37,7 +37,7 @@
                         <tr>
                             <td><?php echo $no++; ?></td>
                             <td><?php echo $row->nama; ?></td>
-                            <td><?php echo $row->alamat; ?></td>
+                            <td><?php echo $row->kode_pju; ?></td>
                             <td><?php echo character_limiter($row->laporan, 20); ?></td>
                             <td class="font-weight-bold"><?php echo $row->verifikasi; ?></td>
                             <td>

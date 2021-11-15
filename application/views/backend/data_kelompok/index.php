@@ -37,7 +37,7 @@
                             <th>Kode Kelompok</th>
                             <th>Nama Kelompok</th>
                             <?php if ($this->session->userdata('access') == 'Administrator') { ?>
-                            <th>Action</th>
+                            <th>Aksi</th>
                             <?php } ?>
                         </tr>
                     </thead>

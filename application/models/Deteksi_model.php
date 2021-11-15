@@ -1,11 +1,11 @@
 <?php
 class Deteksi_model extends CI_Model
 {
-
     public function getAllDeteksi()
     {
-        $this->db->select();
+        $this->db->select('*');
         $this->db->from('deteksi_pju');
+        $this->db->join('data_pju', 'data_pju.no_meter_pju = deteksi_pju.no_meter');
         $this->db->order_by("deteksi_pju.id_deteksi", "DESC");
         $query = $this->db->get();
         return $query->result();

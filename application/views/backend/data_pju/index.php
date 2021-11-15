@@ -41,9 +41,10 @@
                             <th>Kode</th>
                             <th>Alamat</th>
                             <th>Latitude</th>
-                            <th>Longitue</th>
+                            <th>Longitude</th>
+                            <th>No.Meter PJU</th>
                             <?php if ($this->session->userdata('access') == 'Administrator') { ?>
-                            <th>Action</th>
+                            <th>Aksi</th>
                             <?php } ?>
                         </tr>
                     </thead>
@@ -60,6 +61,7 @@
                             <td><?php echo $row->alamat_pju; ?></td>
                             <td><?php echo $row->lat; ?></td>
                             <td><?php echo $row->lng; ?></td>
+                            <td><?php echo $row->no_meter_pju; ?></td>
 
                             <?php if ($this->session->userdata('access') == 'Administrator') { ?>
                             <td>

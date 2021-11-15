@@ -48,7 +48,8 @@ class C_rute extends CI_Controller
                 'kode_pju' => $pju['data_pju'][$i]->kode_pju,
                 'kode_kelompok' => $pju['data_pju'][$i]->kode_kelompok,
                 'status' => $pju['data_pju'][$i]->status,
-                'create_at' => $pju['data_pju'][$i]->create_at
+                'create_at' => $pju['data_pju'][$i]->create_at,
+                'alamat_pju' => $pju['data_pju'][$i]->alamat_pju
             );
 
             array_push($data['arre'], $arr);

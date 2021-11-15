@@ -28,7 +28,8 @@ class DataPju_model extends CI_Model
             'kode_pju'  => htmlspecialchars($this->input->post('kode_pju', true)),
             'alamat_pju'  => htmlspecialchars($this->input->post('alamat_pju', true)),
             'lat'  => htmlspecialchars($this->input->post('lat', true)),
-            'lng'  => htmlspecialchars($this->input->post('lng', true))
+            'lng'  => htmlspecialchars($this->input->post('lng', true)),
+            'no_meter_pju'  => htmlspecialchars($this->input->post('no_meter_pju', true))
         ];
 
         $this->db->insert('data_pju', $data);
@@ -67,7 +68,8 @@ class DataPju_model extends CI_Model
             'kode_pju'  => htmlspecialchars($this->input->post('kode_pju', true)),
             'alamat_pju'  => htmlspecialchars($this->input->post('alamat_pju', true)),
             'lat'  => htmlspecialchars($this->input->post('lat', true)),
-            'lng'  => htmlspecialchars($this->input->post('lng', true))
+            'lng'  => htmlspecialchars($this->input->post('lng', true)),
+            'no_meter_pju'  => htmlspecialchars($this->input->post('no_meter_pju', true))
         ];
 
         $this->db->where('id_pju', $id_pju);

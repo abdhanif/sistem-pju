@@ -30,6 +30,21 @@ foreach ($deteksi_pju as $dt) {
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <div class="font-weight-bold">
+                                <label for="inputNama">Kode PJU</label>
+                            </div>
+                            <input type="text" class="form-control" readonly placeholder="<?php echo $dt->kode_pju; ?>">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="font-weight-bold">
+                                <label for="inputWA">No Meter PJU</label>
+                            </div>
+                            <input type="text" class="form-control" readonly placeholder="<?php echo $dt->no_meter; ?>">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <div class="font-weight-bold">
                                 <label for="inputNama">Kecamatan</label>
                             </div>
                             <input type="text" class="form-control" readonly

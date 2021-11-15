@@ -8,6 +8,7 @@ class C_deteksi extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Deteksi_model');
+        $this->load->model('DataPju_model');
         $this->load->library('form_validation');
         $this->load->helper('text');
         $this->load->model("Mlogin");
@@ -16,12 +17,13 @@ class C_deteksi extends CI_Controller
     public function index()
     {
         $data['deteksi_pju'] = $this->Deteksi_model->getAllDeteksi();
+        $pju['data_pju'] = $this->DataPju_model->getAllDataPju();
 
         $this->load->view('backend/templates/header');
         $this->load->view('backend/templates/sidebar');
         $this->load->view('backend/templates/topbar');
         $this->load->view('backend/deteksi_pju/index', $data);
-        $this->load->view('backend/deteksi_pju/detail');
+        $this->load->view('backend/deteksi_pju/detail', $pju);
         $this->load->view('backend/deteksi_pju/edit');
         $this->load->view('backend/templates/footer');
     }

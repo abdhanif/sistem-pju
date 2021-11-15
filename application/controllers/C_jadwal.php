@@ -82,10 +82,10 @@ class C_jadwal extends CI_Controller
     {
         $data['jadwal'] = $this->Jadwal_model->getById($id_jadwal)->row();
 
+        $this->form_validation->set_rules('kode_jadwal', 'Kode Jadwal', 'required');
         $this->form_validation->set_rules('kode_kelompok', 'Kode Kelompok', 'required');
         $this->form_validation->set_rules('kode_pju', 'Kode_Pju', 'required');
         $this->form_validation->set_rules('status', 'Status', 'required');
-        $this->form_validation->set_rules('update_at', 'Update At', 'required');
         $pju['data_kelompok'] = $this->Kelompok_model->getAllKelompok();
         $pju['data_pju'] = $this->DataPju_model->getAllDataPju()->result();
         $data['id_jadwal'] = $id_jadwal;
@@ -126,10 +126,10 @@ class C_jadwal extends CI_Controller
 
         $data['jadwal'] = $this->Jadwal_model->getJadwalById($id_jadwal);
 
+        $this->form_validation->set_rules('kode_jadwal', 'Kode Jadwal', 'required');
         $this->form_validation->set_rules('kode_kelompok', 'Kode Kelompok', 'required');
         $this->form_validation->set_rules('kode_pju', 'Kode_Pju', 'required');
         $this->form_validation->set_rules('status', 'Status', 'required');
-        $this->form_validation->set_rules('update_at', 'Update At', 'required');
         $data_pju['data_kelompok'] = $this->Kelompok_model->getAllKelompok();
         $data_pju['data_pju'] = $this->DataPju_model->getAllDataPju();
         if ($this->form_validation->run() == false) {

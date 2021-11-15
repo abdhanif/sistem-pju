@@ -57,6 +57,15 @@
                                              <?= form_error('whatsapp', ' <small class="text-danger pl-3">', '</small>'); ?>
                                          </div>
                                      </div>
+
+                                     <div class="form-group">
+                                         <div class="font-weight-bold">
+                                             <label for="alamat">Nomor Meter PJU *</label>
+                                         </div>
+                                         <input type="text" class="form-control" id="no_meter" name="no_meter"
+                                             placeholder="Masukan Nomor Meter PJU yang mati!"></input><?= form_error('no_meter_pju', ' <small class="text-danger pl-3">', '</small>'); ?>
+                                     </div>
+
                                      <div class="form-group">
                                          <div class="font-weight-bold">
                                              <label for="alamat">Alamat Kerusakan *</label>

@@ -44,8 +44,7 @@
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li class="active"><a href="C_landingpage">Beranda</a></li>
-                    <li><a href="#about">Profil</a></li>
-                    <li><a href="#services">Kegiatan</a></li>
+
                     <li><a href="#departments">Tentang</a></li>
                 </ul>
             </nav><!-- .nav-menu -->

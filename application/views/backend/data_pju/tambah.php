@@ -8,7 +8,7 @@
 
     #map {
         width: 1100px;
-        height: 450px;
+        height: 500px;
     }
     </style>
 </head>
@@ -32,7 +32,14 @@
 
                             </br>
 
-                            <label class="font-weight-bold form-label">Nama Kelompok</label>
+                            <label class="font-weight-bold form-label">Nomer Mater PJU</label>
+                            <input type="text" class="form-control form-control" id="no_meter_pju" name="no_meter_pju"
+                                autocomplete="off" autofocus>
+                            <?= form_error('no_meter_pju', ' <small class="text-danger pl-3">', '</small>'); ?>
+
+                            </br>
+
+                            <label class="font-weight-bold form-label">Kelompok</label>
                             <select class="form-control" id="kode_kelompok" name="kode_kelompok" autofocus>
                                 <option value="">- Pilih -</option>
                                 <?php
@@ -128,6 +135,7 @@
                         </script>
 
                     </div>
+                    </br>
                     <a type="button" href="<?= base_url('C_data_pju') ?>" class="btn btn-danger pull-left">Batal</a>
                     <button type="submit" class="btn btn-primary">Create</button>
                 </form>

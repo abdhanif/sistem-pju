@@ -43,6 +43,7 @@ class C_data_pju extends CI_Controller
         $this->form_validation->set_rules('alamat_pju', 'Alamat PJU', 'required');
         $this->form_validation->set_rules('lat', 'Lat', 'required');
         $this->form_validation->set_rules('lng', 'Lng', 'required');
+        $this->form_validation->set_rules('no_meter_pju', 'Nomor Meter PJU', 'required');
         $kelompok['data_kelompok'] = $this->Kelompok_model->getAllKelompok();
         $data['kode'] = $this->DataPju_model->kode();
 
@@ -78,6 +79,7 @@ class C_data_pju extends CI_Controller
         $this->form_validation->set_rules('alamat_pju', 'Alamat PJU', 'required');
         $this->form_validation->set_rules('lat', 'Lat', 'required');
         $this->form_validation->set_rules('lng', 'Lng', 'required');
+        $this->form_validation->set_rules('no_meter_pju', 'Nomor Meter PJU', 'required');
         $kelompok['data_kelompok'] = $this->Kelompok_model->getAllKelompok();
 
         if ($this->form_validation->run() == false) {
@@ -105,6 +107,7 @@ class C_data_pju extends CI_Controller
         $this->form_validation->set_rules('alamat_pju', 'Alamat PJU', 'required');
         $this->form_validation->set_rules('lat', 'Lat', 'required');
         $this->form_validation->set_rules('lng', 'Lng', 'required');
+        $this->form_validation->set_rules('no_meter_pju', 'Nomor Meter PJU', 'required');
         $kelompok['data_kelompok'] = $this->Kelompok_model->getAllKelompok();
 
 

@@ -21,6 +21,18 @@
                                 value="<?php echo $jd->id_jadwal; ?>">
 
                             <div class="row g-3">
+                                <div class=" col-md">
+                                    <label class="font-weight-bold form-label">Kode Jadwal</label>
+                                    <input type="text" class="font-weight-boldform-control form-control"
+                                        id="kode_jadwal" name="kode_jadwal" value="<?php echo $jd->kode_jadwal; ?>"
+                                        autocomplete="off" readonly="readonly">
+                                    <?= form_error('kode_jadwal', ' <small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
+                            </div>
+
+                            </br>
+
+                            <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="font-weight-bold">Kelompok</label>
                                     <select class="form-control kode_kelompok" name="kode_kelompok" autofocus>
@@ -71,13 +83,6 @@
                             </br>
 
                             <div class="row g-3">
-                                <div class=" col-md-6">
-                                    <label class="font-weight-bold form-label">Diubah</label>
-                                    <input type="text" class="font-weight-boldform-control form-control" id="update_at"
-                                        name="create_at" value="<?php echo $jd->update_at; ?>">
-                                    <?= form_error('update_at', ' <small class="text-danger pl-3">', '</small>'); ?>
-                                </div>
-
                                 <div class="col-md">
                                     <label class="font-weight-bold">Status</label>
                                     <select class="form-control" id="update_at" name="status"
@@ -88,7 +93,6 @@
                                         <option value="SELESAI" <?php if ($jd->status == "SELESAI") {
                                                                         echo "selected";
                                                                     } ?>>SELESAI</option>
-
                                     </select>
                                 </div>
                             </div>

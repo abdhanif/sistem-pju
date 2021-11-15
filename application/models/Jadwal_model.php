@@ -45,10 +45,10 @@ class Jadwal_model extends CI_Model
     {
         $id_jadwal =  htmlspecialchars($this->input->post('id_jadwal', true));
         $data = [
+            'kode_jadwal'  => htmlspecialchars($this->input->post('kode_jadwal', true)),
             'kode_kelompok'  => htmlspecialchars($this->input->post('kode_kelompok', true)),
             'kode_pju'  => htmlspecialchars($this->input->post('kode_pju', true)),
-            'status'  => htmlspecialchars($this->input->post('status', true)),
-            'update_at'  => htmlspecialchars($this->input->post('update_at', true))
+            'status'  => htmlspecialchars($this->input->post('status', true))
         ];
 
         $this->db->where('id_jadwal', $id_jadwal);

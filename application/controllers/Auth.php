@@ -46,6 +46,12 @@ class Auth extends CI_Controller
                         $this->session->set_userdata('id', $id);
                         $this->session->set_userdata('name', $name);
                         redirect('C_dashboard');
+                    } else if ($x['user_akses'] == '3') { //Mayarakat
+                        $name = $x['user_name'];
+                        $this->session->set_userdata('access', 'Masyarakat');
+                        $this->session->set_userdata('id', $id);
+                        $this->session->set_userdata('name', $name);
+                        redirect('C_landingpage');
                     }
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">

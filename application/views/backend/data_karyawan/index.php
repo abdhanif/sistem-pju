@@ -54,7 +54,7 @@
                             <th>Jabatan</th>
                             <th>Email</th>
                             <th>Status</th>
-                            <th>Action</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
 

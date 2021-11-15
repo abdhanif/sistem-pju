@@ -8,7 +8,7 @@
 
     #map {
         width: 1100px;
-        height: 450px;
+        height: 500px;
     }
     </style>
 </head>
@@ -25,8 +25,22 @@
                     <input type="hidden" class="form-control" name="id_pju" value="<?php echo $data_pju->id_pju; ?>">
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <label class="font-weight-bold">Kode Kelompok</label>
 
+                            <label class="font-weight-bold form-label">Kode</label>
+                            <input type="text" class="form-control" id="kode_pju" name="kode_pju"
+                                value="<?php echo $data_pju->kode_pju; ?>" readonly>
+                            <?= form_error('kode_pju', ' <small class="text-danger pl-3">', '</small>'); ?>
+
+                            </br>
+
+                            <label class="font-weight-bold form-label">No Meter PJU</label>
+                            <input type="text" class="form-control" id="no_meter_pju" name="no_meter_pju"
+                                value="<?php echo $data_pju->no_meter_pju; ?>" autofocus>
+                            <?= form_error('no_meter_pju', ' <small class="text-danger pl-3">', '</small>'); ?>
+
+                            </br>
+
+                            <label class="font-weight-bold">Kelompok</label>
                             <select class="form-control" id="kode_kelompok" name="kode_kelompok"
                                 value="<?php echo $data_pju->kode_kelompok; ?>">
                                 <option value="">-Pilih Satu-</option>
@@ -45,13 +59,6 @@
                                 }
                                 ?>
                             </select>
-
-                            </br>
-
-                            <label class="font-weight-bold form-label">Kode</label>
-                            <input type="text" class="form-control" id="kode_pju" name="kode_pju"
-                                value="<?php echo $data_pju->kode_pju; ?>" readonly>
-                            <?= form_error('kode_pju', ' <small class="text-danger pl-3">', '</small>'); ?>
 
                             </br>
 
@@ -136,6 +143,9 @@
                         });
                         </script>
                     </div>
+
+                    </br>
+
                     <a type="button" href="<?= base_url('C_data_pju') ?>" class="btn btn-danger pull-left">Batal</a>
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>

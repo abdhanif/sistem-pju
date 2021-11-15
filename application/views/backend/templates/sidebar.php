@@ -81,12 +81,6 @@
                     <span>Data Karyawan</span></a>
             </li>
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="far fa-fw fa-clipboard"></i>
-                    <span>Jadwal Pemeliharaan</span></a>
-            </li>
 
             <?php }
             if ($this->session->userdata('access') == 'Teknisi') { ?>
