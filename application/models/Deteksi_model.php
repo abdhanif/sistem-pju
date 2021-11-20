@@ -5,7 +5,7 @@ class Deteksi_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('deteksi_pju');
-        $this->db->join('data_pju', 'data_pju.no_meter_pju = deteksi_pju.no_meter');
+        $this->db->join('data_pju', 'data_pju.kode_pju = deteksi_pju.kode_pju_box');
         $this->db->order_by("deteksi_pju.id_deteksi", "DESC");
         $query = $this->db->get();
         return $query->result();
@@ -36,14 +36,46 @@ class Deteksi_model extends CI_Model
     {
         $id_deteksi =  htmlspecialchars($this->input->post('id_deteksi', true));
         $data = [
-
-            'verifikasi'  => htmlspecialchars($this->input->post('verifikasi', true))
+            'verifikasi'  => 'DISETUJUI'
         ];
 
         $this->db->where('id_deteksi', $id_deteksi);
         $this->db->update('deteksi_pju', $data);
 
+
         redirect('C_deteksi');
+    }
+
+    public function insertToJadwal($kode_pju_box)
+    {
+        //Generate Kode Untuk Insert Jadwal
+        $this->db->select('RIGHT(jadwal.kode_jadwal,2) as kode_jadwal', FALSE);
+        $this->db->order_by('kode_jadwal', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('jadwal');  //cek dulu apakah ada sudah ada kode di tabel.    
+        if ($query->num_rows() <> 0) {
+            //cek kode jika telah tersedia    
+            $data = $query->row();
+            $kode = intval($data->kode_jadwal) + 1;
+        } else {
+            $kode = 1;  //cek jika kode belum terdapat pada table
+        }
+        $batas = str_pad($kode, 3, "0", STR_PAD_LEFT);
+        $kodetampil = "J" . "-" . $batas;  //format kode
+
+        //Insert Jadwal
+        $dataPju = $this->db->get_where('data_pju', ['kode_pju' => $kode_pju_box])->row();
+        var_dump($dataPju);
+        var_dump($kode_pju_box);
+        $dataInsertJadwal = [
+            'kode_jadwal'  => $kodetampil,
+            'kode_kelompok'  => $dataPju->kode_kelompok,
+            'kode_pju'  => $dataPju->kode_pju,
+            'status'  => 'BELUM'
+        ];
+        //END Insert Jadwal
+
+        return $this->db->insert('jadwal', $dataInsertJadwal);
     }
 
     public function getById($id_deteksi)

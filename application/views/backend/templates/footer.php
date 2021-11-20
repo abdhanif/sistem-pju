@@ -2,7 +2,8 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Yatim Mandiri Website 2021</span>
+            &copy; Copyright <strong><span>SISTEM INFORMASI MANAJEMEN PENERANGAN JALAN UMUM</span></strong>. All
+            Rights Reserved
         </div>
     </div>
 </footer>

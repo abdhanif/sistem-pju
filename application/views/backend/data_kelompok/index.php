@@ -34,10 +34,10 @@
                     <thead>
                         <tr>
                             <th width="5%">No</th>
-                            <th>Kode Kelompok</th>
-                            <th>Nama Kelompok</th>
+                            <th class="text-center" style="vertical-align: middle;">Kode Kelompok</th>
+                            <th class="text-center" style="vertical-align: middle;">Nama Kelompok</th>
                             <?php if ($this->session->userdata('access') == 'Administrator') { ?>
-                            <th>Aksi</th>
+                            <th class="text-center" style="vertical-align: middle;">Aksi</th>
                             <?php } ?>
                         </tr>
                     </thead>
@@ -48,11 +48,13 @@
                     ?>
                     <tbody>
                         <tr>
-                            <td><?php echo $no++; ?></td>
-                            <td><?php echo $row->kode_kelompok; ?></td>
-                            <td><?php echo $row->nama_kelompok; ?></td>
+                            <td class="text-center"><?php echo $no++; ?></td>
+                            <td class="text-center"><?php echo $row->kode_kelompok; ?>
+                            </td>
+                            <td class="text-center"><?php echo $row->nama_kelompok; ?>
+                            </td>
                             <?php if ($this->session->userdata('access') == 'Administrator') { ?>
-                            <td>
+                            <td class="text-center" style="vertical-align: middle;">
                                 <a href="<?= base_url(); ?>C_kelompok/edit/<?php echo $row->id_kelompok; ?>"
                                     class="badge badge-warning" data-toggle="modal"
                                     data-target="#update<?php echo $row->id_kelompok; ?>"></i> Edit</a>
@@ -60,6 +62,10 @@
                                     class="badge badge-danger" data-toggle="modal"
                                     data-target="#delete<?php echo $row->id_kelompok; ?>"></i> Hapus</a>
                             </td>
+
+
+
+
                             <?php } ?>
                         </tr>
                     </tbody>

@@ -6,7 +6,7 @@ class Profile_model extends CI_Model
     {
         $query = $this->db->query("SELECT *
         FROM table_user
-        JOIN user_role ON user_role.role_id = table_user.user_akses");
+        JOIN user_akses ON table_user.user_akses = user_akses.akses_id");
         return $query->result();
     }
 
@@ -27,10 +27,10 @@ class Profile_model extends CI_Model
         redirect('C_profile');
     }
 
-    public function getAllUserRole()
+    public function getAllUserakses()
     {
-        $query = $this->db->query("SELECT user_role.role_id, user_role.role
-        FROM user_role");
+        $query = $this->db->query("SELECT user_akses.akses_id, user_akses.akses
+        FROM user_akses");
         return $query->result();
     }
 

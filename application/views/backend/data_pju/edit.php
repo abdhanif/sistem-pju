@@ -33,13 +33,6 @@
 
                             </br>
 
-                            <label class="font-weight-bold form-label">No Meter PJU</label>
-                            <input type="text" class="form-control" id="no_meter_pju" name="no_meter_pju"
-                                value="<?php echo $data_pju->no_meter_pju; ?>" autofocus>
-                            <?= form_error('no_meter_pju', ' <small class="text-danger pl-3">', '</small>'); ?>
-
-                            </br>
-
                             <label class="font-weight-bold">Kelompok</label>
                             <select class="form-control" id="kode_kelompok" name="kode_kelompok"
                                 value="<?php echo $data_pju->kode_kelompok; ?>">

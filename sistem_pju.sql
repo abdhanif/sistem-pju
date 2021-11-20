@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Okt 2021 pada 10.31
+-- Waktu pembuatan: 20 Nov 2021 pada 19.05
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.3.9
 
@@ -46,8 +46,10 @@ CREATE TABLE `data_karyawan` (
 --
 
 INSERT INTO `data_karyawan` (`id_karyawan`, `nik`, `nama`, `gender`, `tgl_lahir`, `alamat`, `no_tlpn`, `jabatan`, `email`, `status_karyawan`) VALUES
-(1, 111, 'babat', 'Laki-laki', '2021-02-02', 'asf', 8765431, 'asd', 'admin@gmail.com', 'Tetap'),
-(5, 22222, 'Abdurrahman Hanif', 'Laki-laki', '1999-12-02', 'Putat Gede Barat 2/7 Surabaya', 11, 'hrd', 'abdurrahmanhanif85@gmail.co.id', 'Tetap');
+(5, 22222, 'Abdurrahman Hanif', 'Laki-laki', '1999-12-02', 'Putat Gede Barat 2/7 Surabaya', 12222, 'hrd', 'abdurrahmanhanif85@gmail.co.id', 'Tetap'),
+(6, 1111, 'Abdurrahman Hanif', 'Lakilaki', '1999-12-02', 'Putat Gede Barat 2/7 Surabaya', 11, 'hrd', 'hajayakak@gaha.com', 'Tetap'),
+(7, 1111, 'Abdurrahman Hanif', 'Perempuan', '0000-00-00', 'Putat Gede Barat 2/7 Surabaya', 0, 'hrd', 'hajayakak@gaha.com', 'Kontrak'),
+(8, 1111, 'Abdurrahman Hanif', 'Perempuan', '1999-12-02', 'Putat Gede Barat 2/7 Surabaya', 33, 'hrd', 'hajayakak@gaha.com', 'Resign');
 
 -- --------------------------------------------------------
 
@@ -57,22 +59,21 @@ INSERT INTO `data_karyawan` (`id_karyawan`, `nik`, `nama`, `gender`, `tgl_lahir`
 
 CREATE TABLE `data_kelompok` (
   `id_kelompok` int(11) NOT NULL,
-  `kode_kelompok` varchar(10) NOT NULL,
+  `kode_kelompok` varchar(20) NOT NULL,
   `nama_kelompok` varchar(50) NOT NULL,
-  `create_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `update_at` timestamp NULL DEFAULT NULL
+  `create_at` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `data_kelompok`
 --
 
-INSERT INTO `data_kelompok` (`id_kelompok`, `kode_kelompok`, `nama_kelompok`, `create_at`, `update_at`) VALUES
-(3, 'W-001', 'Surabaya Barat', '2021-09-21 11:20:56', NULL),
-(4, 'W-002', 'Surabaya Timur', '2021-09-21 11:21:14', NULL),
-(5, 'W-003', 'Surabaya Utara', '2021-09-21 11:21:28', NULL),
-(6, 'W-004', 'Surabaya Selatan', '2021-09-21 11:21:43', NULL),
-(7, 'W-005', 'Surabaya Pusat', '2021-09-21 11:22:02', NULL);
+INSERT INTO `data_kelompok` (`id_kelompok`, `kode_kelompok`, `nama_kelompok`, `create_at`) VALUES
+(3, 'W-001', 'Surabaya Barat', '0000-00-00'),
+(4, 'W-002', 'Surabaya Timur', '0000-00-00'),
+(5, 'W-003', 'Surabaya Utara', '0000-00-00'),
+(6, 'W-004', 'Surabaya Selatan', '0000-00-00'),
+(7, 'W-005', 'Surabaya Pusat', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -82,32 +83,33 @@ INSERT INTO `data_kelompok` (`id_kelompok`, `kode_kelompok`, `nama_kelompok`, `c
 
 CREATE TABLE `data_pju` (
   `id_pju` int(11) NOT NULL,
-  `kode_kelompok` varchar(11) NOT NULL,
-  `kode_pju` varchar(50) NOT NULL,
+  `kode_pju` varchar(20) NOT NULL,
+  `kode_kelompok` varchar(20) NOT NULL,
   `alamat_pju` varchar(128) NOT NULL,
   `lat` double NOT NULL,
   `lng` double NOT NULL,
-  `create_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `create_at` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `data_pju`
 --
 
-INSERT INTO `data_pju` (`id_pju`, `kode_kelompok`, `kode_pju`, `alamat_pju`, `lat`, `lng`, `create_at`) VALUES
-(1, 'W-001', 'PJU-006', 'Putat Gede', -7.26128835544977, 112.69936155289817, '2021-09-21 07:31:59'),
-(8, 'W-002', 'PJU-012', 'pradah', -7.253538340531229, 112.7417619077669, '2021-09-22 05:28:26'),
-(14, 'W-004', 'PJU-001', 'putat', -7.246215914307619, 112.76545117778643, '2021-09-22 06:20:06'),
-(15, 'W-001', 'PJU-005', 'Kawal', -7.26047750662601, 112.7510101690341, '2021-09-24 08:37:25'),
-(16, 'W-002', 'PJU-007', 'Pradah', -7.2373039632982525, 112.75540898723467, '2021-10-05 07:34:48'),
-(17, 'W-005', 'PJU-010', 'Simo', -7.285040442162224, 112.72733893819051, '2021-10-05 07:35:23'),
-(18, 'W-005', 'PJU-011', 'Dipo', -7.268140546455926, 112.75800704956055, '2021-10-05 07:35:59'),
-(19, 'W-003', 'PJU-020', 'Setro', -7.2426252432966765, 112.80319542226232, '2021-10-05 07:36:39'),
-(20, 'W-003', 'PJU-013', 'Kenjeran', -7.294192946546676, 112.80160903930664, '2021-10-05 07:37:19'),
-(21, 'W-004', 'PJU-015', 'Karah', -7.336588706569289, 112.71509170532227, '2021-10-05 07:38:30'),
-(22, 'W-001', 'PJU-016', 'Kupang', -7.269102941156375, 112.72854545224918, '2021-10-05 07:40:50'),
-(23, 'W-001', 'PJU-017', 'Lontar', -7.300492972697578, 112.67251968383789, '2021-10-05 07:46:26'),
-(24, 'W-001', 'PJU-212', 'LALA', -7.2594557956381465, 112.7556718486294, '2021-10-06 13:11:31');
+INSERT INTO `data_pju` (`id_pju`, `kode_pju`, `kode_kelompok`, `alamat_pju`, `lat`, `lng`, `create_at`) VALUES
+(1, 'PJU-006', 'W-001', 'Jl. Raya Graha Famili Utara, Pradahkalikendal, Kec. Dukuhpakis, Kota SBY, Jawa Timur 60227', -7.291243325904042, 112.68613815318533, '0000-00-00'),
+(8, 'PJU-012', 'W-002', 'Tebel Tengah, Tebel, Kec. Gedangan, Kabupaten Sidoarjo, Jawa Timur 61254', -7.405451911517074, 112.72687912074618, '0000-00-00'),
+(14, 'PJU-001', 'W-004', 'Surabaya, Prapen, Kec. Tenggilis Mejoyo, Kota SBY, Jawa Timur 60299', -7.314795831313746, 112.75492697640342, '0000-00-00'),
+(15, 'PJU-005', 'W-001', 'Jl. Dukuh Kupang XI, Dukuh Kupang, Kec. Dukuhpakis, Kota SBY, Jawa Timur 60225', -7.279251032510824, 112.71421025676592, '0000-00-00'),
+(16, 'PJU-007', 'W-002', 'Gedung I, Siwalankerto, Kec. Wonocolo, Kota SBY, Jawa Timur 60236', -7.33948304919021, 112.73757934570312, '0000-00-00'),
+(17, 'PJU-010', 'W-005', 'Jl. Kembang Kuning Kramat Jaya No.2, RT.015/RW.06, Pakis, Kec. Sawahan, Kota SBY, Jawa Timur 60256', -7.2765490317618315, 112.72518217563629, '0000-00-00'),
+(18, 'PJU-011', 'W-005', 'Jl. Mayjen Prof. Dr. Moestopo No.6-8, Airlangga, Kec. Gubeng, Kota SBY, Jawa Timur 60286', -7.268140546455926, 112.75800704956055, '0000-00-00'),
+(19, 'PJU-020', 'W-003', 'Jl. Kalisari Damen 3-14, Kalisari, Kec. Mulyorejo, Kota SBY, Jawa Timur 60112', -7.27399947170167, 112.79815813078454, '0000-00-00'),
+(20, 'PJU-013', 'W-003', 'Jl. Keputih Tegal No.10, Keputih, Kec. Sukolilo, Kota SBY, Jawa Timur 60111', -7.294192946546676, 112.80160903930664, '0000-00-00'),
+(21, 'PJU-015', 'W-004', 'Jl. Jemur Andayani XXI No.18 Jemur Wonosari Wonocolo Surabaya Jawa Timur, Pagesangan, Kec. Jambangan, Kota SBY, Jawa Timur 60237', -7.336588706569289, 112.71509170532227, '0000-00-00'),
+(22, 'PJU-016', 'W-001', 'Jl. Petemon Timur No.10, RW.01, Sawahan, Kec. Sawahan, Kota SBY, Jawa Timur 60251', -7.269102941156375, 112.72854545224918, '0000-00-00'),
+(23, 'PJU-017', 'W-001', 'Jl. Lidah Wetan, Lidah Wetan, Kec. Lakarsantri, Kota SBY, Jawa Timur 60213', -7.300492972697578, 112.67251968383789, '0000-00-00'),
+(26, 'PJU-021', 'W-002', 'Jl. Joyoboyo 8, Bungur, Medaeng, Kec. Waru, Kabupaten Sidoarjo, Jawa Timur 61256', -7.353599793432107, 112.72145748051118, '0000-00-00'),
+(27, 'PJU-022', 'W-002', 'Surabaya, Manyar Sabrangan, Kec. Mulyorejo, Kota SBY, Jawa Timur 60116', -7.286806443184338, 112.76330441236497, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -119,6 +121,7 @@ CREATE TABLE `deteksi_pju` (
   `id_deteksi` int(11) NOT NULL,
   `nama` varchar(128) NOT NULL,
   `whatsapp` int(13) NOT NULL,
+  `kode_pju_box` varchar(20) NOT NULL,
   `alamat` varchar(128) NOT NULL,
   `kecamatan` varchar(20) NOT NULL,
   `kelurahan` varchar(20) NOT NULL,
@@ -132,9 +135,10 @@ CREATE TABLE `deteksi_pju` (
 -- Dumping data untuk tabel `deteksi_pju`
 --
 
-INSERT INTO `deteksi_pju` (`id_deteksi`, `nama`, `whatsapp`, `alamat`, `kecamatan`, `kelurahan`, `laporan`, `gambar`, `verifikasi`, `create_at`) VALUES
-(1, 'dad', 11, 'ffd', 'efd', 'dvdv', 'vsv', 'svdv', 'DISETUJUI', '2021-09-27 11:45:27'),
-(2, 'Abdurrahman Hanif', 2147483647, 'Jl.Putat Gede Barat 2/7', 'Sukomanunggal', 'Putat Gede', 'Lampu PJU mati di ruas jalan Hr.Muhammad depan Pom Bensin Hr.Muhammad arah ke Mayjend Sungkono sampai dengan depan Daihatsu Hr.Muhammad', 'default.jpg', 'DISETUJUI', '2021-09-27 14:30:37');
+INSERT INTO `deteksi_pju` (`id_deteksi`, `nama`, `whatsapp`, `kode_pju_box`, `alamat`, `kecamatan`, `kelurahan`, `laporan`, `gambar`, `verifikasi`, `create_at`) VALUES
+(1, 'Hanif', 8786545, 'PJU-021', 'Putat Gede Barat 2/7 Surabaya', 'Sukomanunggal', 'Putat Gede', 'Lampu mati di jalan dukuh kupang depan polsek dukuh pakis', 'Abdurrahman_Hanif.jpg', 'DISETUJUI', '2021-11-05 14:54:28'),
+(2, 'Dinda', 976, 'PJU-010', 'Surabaya Raya', 'Sawahan', 'Pradah', 'Lampu mati disepanjang jalan mayjend sungkono mulai depan underpass', 'Dinda.png', 'DISETUJUI', '2021-11-05 15:02:06'),
+(7, 'Fabiyanu', 1233, 'PJU-010', 'aaa', 'Sukomanunggal', 'Putat Gede', 'aax', 'Fabiyanu2.jpg', 'DISETUJUI', '2021-11-20 23:27:19');
 
 -- --------------------------------------------------------
 
@@ -144,69 +148,72 @@ INSERT INTO `deteksi_pju` (`id_deteksi`, `nama`, `whatsapp`, `alamat`, `kecamata
 
 CREATE TABLE `jadwal` (
   `id_jadwal` int(11) NOT NULL,
-  `kode_kelompok` varchar(128) NOT NULL,
-  `kode_pju` varchar(128) NOT NULL,
+  `kode_jadwal` varchar(20) NOT NULL,
+  `kode_kelompok` varchar(20) NOT NULL,
+  `kode_pju` varchar(20) NOT NULL,
   `status` varchar(20) DEFAULT NULL,
-  `create_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `update_at` datetime DEFAULT current_timestamp()
+  `create_at` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `jadwal`
 --
 
-INSERT INTO `jadwal` (`id_jadwal`, `kode_kelompok`, `kode_pju`, `status`, `create_at`, `update_at`) VALUES
-(23, 'W-001', 'PJU-005', 'BELUM', '2021-10-05 13:21:58', '2021-10-05 13:21:58'),
-(24, 'W-002', 'PJU-012', 'BELUM', '2021-10-05 13:22:50', '2021-10-05 13:22:50'),
-(25, 'W-004', 'PJU-001', 'BELUM', '2021-10-05 13:23:04', '2021-10-05 13:23:04'),
-(27, 'W-001', 'PJU-006', 'BELUM', '2021-10-05 13:23:17', '2021-10-05 13:23:17'),
-(28, 'W-004', 'PJU-015', 'BELUM', '2021-10-05 14:39:14', '2021-10-05 14:39:14'),
-(29, 'W-002', 'PJU-007', 'BELUM', '2021-10-05 14:39:35', '2021-10-05 14:39:35'),
-(30, 'W-001', 'PJU-016', 'BELUM', '2021-10-05 14:41:05', '2021-10-05 14:41:05');
+INSERT INTO `jadwal` (`id_jadwal`, `kode_jadwal`, `kode_kelompok`, `kode_pju`, `status`, `create_at`) VALUES
+(23, 'J-001', 'W-001', 'PJU-005', 'SUDAH', '2021-10-05'),
+(24, 'J-004', 'W-002', 'PJU-012', 'BELUM', '2021-10-05'),
+(25, 'J-006', 'W-004', 'PJU-001', 'BELUM', '2021-11-05'),
+(27, 'J-002', 'W-001', 'PJU-006', 'BELUM', '2021-10-05'),
+(28, 'J-007', 'W-004', 'PJU-015', 'BELUM', '2021-10-05'),
+(29, 'J-005', 'W-002', 'PJU-007', 'BELUM', '2021-10-05'),
+(30, 'J-003', 'W-001', 'PJU-016', 'BELUM', '2021-10-05'),
+(32, 'J-008', 'W-002', 'PJU-021', 'BELUM', '2021-10-16'),
+(33, 'J-009', 'W-002', 'PJU-022', 'BELUM', '2021-10-29'),
+(42, 'J-010', 'W-005', 'PJU-010', 'BELUM', '2021-11-20');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Struktur dari tabel `table_user`
 --
 
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `name` varchar(128) NOT NULL,
-  `email` varchar(128) NOT NULL,
-  `image` varchar(128) NOT NULL,
-  `password` varchar(256) NOT NULL,
-  `role_id` int(11) NOT NULL,
-  `is_active` int(1) NOT NULL,
-  `date_created` int(11) NOT NULL
+CREATE TABLE `table_user` (
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(128) NOT NULL,
+  `user_email` varchar(50) NOT NULL,
+  `user_password` varchar(256) NOT NULL,
+  `user_akses` int(11) NOT NULL,
+  `user_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data untuk tabel `table_user`
 --
 
-INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(5, 'Admin', 'admin@gmail.com', 'default.jpg', '$2y$10$mEQ2eQ6CbC7Hw7R80WKFfux1XHAAhMlGyca74SpuKuR2dJmG/8Q1a', 1, 1, 1614930452),
-(12, 'hanif', 'abdurrahmanhanif85@gmail.com', 'default.jpg', '$2y$10$CJ74Xyydqx/VqIWmtyNJbOyW6QWgxAmPDJqSnwlWAueBCj8lUnWRS', 2, 1, 1614926608);
+INSERT INTO `table_user` (`user_id`, `user_name`, `user_email`, `user_password`, `user_akses`, `user_status`) VALUES
+(1, 'Admin', 'admin@gmail.com', 'b759497cf50772b2452434b3983eebcc1772f1e03bbd76dc2a139da7', 1, 1),
+(2, 'Hanif', 'hanif@gmail.com', 'b759497cf50772b2452434b3983eebcc1772f1e03bbd76dc2a139da7', 2, 1),
+(3, 'Masyarakat', 'masyarakat@gmail.com', 'b759497cf50772b2452434b3983eebcc1772f1e03bbd76dc2a139da7', 3, 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_role`
+-- Struktur dari tabel `user_akses`
 --
 
-CREATE TABLE `user_role` (
-  `role_id` int(11) NOT NULL,
-  `role` varchar(128) NOT NULL
+CREATE TABLE `user_akses` (
+  `akses_id` int(11) NOT NULL,
+  `akses` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user_role`
+-- Dumping data untuk tabel `user_akses`
 --
 
-INSERT INTO `user_role` (`role_id`, `role`) VALUES
-(1, 'Admin'),
-(2, 'User');
+INSERT INTO `user_akses` (`akses_id`, `akses`) VALUES
+(1, 'Staff'),
+(2, 'Teknisi'),
+(3, 'Masyarakat');
 
 --
 -- Indexes for dumped tables
@@ -243,16 +250,16 @@ ALTER TABLE `jadwal`
   ADD PRIMARY KEY (`id_jadwal`);
 
 --
--- Indeks untuk tabel `user`
+-- Indeks untuk tabel `table_user`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `table_user`
+  ADD PRIMARY KEY (`user_id`);
 
 --
--- Indeks untuk tabel `user_role`
+-- Indeks untuk tabel `user_akses`
 --
-ALTER TABLE `user_role`
-  ADD PRIMARY KEY (`role_id`);
+ALTER TABLE `user_akses`
+  ADD PRIMARY KEY (`akses_id`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -262,43 +269,43 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT untuk tabel `data_karyawan`
 --
 ALTER TABLE `data_karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_kelompok`
 --
 ALTER TABLE `data_kelompok`
-  MODIFY `id_kelompok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_kelompok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_pju`
 --
 ALTER TABLE `data_pju`
-  MODIFY `id_pju` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_pju` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT untuk tabel `deteksi_pju`
 --
 ALTER TABLE `deteksi_pju`
-  MODIFY `id_deteksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_deteksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT untuk tabel `table_user`
 --
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE `table_user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `user_role`
+-- AUTO_INCREMENT untuk tabel `user_akses`
 --
-ALTER TABLE `user_role`
-  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `user_akses`
+  MODIFY `akses_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

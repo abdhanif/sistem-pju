@@ -62,7 +62,7 @@ class C_landingpage extends CI_Controller
         $alamat = $this->input->post('alamat');
         $kecamatan = $this->input->post('kecamatan');
         $kelurahan = $this->input->post('kelurahan');
-        $no_meter = $this->input->post('no_meter');
+        $kode_pju_box = $this->input->post('kode_pju_box');
         $laporan = $this->input->post('laporan');
 
         $key = $nama;
@@ -104,7 +104,7 @@ class C_landingpage extends CI_Controller
                 'alamat' => $alamat,
                 'kecamatan' => $kecamatan,
                 'kelurahan' => $kelurahan,
-                'no_meter' => $no_meter,
+                'kode_pju_box' => $kode_pju_box,
                 'laporan' => $laporan,
                 'gambar' => $this->upload->data('file_name')
             );

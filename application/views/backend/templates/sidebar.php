@@ -41,7 +41,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('C_deteksi') ?>">
                     <i class="fas fa-fw fa-envelope"></i>
-                    <span>Deteksi PJU</span></a>
+                    <span>Pengaduan</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('C_kelompok') ?>">
@@ -53,6 +53,14 @@
                     <i class="fas fa-fw fa-database"></i>
                     <span>Data PJU</span></a>
             </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('C_jadwal') ?>">
+                    <i class="far fa-fw fa-calendar-alt"></i>
+                    <span>Maintenance</span></a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('C_jadwal') ?>">
                     <i class="far fa-fw fa-calendar-alt"></i>

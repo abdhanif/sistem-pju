@@ -38,7 +38,8 @@ foreach ($deteksi_pju as $dt) {
                             <div class="font-weight-bold">
                                 <label for="inputWA">No Meter PJU</label>
                             </div>
-                            <input type="text" class="form-control" readonly placeholder="<?php echo $dt->no_meter; ?>">
+                            <input type="text" class="form-control" readonly
+                                placeholder="<?php echo $dt->kode_pju_box; ?>">
                         </div>
                     </div>
 
@@ -90,19 +91,15 @@ foreach ($deteksi_pju as $dt) {
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <div class="font-weight-bold">
-                            <label for="laporan">Gambar</label>
-                        </div>
+                    <div class="form-group text-center">
                         <img width="150px" src="<?php echo base_url(); ?>upload_dir/<?php echo $dt->gambar; ?>">
                     </div>
-                    </form>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
 <?php
 }
 ?>
-<!-- modal update close -->

@@ -32,13 +32,6 @@
 
                             </br>
 
-                            <label class="font-weight-bold form-label">Nomer Mater PJU</label>
-                            <input type="text" class="form-control form-control" id="no_meter_pju" name="no_meter_pju"
-                                autocomplete="off" autofocus>
-                            <?= form_error('no_meter_pju', ' <small class="text-danger pl-3">', '</small>'); ?>
-
-                            </br>
-
                             <label class="font-weight-bold form-label">Kelompok</label>
                             <select class="form-control" id="kode_kelompok" name="kode_kelompok" autofocus>
                                 <option value="">- Pilih -</option>

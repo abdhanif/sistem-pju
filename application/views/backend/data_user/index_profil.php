@@ -24,11 +24,11 @@
                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th width="5%">No</th>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>Hak Akses</th>
-                            <th>Action</th>
+                            <th class="text-center" width="5%">No</th>
+                            <th class="text-center">Nama</th>
+                            <th class="text-center">Email</th>
+                            <th class="text-center">Hak Akses</th>
+                            <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
 
@@ -38,11 +38,11 @@
                     ?>
                     <tbody>
                         <tr>
-                            <td><?php echo $no++; ?></td>
+                            <td class="text-center"><?php echo $no++; ?></td>
                             <td><?php echo $row->user_name; ?></td>
-                            <td><?php echo $row->user_email; ?></td>
-                            <td><?php echo $row->role; ?></td>
-                            <td>
+                            <td class="text-center"><?php echo $row->user_email; ?></td>
+                            <td class="text-center"><?php echo $row->akses; ?></td>
+                            <td class="text-center">
                                 <a href="<?= base_url(); ?>C_profile/edit/<?php echo $row->user_id; ?>"
                                     class="badge badge-warning" data-toggle="modal"
                                     data-target="#update<?php echo $row->user_id; ?>"></i>Edit</a>
@@ -69,14 +69,14 @@
 <?php
 foreach ($profile as $prf) {
 ?>
-<div class="modal fade" id="delete<?php echo $prf->user_id; ?>" role="dialog" style="display: none;">
+<div class="modal fade" id="delete<?php echo $prf->user_id; ?>" akses="dialog" style="display: none;">
     <div class="modal-dialog" style="margin-top: 260.5px;">
         <div class="modal-content">
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal">×</button>
                 <h5>Anda yakin mau menghapus <b><?php echo $prf->user_name; ?></b> ?</h5>
             </div>
-            <form role="form" method="post" id="delete_data"
+            <form akses="form" method="post" id="delete_data"
                 action="<?php echo base_url(); ?>C_profile/hapus/<?php echo $prf->user_id; ?>">
                 <input type="hidden" id="delete_item_id" name="id" value="<?php echo $prf->user_id; ?>">
                 <div class="modal-footer">

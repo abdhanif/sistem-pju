@@ -92,7 +92,6 @@
                         <th scope="row" width="5%">No</th>
                         <th scope="row">Kelompok</th>
                         <th scope="row">Kode</th>
-                        <th scope="row">No.Meter</th>
                         <th scope="row">Alamat</th>
                         <th scope="row">Latitude</th>
                         <th scope="row">Longitude</th>
@@ -108,7 +107,6 @@
                         <td><?php echo $no++; ?></td>
                         <td><?php echo $row->nama_kelompok; ?></td>
                         <td><?php echo $row->kode_pju; ?></td>
-                        <td><?php echo $row->no_meter_pju; ?></td>
                         <td><?php echo $row->alamat_pju; ?></td>
                         <td><?php echo $row->lat; ?></td>
                         <td><?php echo $row->lng; ?></td>

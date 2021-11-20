@@ -73,24 +73,9 @@ class C_deteksi extends CI_Controller
     {
         $id_deteksi = $this->input->post("id_deteksi");
         $data['deteksi_pju'] = $this->Deteksi_model->getDeteksiPjuById($id_deteksi);
-
-        $this->form_validation->set_rules('verifikasi', 'Verifikasi', 'required');
-
-
-        if ($this->form_validation->run() == false) {
-
-
-            $this->load->view('backend/templates/header');
-            $this->load->view('backend/templates/sidebar');
-            $this->load->view('backend/templates/topbar');
-            $this->load->view('backend/deteksi_pju/edit', $data);
-            $this->load->view('backend/templates/footer');
-            $this->load->library('form_validation');
-        } else {
-            $this->Deteksi_model->update();
-            redirect('C_deteksi');
-        }
-        var_dump($data);
+        $this->Deteksi_model->insertToJadwal($data['deteksi_pju']['kode_pju_box']);
+        $this->Deteksi_model->update();
+        redirect('C_deteksi');
     }
 
     public function detail($id_deteksi)

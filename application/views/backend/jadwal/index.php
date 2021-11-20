@@ -35,14 +35,14 @@
                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th width="5%">No</th>
-                            <th>Kode Jadwal</th>
-                            <th>Kelompok</th>
-                            <th>Kode PJU</th>
-                            <th>Status</th>
-                            <th>Dibuat</th>
+                            <th class="text-center" width="5%">No</th>
+                            <th class="text-center">Kode Jadwal</th>
+                            <th class="text-center">Kelompok</th>
+                            <th class="text-center">Kode PJU</th>
+                            <th class="text-center">Status</th>
+                            <th class="text-center">Dibuat</th>
                             <?php if ($this->session->userdata('access') == 'Administrator') { ?>
-                            <th>Aksi</th>
+                            <th class="text-center">Aksi</th>
                             <?php } ?>
                         </tr>
                     </thead>
@@ -55,17 +55,18 @@
 
                     <tbody>
                         <tr>
-                            <td><?php echo $no++; ?></td>
-                            <td><?php echo $row->kode_jadwal; ?></td>
-                            <td><?php echo $row->nama_kelompok; ?></td>
-                            <td><?php echo $row->kode_pju; ?></td>
-                            <td class="font-weight-bold"><?php echo $row->status; ?></td>
-                            <td><?php echo $row->create_at; ?></td>
+                            <td class="text-center"><?php echo $no++; ?></td>
+                            <td class="text-center"><?php echo $row->kode_jadwal; ?></td>
+                            <td class="text-center"><?php echo $row->nama_kelompok; ?></td>
+                            <td class="text-center"><?php echo $row->kode_pju; ?></td>
+                            <td class="font-weight-bold text-center"><?php echo $row->status; ?></td>
+                            <td class="text-center"><?php echo $row->create_at; ?></td>
                             <?php if ($this->session->userdata('access') == 'Administrator') { ?>
-                            <td>
+                            <td class="text-center">
                                 <a href="<?= base_url(); ?>C_jadwal/edit/<?php echo $row->id_jadwal; ?>"
                                     class="badge badge-warning" data-toggle="modal"
                                     data-target="#updatejadwal<?php echo $row->id_jadwal ?>"></i> Edit</a>
+
                                 <a href="<?php echo base_url(); ?>C_jadwal/hapus/<?php echo $row->id_jadwal; ?>"
                                     class="badge badge-danger" data-toggle="modal"
                                     data-target="#delete<?php echo $row->id_jadwal; ?>"></i> Hapus</a>

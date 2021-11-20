@@ -3,7 +3,7 @@
 foreach ($profile as $pr) {
 ?>
 <div class="example-modal">
-    <div id="update<?php echo $pr->user_id ?>" class="modal fade" role="dialog" style="display:none;">
+    <div id="update<?php echo $pr->user_id ?>" class="modal fade" akses="dialog" style="display:none;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -63,13 +63,14 @@ foreach ($profile as $pr) {
                                 <label for="exampleFormControlSelect1 font-weight-bold">Hak Akses</label>
                                 <select class="form-control" id="user_akses" name="user_akses">
                                     <?php
-                                        $user_role;
-                                        foreach ($user_role as $ur) {
+                                        $user_akses;
+                                        foreach ($user_akses as $ur) {
                                         ?>
-                                    <?php if ($ur->role_id == $pr->user_akses) : ?>
-                                    <option value="<?php echo $ur->role_id ?>" selected><?php echo $ur->role ?></option>
+                                    <?php if ($ur->akses_id == $pr->user_akses) : ?>
+                                    <option value="<?php echo $ur->akses_id ?>" selected><?php echo $ur->akses ?>
+                                    </option>
                                     <?php else : ?>
-                                    <option value="<?php echo $ur->role_id ?>"><?php echo $ur->role ?></option>
+                                    <option value="<?php echo $ur->akses_id ?>"><?php echo $ur->akses ?></option>
                                     <?php endif; ?>
                                     <?php
                                         }

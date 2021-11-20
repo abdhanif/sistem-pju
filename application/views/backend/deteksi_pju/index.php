@@ -20,12 +20,12 @@
                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th width="5%">No</th>
-                            <th>Nama Pengadu</th>
-                            <th>PJU Diadukan</th>
-                            <th>Laporan</th>
-                            <th>Status</th>
-                            <th>Aksi</th>
+                            <th class="text-center" style="vertical-align: middle;" width="5%">No</th>
+                            <th class="text-center" style="vertical-align: middle;">Nama Pengadu</th>
+                            <th class="text-center" style="vertical-align: middle;">PJU Diadukan</th>
+                            <th class="text-center" style="vertical-align: middle;">Laporan</th>
+                            <th class="text-center" style="vertical-align: middle;">Status</th>
+                            <th class="text-center" style="vertical-align: middle;">Aksi</th>
                         </tr>
                     </thead>
 
@@ -35,15 +35,18 @@
                     ?>
                     <tbody>
                         <tr>
-                            <td><?php echo $no++; ?></td>
+                            <td class="text-center" style="vertical-align: middle;"><?php echo $no++; ?></td>
                             <td><?php echo $row->nama; ?></td>
-                            <td><?php echo $row->kode_pju; ?></td>
+                            <td class="text-center"><?php echo $row->kode_pju; ?></td>
                             <td><?php echo character_limiter($row->laporan, 20); ?></td>
-                            <td class="font-weight-bold"><?php echo $row->verifikasi; ?></td>
-                            <td>
+                            <td class="font-weight-bold text-center"><?php echo $row->verifikasi; ?></td>
+
+                            <td class="text-center">
+                                <?php if ($row->verifikasi != "DISETUJUI") { ?>
                                 <a href="<?= base_url(); ?>C_deteksi/edit/<?php echo $row->id_deteksi; ?>"
                                     class="badge badge-secondary" data-toggle="modal"
                                     data-target="#update<?php echo $row->id_deteksi; ?>"></i> Verifikasi</a>
+                                <?php } ?>
 
                                 <a href="<?= base_url(); ?>C_deteksi/detail/<?php echo $row->id_deteksi; ?>"
                                     class="badge badge-info" data-toggle="modal"

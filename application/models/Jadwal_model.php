@@ -4,7 +4,7 @@ class Jadwal_model extends CI_Model
 
     public function getAllJadwal()
     {
-        $this->db->select();
+        $this->db->select('jadwal.`id_jadwal`, jadwal.kode_jadwal, jadwal.kode_kelompok, data_kelompok.nama_kelompok, jadwal.kode_pju, jadwal.status, jadwal.create_at');
         $this->db->from('jadwal');
         $this->db->join('data_kelompok', 'data_kelompok.kode_kelompok = jadwal.kode_kelompok');
         $this->db->join('data_pju', 'data_pju.kode_pju = jadwal.kode_pju');

@@ -44,17 +44,17 @@
                 <table class="table table-bordered" id="table-datatables" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th width="5%">No</th>
-                            <th>NIK</th>
-                            <th>Nama</th>
-                            <th>Gender</th>
-                            <th>TTL</th>
-                            <th>Alamat</th>
-                            <th>Telepon</th>
-                            <th>Jabatan</th>
-                            <th>Email</th>
-                            <th>Status</th>
-                            <th>Aksi</th>
+                            <th class="text-center" width="5%">No</th>
+                            <th class="text-center">NIK</th>
+                            <th class="text-center">Nama</th>
+                            <th class="text-center">Gender</th>
+                            <th class="text-center">TTL</th>
+                            <th class="text-center">Alamat</th>
+                            <th class="text-center">Telepon</th>
+                            <th class="text-center">Jabatan</th>
+                            <th class="text-center">Email</th>
+                            <th class="text-center">Status</th>
+                            <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
 
@@ -64,17 +64,17 @@
                     ?>
                     <tbody>
                         <tr>
-                            <td><?php echo $no++; ?></td>
-                            <td><?php echo $row->nik; ?></td>
+                            <td class="text-center"><?php echo $no++; ?></td>
+                            <td class="text-center"><?php echo $row->nik; ?></td>
                             <td><?php echo $row->nama; ?></td>
-                            <td><?php echo $row->gender; ?></td>
-                            <td><?php echo $row->tgl_lahir; ?></td>
+                            <td class="text-center"><?php echo $row->gender; ?></td>
+                            <td class="text-center"><?php echo $row->tgl_lahir; ?></td>
                             <td><?php echo character_limiter($row->alamat, 10); ?></td>
-                            <td><?php echo $row->no_tlpn; ?></td>
-                            <td><?php echo $row->jabatan; ?></td>
+                            <td class="text-center"><?php echo $row->no_tlpn; ?></td>
+                            <td class="text-center"><?php echo $row->jabatan; ?></td>
                             <td><?php echo $row->email; ?></td>
-                            <td><?php echo $row->status_karyawan; ?></td>
-                            <td>
+                            <td class="text-center"><?php echo $row->status_karyawan; ?></td>
+                            <td class="text-center">
                                 <a href="<?= base_url(); ?>C_karyawan/edit/<?php echo $row->id_karyawan; ?>"
                                     class="badge badge-warning" data-toggle="modal"
                                     data-target="#updatekaryawan<?php echo $row->id_karyawan; ?>"></i> Edit</a>

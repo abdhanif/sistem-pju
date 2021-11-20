@@ -14,13 +14,13 @@ class C_profile extends CI_Controller
     public function index()
     {
         $data['profile'] = $this->Profile_model->index();
-        $role['user_role'] = $this->Profile_model->getAllUserRole();
+        $akses['user_akses'] = $this->Profile_model->getAllUserakses();
 
         $this->load->view('backend/templates/header');
         $this->load->view('backend/templates/sidebar');
         $this->load->view('backend/templates/topbar');
         $this->load->view('backend/data_user/index_profil', $data);
-        $this->load->view('backend/data_user/edit', $role);
+        $this->load->view('backend/data_user/edit', $akses);
         $this->load->view('backend/templates/footer');
     }
 
@@ -28,7 +28,7 @@ class C_profile extends CI_Controller
     {
 
         $data['profile'] = $this->Profile_model->getById($user_id)->row();
-        $role['user_role'] = $this->Profile_model->getAllUserRole();
+        $akses['user_akses'] = $this->Profile_model->getAllUserakses();
 
         $this->form_validation->set_rules('user_name', 'User_Name', 'required');
         $this->form_validation->set_rules('user_email', 'User_Email', 'required');
@@ -39,7 +39,7 @@ class C_profile extends CI_Controller
 
             $this->load->view('backend/templates/header');
             $this->load->view('backend/templates/sidebar');
-            $this->load->view('backend/templates/topbar', $role);
+            $this->load->view('backend/templates/topbar', $akses);
             $this->load->view('backend/data_user/edit', $data);
             $this->load->view('backend/templates/footer');
 
@@ -55,7 +55,7 @@ class C_profile extends CI_Controller
         $user_id = $this->input->post("user_id");
 
         $data['profile'] = $this->Profile_model->getProfileById($user_id);
-        $role['user_role'] = $this->Profile_model->getAllUserRole();
+        $akses['user_akses'] = $this->Profile_model->getAllUserakses();
 
         $this->form_validation->set_rules('user_name', 'User_Name', 'required');
         $this->form_validation->set_rules('user_email', 'User_Email', 'required');
@@ -68,7 +68,7 @@ class C_profile extends CI_Controller
 
             $this->load->view('backend/templates/header');
             $this->load->view('backend/templates/sidebar');
-            $this->load->view('backend/templates/topbar', $role);
+            $this->load->view('backend/templates/topbar', $akses);
             $this->load->view('backend/data_user/edit', $data);
             $this->load->view('backend/templates/footer');
 

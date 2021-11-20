@@ -36,13 +36,12 @@
                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th width="5%">No</th>
-                            <th>Kelompok</th>
-                            <th>Kode</th>
-                            <th>Alamat</th>
-                            <th>Latitude</th>
-                            <th>Longitude</th>
-                            <th>No.Meter PJU</th>
+                            <th class="text-center" style="vertical-align: middle;" width="5%">No</th>
+                            <th class="text-center" style="vertical-align: middle;">Kelompok</th>
+                            <th class="text-center" style="vertical-align: middle;">Kode</th>
+                            <th class="text-center" style="vertical-align: middle;">Alamat</th>
+                            <th class="text-center" style="vertical-align: middle;">Latitude</th>
+                            <th class="text-center" style="vertical-align: middle;">Longitude</th>
                             <?php if ($this->session->userdata('access') == 'Administrator') { ?>
                             <th>Aksi</th>
                             <?php } ?>
@@ -55,16 +54,15 @@
                     ?>
                     <tbody>
                         <tr>
-                            <td><?php echo $no++; ?></td>
+                            <td class="text-center" style="vertical-align: middle;"><?php echo $no++; ?></td>
                             <td><?php echo $row->nama_kelompok; ?></td>
-                            <td><?php echo $row->kode_pju; ?></td>
+                            <td class="text-center"><?php echo $row->kode_pju; ?></td>
                             <td><?php echo $row->alamat_pju; ?></td>
-                            <td><?php echo $row->lat; ?></td>
-                            <td><?php echo $row->lng; ?></td>
-                            <td><?php echo $row->no_meter_pju; ?></td>
+                            <td class="text-center"><?php echo $row->lat; ?></td>
+                            <td class="text-center"><?php echo $row->lng; ?></td>
 
                             <?php if ($this->session->userdata('access') == 'Administrator') { ?>
-                            <td>
+                            <td class="text-center">
                                 <a href="<?php echo base_url(); ?>C_data_pju/edit/<?php echo $row->id_pju; ?>"
                                     class="badge badge-warning">Edit</a>
                                 <a href="<?php echo base_url(); ?>C_data_pju/hapus/<?php echo $row->id_pju; ?>"
