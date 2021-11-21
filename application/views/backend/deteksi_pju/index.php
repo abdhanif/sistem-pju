@@ -2,7 +2,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h5 class="m-0 text-info font-weight-bold">PENGELOLAAN / DETEKSI PJU</h5>
+            <h5 class="m-0 font-weight-bold" style="color: #5777ba;">PENGELOLAAN / DETEKSI PJU</h5>
         </div>
 
         <div class="card-body">
@@ -20,12 +20,12 @@
                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th class="text-center" style="vertical-align: middle;" width="5%">No</th>
-                            <th class="text-center" style="vertical-align: middle;">Nama Pengadu</th>
-                            <th class="text-center" style="vertical-align: middle;">PJU Diadukan</th>
-                            <th class="text-center" style="vertical-align: middle;">Laporan</th>
-                            <th class="text-center" style="vertical-align: middle;">Status</th>
-                            <th class="text-center" style="vertical-align: middle;">Aksi</th>
+                            <th scope="row" class="text-center" style="vertical-align: middle;" width="5%">No</th>
+                            <th scope="row" class="text-center" style="vertical-align: middle;">Nama Pengadu</th>
+                            <th scope="row" class="text-center" style="vertical-align: middle;">PJU Diadukan</th>
+                            <th scope="row" class="text-center" style="vertical-align: middle;">Laporan</th>
+                            <th scope="row" class="text-center" style="vertical-align: middle;">Status</th>
+                            <th scope="row" class="text-center" style="vertical-align: middle;">Aksi</th>
                         </tr>
                     </thead>
 

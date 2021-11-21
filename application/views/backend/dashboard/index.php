@@ -17,7 +17,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h5 class="m-0 text-info font-weight-bold">ADMINISTRATOR / PETA LOKASI PJU</h5>
+            <h5 class="m-0 font-weight-bold" style="color: #5777ba;">ADMINISTRATOR / PETA LOKASI PJU</h5>
         </div>
         <div class="card-body">
             <div class="container col-md">

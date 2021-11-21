@@ -8,7 +8,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-laptop-house"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">SIM PJU</div>
             </a>
@@ -34,15 +34,29 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Pengelolaan
+                Pengaduan
             </div>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('C_deteksi') ?>">
                     <i class="fas fa-fw fa-envelope"></i>
-                    <span>Pengaduan</span></a>
+                    <span>Cek Pengaduan</span></a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Jenis Laporan</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <div class="sidebar-heading">
+                Pengelolaan
+            </div>
+
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('C_kelompok') ?>">
                     <i class="fas fa-fw fa-layer-group"></i>
@@ -56,7 +70,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('C_jadwal') ?>">
+                <a class="nav-link" href="#">
                     <i class="far fa-fw fa-calendar-alt"></i>
                     <span>Maintenance</span></a>
             </li>

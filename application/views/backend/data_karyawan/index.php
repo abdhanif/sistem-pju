@@ -14,7 +14,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h5 class="m-0 text-info font-weight-bold">KARYAWAN / DATA KARYAWAN</h5>
+            <h5 class="m-0 font-weight-bold" style="color: #5777ba;">KARYAWAN / DATA KARYAWAN</h5>
         </div>
 
         <div class="card-body">
@@ -44,17 +44,17 @@
                 <table class="table table-bordered" id="table-datatables" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th class="text-center" width="5%">No</th>
-                            <th class="text-center">NIK</th>
-                            <th class="text-center">Nama</th>
-                            <th class="text-center">Gender</th>
-                            <th class="text-center">TTL</th>
-                            <th class="text-center">Alamat</th>
-                            <th class="text-center">Telepon</th>
-                            <th class="text-center">Jabatan</th>
-                            <th class="text-center">Email</th>
-                            <th class="text-center">Status</th>
-                            <th class="text-center">Aksi</th>
+                            <th scope="row" class="text-center" width="5%">No</th>
+                            <th scope="row" class="text-center">NIK</th>
+                            <th scope="row" class="text-center">Nama</th>
+                            <th scope="row" class="text-center">Gender</th>
+                            <th scope="row" class="text-center">TTL</th>
+                            <th scope="row" class="text-center">Alamat</th>
+                            <th scope="row" class="text-center">Telepon</th>
+                            <th scope="row" class="text-center">Jabatan</th>
+                            <th scope="row" class="text-center">Email</th>
+                            <th scope="row" class="text-center">Status</th>
+                            <th scope="row" class="text-center">Aksi</th>
                         </tr>
                     </thead>
 

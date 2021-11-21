@@ -2,7 +2,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h5 class="m-0 text-info font-weight-bold">PENGELOLAAN / JADWAL</h5>
+            <h5 class="m-0 font-weight-bold" style="color: #5777ba;">PENGELOLAAN / JADWAL</h5>
         </div>
         <div class="card-body">
             <div class="container col-md">
@@ -35,14 +35,14 @@
                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th class="text-center" width="5%">No</th>
-                            <th class="text-center">Kode Jadwal</th>
-                            <th class="text-center">Kelompok</th>
-                            <th class="text-center">Kode PJU</th>
-                            <th class="text-center">Status</th>
-                            <th class="text-center">Dibuat</th>
+                            <th scope="row" class="text-center" width="5%">No</th>
+                            <th scope="row" class="text-center">Kode Jadwal</th>
+                            <th scope="row" class="text-center">Kelompok</th>
+                            <th scope="row" class="text-center">Kode PJU</th>
+                            <th scope="row" class="text-center">Status</th>
+                            <th scope="row" class="text-center">Dibuat</th>
                             <?php if ($this->session->userdata('access') == 'Administrator') { ?>
-                            <th class="text-center">Aksi</th>
+                            <th scope="row" class="text-center">Aksi</th>
                             <?php } ?>
                         </tr>
                     </thead>

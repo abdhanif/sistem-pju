@@ -2,7 +2,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h5 class="m-0 text-info font-weight-bold">ADMINISTRATOR / DATA USER</h5>
+            <h5 class="m-0 font-weight-bold" style="color: #5777ba;">ADMINISTRATOR / DATA USER</h5>
         </div>
 
         <div class="card-body">
@@ -24,11 +24,11 @@
                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th class="text-center" width="5%">No</th>
-                            <th class="text-center">Nama</th>
-                            <th class="text-center">Email</th>
-                            <th class="text-center">Hak Akses</th>
-                            <th class="text-center">Aksi</th>
+                            <th scope="row" class="text-center" width="5%">No</th>
+                            <th scope="row" class="text-center">Nama</th>
+                            <th scope="row" class="text-center">Email</th>
+                            <th scope="row" class="text-center">Hak Akses</th>
+                            <th scope="row" class="text-center">Aksi</th>
                         </tr>
                     </thead>
 

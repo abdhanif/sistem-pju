@@ -34,4 +34,11 @@
 
     <link href="<?php echo base_url() . 'assets/css/boostrap.css' ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url() . 'assets/css/datatables.css' ?>" rel="stylesheet" type="text/css">
+
+    <style>
+    th[scope="row"] {
+        background-color: #d7d9f2;
+    }
+    </style>
+
 </head>

@@ -51,7 +51,7 @@ class Auth extends CI_Controller
                         $this->session->set_userdata('access', 'Masyarakat');
                         $this->session->set_userdata('id', $id);
                         $this->session->set_userdata('name', $name);
-                        redirect('C_landingpage');
+                        redirect('C_pengaduan');
                     }
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">

@@ -2,7 +2,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h5 class="m-0 text-info font-weight-bold">PENGELOLAAN / DATA KELOMPOK</h5>
+            <h5 class="m-0 font-weight-bold" style="color: #5777ba;">PENGELOLAAN / DATA KELOMPOK</h5>
         </div>
 
         <div class="card-body">
@@ -33,11 +33,11 @@
                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th width="5%">No</th>
-                            <th class="text-center" style="vertical-align: middle;">Kode Kelompok</th>
-                            <th class="text-center" style="vertical-align: middle;">Nama Kelompok</th>
+                            <th scope="row" width="5%">No</th>
+                            <th scope="row" class="text-center" style="vertical-align: middle;">Kode Kelompok</th>
+                            <th scope="row" class="text-center" style="vertical-align: middle;">Nama Kelompok</th>
                             <?php if ($this->session->userdata('access') == 'Administrator') { ?>
-                            <th class="text-center" style="vertical-align: middle;">Aksi</th>
+                            <th scope="row" class="text-center" style="vertical-align: middle;">Aksi</th>
                             <?php } ?>
                         </tr>
                     </thead>
