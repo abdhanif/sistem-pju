@@ -73,7 +73,7 @@
 
                             <?php
                             $no = 1;
-                            foreach ($mst_mt as $row) {
+                            foreach ($maintenance as $row) {
                             ?>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label" for="inlineCheckbox1"><input class="form-check-input"

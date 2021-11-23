@@ -51,8 +51,8 @@
                 <div id="maintenance" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="py-2 collapse-inner rounded" style="background-color: #f7f7f7;">
                         <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="nav-link" href="#">Data Maintenance</a>
-                        <a class="nav-link" href="<?= base_url('C_mst_mt') ?>">Jenis Maintenance</a>
+                        <a class="nav-link" href="<?= base_url('C_maintenance') ?>">Data Maintenance</a>
+                        <a class="nav-link" href="<?= base_url('C_pju_maintenance') ?>">Data Maintenance PJU</a>
                     </div>
                 </div>
             </li>

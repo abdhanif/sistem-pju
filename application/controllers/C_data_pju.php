@@ -8,7 +8,7 @@ class C_data_pju extends CI_Controller
     {
         parent::__construct();
         $this->load->model('DataPju_model');
-        $this->load->model('Mst_mt_model');
+        $this->load->model('Maintenance_model');
         $this->load->model('Kelompok_model');
         $this->load->library('form_validation');
         $this->load->model("Mlogin");
@@ -47,7 +47,7 @@ class C_data_pju extends CI_Controller
         $this->form_validation->set_rules('lng', 'Lng', 'required');
         $kelompok['data_kelompok'] = $this->Kelompok_model->getAllKelompok();
         $data['kode'] = $this->DataPju_model->kode();
-        $data['mst_mt'] = $this->Mst_mt_model->getAllMstMt();
+        $data['maintenance'] = $this->Maintenance_model->getAllMaintenance();
 
         if ($this->form_validation->run() == false) {
 
