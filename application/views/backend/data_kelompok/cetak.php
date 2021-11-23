@@ -90,7 +90,6 @@
                 <thead>
                     <tr>
                         <th scope="row" width="5%">No</th>
-                        <th scope="row">Kode Kelompok</th>
                         <th scope="row">Nama Kelompok</th>
                     </tr>
                 </thead>
@@ -102,7 +101,6 @@
                 <tbody>
                     <tr>
                         <td><?php echo $no++; ?></td>
-                        <td><?php echo $row->kode_kelompok; ?></td>
                         <td><?php echo $row->nama_kelompok; ?></td>
                     </tr>
                 </tbody>

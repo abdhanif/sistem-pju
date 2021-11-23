@@ -6,6 +6,7 @@ class Deteksi_model extends CI_Model
         $this->db->select('*');
         $this->db->from('deteksi_pju');
         $this->db->join('data_pju', 'data_pju.kode_pju = deteksi_pju.kode_pju_box');
+        $this->db->join('table_user', 'table_user.user_id = deteksi_pju.id_user');
         $this->db->order_by("deteksi_pju.id_deteksi", "DESC");
         $query = $this->db->get();
         return $query->result();
@@ -23,7 +24,7 @@ class Deteksi_model extends CI_Model
     public function tambah($data)
     {
         $this->db->insert('deteksi_pju', $data);
-        redirect('C_landingpage');
+        redirect('C_pengaduan');
     }
 
     // public function hapus($id_pju, $data_pju)

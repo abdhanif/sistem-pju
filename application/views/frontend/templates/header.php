@@ -27,6 +27,8 @@
     <link href="assets/landing-page/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="assets/landing-page/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/landing-page/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
 
     <!-- Template Main CSS File -->
     <link href="assets/landing-page/css/style.css" rel="stylesheet">
@@ -53,10 +55,9 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="C_landingpage">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#features">About</a></li>
-                    <li><a class="nav-link scrollto" href="#testimonials">Report</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    <li><a class="nav-link scrollto active" href="C_landingpage">Beranda</a></li>
+                    <li><a class="nav-link scrollto" href="#features">Tentang Kami</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
                     <li><a class="getstarted scrollto" href="Auth">Login</a>
                     </li>
                 </ul>

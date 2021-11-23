@@ -6,7 +6,7 @@ class DataPju_model extends CI_Model
     {
         $this->db->select();
         $this->db->from('data_pju');
-        $this->db->join('data_kelompok', 'data_kelompok.kode_kelompok = data_pju.kode_kelompok');
+        $this->db->join('data_kelompok', 'data_kelompok.id_kelompok = data_pju.id_kelompok');
         $this->db->order_by("data_pju.kode_pju", "DESC");
         $query = $this->db->get();
         return $query;
@@ -16,7 +16,7 @@ class DataPju_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('data_pju');
-        $this->db->join('data_kelompok', 'data_kelompok.kode_kelompok = data_pju.kode_kelompok');
+        $this->db->join('data_kelompok', 'data_kelompok.id_kelompok = data_pju.id_kelompok');
         $this->db->like('kode_pju', $keyword);
         return $this->db->get()->result();
     }
@@ -24,7 +24,7 @@ class DataPju_model extends CI_Model
     public function tambah()
     {
         $data = [
-            'kode_kelompok'  => htmlspecialchars($this->input->post('kode_kelompok', true)),
+            'id_kelompok'  => htmlspecialchars($this->input->post('id_kelompok', true)),
             'kode_pju'  => htmlspecialchars($this->input->post('kode_pju', true)),
             'alamat_pju'  => htmlspecialchars($this->input->post('alamat_pju', true)),
             'lat'  => htmlspecialchars($this->input->post('lat', true)),
@@ -63,7 +63,7 @@ class DataPju_model extends CI_Model
     {
         $id_pju =  htmlspecialchars($this->input->post('id_pju', true));
         $data = [
-            'kode_kelompok'  => htmlspecialchars($this->input->post('kode_kelompok', true)),
+            'id_kelompok'  => htmlspecialchars($this->input->post('id_kelompok', true)),
             'kode_pju'  => htmlspecialchars($this->input->post('kode_pju', true)),
             'alamat_pju'  => htmlspecialchars($this->input->post('alamat_pju', true)),
             'lat'  => htmlspecialchars($this->input->post('lat', true)),
@@ -86,19 +86,19 @@ class DataPju_model extends CI_Model
         return $this->db->get_where('data_pju', ['id_pju' => $id_pju])->row_array();
     }
 
-    function getDataPjuByKodeKelompok($kode_kelompok)
+    function getDataPjuByKodeKelompok($id_kelompok)
     {
-        $query = $this->db->get_where('data_pju', array('kode_kelompok' => $kode_kelompok));
+        $query = $this->db->get_where('data_pju', array('id_kelompok' => $id_kelompok));
         return $query;
     }
 
-    function getDataPjuRute($kode_kelompok)
+    function getDataPjuRute($id_kelompok)
     {
         $this->db->select('*');
         $this->db->from('jadwal');
         $this->db->join('data_pju', 'data_pju.kode_pju = jadwal.kode_pju');
-        $this->db->join('data_kelompok', 'data_kelompok.kode_kelompok = data_pju.kode_kelompok');
-        $this->db->where('jadwal.kode_kelompok', $kode_kelompok);
+        $this->db->join('data_kelompok', 'data_kelompok.id_kelompok = data_pju.id_kelompok');
+        $this->db->where('jadwal.id_kelompok', $id_kelompok);
         $this->db->where('jadwal.status', 'BELUM');
         $query = $this->db->get();
         return $query;

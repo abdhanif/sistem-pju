@@ -17,7 +17,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h5 class="m-0 text-info font-weight-bold">PENGELOLAAN / CARI RUTE</h5>
+            <h5 class="m-0 font-weight-bold" style="color: #5777ba">PENGELOLAAN / CARI RUTE</h5>
         </div>
         <div class="card-body">
             <div class="container col-md">
@@ -31,7 +31,7 @@
                                     <?php
                                     foreach ($rute as $rt) {
                                     ?>
-                                    <option value="<?php echo $rt->kode_kelompok ?>"><?php echo $rt->nama_kelompok ?>
+                                    <option value="<?php echo $rt->id_kelompok ?>"><?php echo $rt->nama_kelompok ?>
                                     </option>
                                     <?php
                                     }
@@ -135,7 +135,7 @@
             lat: '<?php echo $arre[$i]->lat ?>',
             kode_jadwal: '<?php echo $arre[$i]->kode_jadwal ?>',
             kode_pju: '<?php echo $arre[$i]->kode_pju ?>',
-            kode_kelompok: '<?php echo $arre[$i]->kode_kelompok ?>',
+            id_kelompok: '<?php echo $arre[$i]->id_kelompok ?>',
             status: '<?php echo $arre[$i]->status ?>',
             create_at: '<?php echo $arre[$i]->create_at ?>'
         }

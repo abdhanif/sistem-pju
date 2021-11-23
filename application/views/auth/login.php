@@ -35,7 +35,8 @@
                                     </div>
 
                                     <div class="text-right">
-                                        <a class="small font-italic ins" href="#">Create an Account!</a>
+                                        <a class="small font-italic ins" href="<?= base_url('C_register'); ?>">Create
+                                            an Account!</a>
                                     </div>
 
 

@@ -32,29 +32,31 @@
                     <thead>
                         <tr>
                             <th scope="row" width="5%">No</th>
-                            <th scope="row" class="text-center" style="vertical-align: middle;">Nama Kelompok</th>
+                            <th scope="row" class="text-center" style="vertical-align: middle;">Deskripsi</th>
+                            <th scope="row" class="text-center" style="vertical-align: middle;">Jangka Waktu</th>
                             <th scope="row" class="text-center" style="vertical-align: middle;">Aksi</th>
                         </tr>
                     </thead>
 
                     <?php
                     $no = 1;
-                    foreach ($kelompok as $row) {
+                    foreach ($mst_mt as $row) {
                     ?>
                     <tbody>
                         <tr>
                             <td class="text-center"><?php echo $no++; ?></td>
                             </td>
-                            <td class="text-center"><?php echo $row->nama_kelompok; ?>
+                            <td class="text-center"><?php echo $row->deskripsi; ?>
+                            <td class="text-center"><?php echo $row->waktu; ?>
                             </td>
-                            <td class="text-center" style="vertical-align: middle;">
+                            <!-- <td class="text-center" style="vertical-align: middle;">
                                 <a href="<?= base_url(); ?>C_kelompok/edit/<?php echo $row->id_kelompok; ?>"
                                     class="badge badge-warning" data-toggle="modal"
                                     data-target="#update<?php echo $row->id_kelompok; ?>"></i> Edit</a>
                                 <a href="<?php echo base_url(); ?>C_kelompok/hapus/<?php echo $row->id_kelompok; ?>"
                                     class="badge badge-danger" data-toggle="modal"
                                     data-target="#delete<?php echo $row->id_kelompok; ?>"></i> Hapus</a>
-                            </td>
+                            </td> -->
                         </tr>
                     </tbody>
 
@@ -68,13 +70,12 @@
 
 </div>
 </div>
-</div>
 <!-- End of Main Content -->
 
 <!-- modal hapus -->
-<?php
-foreach ($kelompok as $klpk) {
-?>
+<!-- <?php
+        foreach ($kelompok as $klpk) {
+        ?>
 <div class="modal fade" id="delete<?php echo $klpk->id_kelompok; ?>" role="dialog" style="display: none;">
     <div class="modal-dialog" style="margin-top: 260.5px;">
         <div class="modal-content">
@@ -94,7 +95,7 @@ foreach ($kelompok as $klpk) {
     </div>
 </div>
 <?php
-}
+        }
 ?>
-</div>
+</div> -->
 <!-- end modal hapus -->

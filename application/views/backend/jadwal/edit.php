@@ -11,7 +11,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header font-weight-bold">
-                        <h5 class="font-weight-bold">EDIT JADWAL</h5>
+                        <h5 class="font-weight-bold" style="color: #5777ba">EDIT JADWAL</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
                     </div>
@@ -35,22 +35,22 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="font-weight-bold">Kelompok</label>
-                                    <select class="form-control kode_kelompok" name="kode_kelompok" autofocus>
+                                    <select class="form-control id_kelompok" name="id_kelompok" autofocus>
                                         <option value="">-Pilih Satu-</option>
-                                        <!-- <?php foreach ($kode_kelompok as $row) : ?>
-                                                <option value="<?php echo $row->kode_kelompok; ?>"><?php echo $row->nama_kelompok; ?></option>
+                                        <!-- <?php foreach ($id_kelompok as $row) : ?>
+                                                <option value="<?php echo $row->id_kelompok; ?>"><?php echo $row->nama_kelompok; ?></option>
                                             <?php endforeach; ?> -->
 
                                         <?php
                                             foreach ($data_kelompok as $d) {
                                             ?>
-                                        <?php if ($d->kode_kelompok == $jd->kode_kelompok) : ?>
+                                        <?php if ($d->id_kelompok == $jd->id_kelompok) : ?>
 
-                                        <option value="<?php echo $d->kode_kelompok ?>" selected>
+                                        <option value="<?php echo $d->id_kelompok ?>" selected>
                                             <?php echo $d->nama_kelompok ?></option>
 
                                         <?php else : ?>
-                                        <option value="<?php echo $d->kode_kelompok ?>"><?php echo $d->nama_kelompok ?>
+                                        <option value="<?php echo $d->id_kelompok ?>"><?php echo $d->nama_kelompok ?>
                                         </option>
                                         <?php endif; ?>
                                         <?php
@@ -118,7 +118,7 @@
         //call function get data edit
         get_data_edit();
 
-        $('.kode_kelompok').change(function() {
+        $('.id_kelompok').change(function() {
             var id = $(this).val();
             var kode_pju = "<?php echo $jd->kode_pju; ?>";
             $.ajax({
@@ -163,7 +163,7 @@
                 dataType: 'json',
                 success: function(data) {
                     $.each(data, function(i, item) {
-                        // $('[name="kode_kelompok"]').val(data[i].kode_kelompok).trigger('change');
+                        // $('[name="id_kelompok"]').val(data[i].id_kelompok).trigger('change');
                         $('[name="kode_pju"]').val(data[i].kode_pju).trigger('change');
                     });
                 }

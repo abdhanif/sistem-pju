@@ -7,61 +7,38 @@ foreach ($deteksi_pju as $dt) {
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="font-weight-bold">DETAIL LAPORAN</h5>
+                    <h5 class="font-weight-bold" style="color: #5777ba">DETAIL LAPORAN</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <div class="font-weight-bold">
                                 <label for="inputNama">Nama</label>
                             </div>
-                            <input type="text" class="form-control" readonly placeholder="<?php echo $dt->nama; ?>">
+                            <input type="text" class="form-control" readonly
+                                placeholder="<?php echo $dt->user_name; ?>">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-5">
                             <div class="font-weight-bold">
-                                <label for="inputWA">Whatsapp</label>
+                                <label for="inputWA">No Telephon</label>
                             </div>
-                            <input type="text" class="form-control" readonly placeholder="<?php echo $dt->whatsapp; ?>">
+                            <input type="text" class="form-control" readonly placeholder="<?php echo $dt->no_tlpn; ?>">
                         </div>
-                    </div>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3">
                             <div class="font-weight-bold">
                                 <label for="inputNama">Kode PJU</label>
-                            </div>
-                            <input type="text" class="form-control" readonly placeholder="<?php echo $dt->kode_pju; ?>">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <div class="font-weight-bold">
-                                <label for="inputWA">No Meter PJU</label>
                             </div>
                             <input type="text" class="form-control" readonly
                                 placeholder="<?php echo $dt->kode_pju_box; ?>">
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <div class="font-weight-bold">
-                                <label for="inputNama">Kecamatan</label>
-                            </div>
-                            <input type="text" class="form-control" readonly
-                                placeholder="<?php echo $dt->kecamatan; ?>">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <div class="font-weight-bold">
-                                <label for="inputWA">Kelurahan</label>
-                            </div>
-                            <input type="text" class="form-control" readonly
-                                placeholder="<?php echo $dt->kelurahan; ?>">
-                        </div>
-                    </div>
                     <div class="form-group">
                         <div class="font-weight-bold">
-                            <label for="laporan">Alamat</label>
+                            <label for="laporan">Alamat Kerusakan</label>
                         </div>
                         <textarea type="text" class="form-control" readonly rows="1"
                             placeholder="<?php echo $dt->alamat; ?>"></textarea>
@@ -69,7 +46,7 @@ foreach ($deteksi_pju as $dt) {
 
                     <div class="form-group">
                         <div class="font-weight-bold">
-                            <label for="laporan">Laporan Anda</label>
+                            <label for="laporan">Laporan</label>
                         </div>
                         <textarea type="text" class="form-control" readonly rows="3"
                             placeholder="<?php echo $dt->laporan; ?>"></textarea>

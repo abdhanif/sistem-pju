@@ -46,7 +46,7 @@ class C_rute extends CI_Controller
                 'lang' => $pju['data_pju'][$i]->lng,
                 'kode_jadwal' => $pju['data_pju'][$i]->kode_jadwal,
                 'kode_pju' => $pju['data_pju'][$i]->kode_pju,
-                'kode_kelompok' => $pju['data_pju'][$i]->kode_kelompok,
+                'id_kelompok' => $pju['data_pju'][$i]->id_kelompok,
                 'status' => $pju['data_pju'][$i]->status,
                 'create_at' => $pju['data_pju'][$i]->create_at,
                 'alamat_pju' => $pju['data_pju'][$i]->alamat_pju

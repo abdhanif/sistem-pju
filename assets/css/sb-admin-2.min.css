@@ -11033,7 +11033,7 @@ a:focus {
 }
 
 .sidebar-dark .nav-item .nav-link[data-toggle=collapse]::after {
-    color: rgba(255, 255, 255, .5)
+    color: #5777ba
 }
 
 .sidebar-dark .nav-item.active .nav-link {

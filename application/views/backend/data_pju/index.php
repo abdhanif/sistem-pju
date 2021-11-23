@@ -18,16 +18,11 @@
                         </form>
                     </div>
 
-                    <?php if ($this->session->userdata('access') == 'Administrator') { ?>
-
                     <div class="col text-right">
                         <a href="<?= base_url('C_data_pju/tambah'); ?>" class="btn btn-primary"></i> Tambah Data</a>
                         <a href="<?= base_url('C_data_pju/cetak') ?>" class="btn btn-success" target="_blank">Export
                             PDF</a>
                     </div>
-
-                    <?php } ?>
-
                 </div>
             </div>
             </br>
@@ -42,9 +37,7 @@
                             <th scope="row" class="text-center" style="vertical-align: middle;">Alamat</th>
                             <th scope="row" class="text-center" style="vertical-align: middle;">Latitude</th>
                             <th scope="row" class="text-center" style="vertical-align: middle;">Longitude</th>
-                            <?php if ($this->session->userdata('access') == 'Administrator') { ?>
                             <th scope="row" class="text-center">Aksi</th>
-                            <?php } ?>
                         </tr>
                     </thead>
 
@@ -61,7 +54,6 @@
                             <td class="text-center"><?php echo $row->lat; ?></td>
                             <td class="text-center"><?php echo $row->lng; ?></td>
 
-                            <?php if ($this->session->userdata('access') == 'Administrator') { ?>
                             <td class="text-center">
                                 <a href="<?php echo base_url(); ?>C_data_pju/edit/<?php echo $row->id_pju; ?>"
                                     class="badge badge-warning">Edit</a>
@@ -69,7 +61,6 @@
                                     class="badge badge-danger" data-toggle="modal"
                                     data-target="#delete<?php echo $row->id_pju; ?>"></i> Hapus</a>
                             </td>
-                            <?php } ?>
                         </tr>
                     </tbody>
 

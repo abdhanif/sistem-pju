@@ -4,7 +4,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="font-weight-bold">TAMBAH DATA KARYAWAN</h5>
+                    <h5 class="font-weight-bold" style="color: #5777ba">TAMBAH DATA KARYAWAN</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                 </div>
@@ -42,7 +42,7 @@
 
                             <div class=" col-md-6">
                                 <label class="font-weight-bold form-label">Tanggal Lahir</label>
-                                <input type="text" class="form-control form-control" id="tgl_lahir" name="tgl_lahir"
+                                <input type="date" class="form-control form-control" id="tgl_lahir" name="tgl_lahir"
                                     value="<?= set_value('tgl_lahir'); ?>">
                                 <?= form_error('tgl_lahir', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>

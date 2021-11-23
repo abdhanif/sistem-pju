@@ -16,7 +16,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h5 class="m-0 text-info font-weight-bold">PENGELOLAAN / DATA PJU / EDIT DATA PJU</h5>
+            <h5 class="m-0 font-weight-bold" style="color: #5777ba">PENGELOLAAN / DATA PJU / EDIT DATA PJU</h5>
         </div>
 
         <div class="card-body">
@@ -34,19 +34,19 @@
                             </br>
 
                             <label class="font-weight-bold">Kelompok</label>
-                            <select class="form-control" id="kode_kelompok" name="kode_kelompok"
-                                value="<?php echo $data_pju->kode_kelompok; ?>">
+                            <select class="form-control" id="id_kelompok" name="id_kelompok"
+                                value="<?php echo $data_pju->id_kelompok; ?>">
                                 <option value="">-Pilih Satu-</option>
                                 <?php
                                 foreach ($data_kelompok as $d) {
                                 ?>
-                                <?php if ($d->kode_kelompok == $data_pju->kode_kelompok) : ?>
+                                <?php if ($d->id_kelompok == $data_pju->id_kelompok) : ?>
 
-                                <option value="<?php echo $d->kode_kelompok ?>" selected><?php echo $d->nama_kelompok ?>
+                                <option value="<?php echo $d->id_kelompok ?>" selected><?php echo $d->nama_kelompok ?>
                                 </option>
 
                                 <?php else : ?>
-                                <option value="<?php echo $d->kode_kelompok ?>"><?php echo $d->nama_kelompok ?></option>
+                                <option value="<?php echo $d->id_kelompok ?>"><?php echo $d->nama_kelompok ?></option>
                                 <?php endif; ?>
                                 <?php
                                 }

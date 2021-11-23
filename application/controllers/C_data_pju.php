@@ -8,11 +8,13 @@ class C_data_pju extends CI_Controller
     {
         parent::__construct();
         $this->load->model('DataPju_model');
+        $this->load->model('Mst_mt_model');
         $this->load->model('Kelompok_model');
         $this->load->library('form_validation');
         $this->load->model("Mlogin");
         $this->Mlogin->Check_Login();
     }
+
     public function index()
     {
         $data['data_pju'] = $this->DataPju_model->getAllDataPju()->result();
@@ -38,13 +40,14 @@ class C_data_pju extends CI_Controller
 
     public function tambah()
     {
-        $this->form_validation->set_rules('kode_kelompok', 'Kode Kelompok', 'required');
+        $this->form_validation->set_rules('id_kelompok', 'Kode Kelompok', 'required');
         $this->form_validation->set_rules('kode_pju', 'Kode PJU', 'required');
         $this->form_validation->set_rules('alamat_pju', 'Alamat PJU', 'required');
         $this->form_validation->set_rules('lat', 'Lat', 'required');
         $this->form_validation->set_rules('lng', 'Lng', 'required');
         $kelompok['data_kelompok'] = $this->Kelompok_model->getAllKelompok();
         $data['kode'] = $this->DataPju_model->kode();
+        $data['mst_mt'] = $this->Mst_mt_model->getAllMstMt();
 
         if ($this->form_validation->run() == false) {
 
@@ -73,7 +76,7 @@ class C_data_pju extends CI_Controller
         $data['data_pju'] = $this->DataPju_model->getById($id_pju)->row();
         $dpju['dpju'] = $this->DataPju_model->getAllDataPju()->result();
 
-        $this->form_validation->set_rules('kode_kelompok', 'Kode Kelompok', 'required');
+        $this->form_validation->set_rules('id_kelompok', 'Kode Kelompok', 'required');
         $this->form_validation->set_rules('kode_pju', 'Kode PJU', 'required');
         $this->form_validation->set_rules('alamat_pju', 'Alamat PJU', 'required');
         $this->form_validation->set_rules('lat', 'Lat', 'required');
@@ -100,7 +103,7 @@ class C_data_pju extends CI_Controller
         $id_pju = $this->input->post("id_pju");
         $data['data_pju'] = $this->DataPju_model->getDataPjuById($id_pju);
 
-        $this->form_validation->set_rules('kode_kelompok', 'Kode Kelompok', 'required');
+        $this->form_validation->set_rules('id_kelompok', 'Kode Kelompok', 'required');
         $this->form_validation->set_rules('kode_pju', 'Kode PJU', 'required');
         $this->form_validation->set_rules('alamat_pju', 'Alamat PJU', 'required');
         $this->form_validation->set_rules('lat', 'Lat', 'required');

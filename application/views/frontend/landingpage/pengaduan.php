@@ -54,8 +54,11 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li>
-                        <a class="getstarted scrollto" data-toggle="modal" data-target="#logoutModal"
-                            href="<?php echo site_url('auth/logout'); ?>">Logout</a>
+                    <li><a class="nav-link scrollto active" href="<?php echo base_url('C_pengaduan'); ?>">Form
+                            Pengaduan</a></li>
+                    <li><a class="nav-link scrollto" href="<?php echo base_url('C_report'); ?>">Report
+                            Pengaduan</a></li>
+                    <a class="getstarted scrollto" href="<?php echo site_url('auth/logout'); ?>">Logout</a>
                     </li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -85,30 +88,32 @@
                                 <form class="user" method="post" action="<?= base_url('C_pengaduan/insert') ?>"
                                     enctype="multipart/form-data">
                                     <div class="form-row">
+                                        <input type="hidden" class="form-control" id="id_user" name="id_user">
                                         <div class="form-group col-md-6">
                                             <div class="font-weight-bold">
-                                                <label for="inputNama">Nama Lengkap *</label>
+                                                <label for="no_tlpn">Nomor Telephon Yang Bisa di Hubungi *</label>
                                             </div>
-                                            <input type="text" class="form-control" id="nama" name="nama"
-                                                placeholder="Contoh : Abdurrahman Hanif">
-                                            <?= form_error('nama', ' <small class="text-danger pl-3">', '</small>'); ?>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <div class="font-weight-bold">
-                                                <label for="inputWA">Nomor WhatsApp *</label>
-                                            </div>
-                                            <input type="text" class="form-control" id="whatsapp" name="whatsapp"
+                                            <input type="text" class="form-control" id="no_tlpn" name="no_tlpn"
                                                 placeholder="Contoh : 0878xxxxxxxx">
-                                            <?= form_error('whatsapp', ' <small class="text-danger pl-3">', '</small>'); ?>
+                                            <?= form_error('no_tlpn', ' <small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
-                                    </div>
 
-                                    <div class="form-group">
-                                        <div class="font-weight-bold">
-                                            <label for="alamat">Nomor Meter PJU *</label>
+                                        <div class="form-group col-md-6">
+                                            <div class="font-weight-bold">
+                                                <label for="kecamatan">Kode PJU / Kode Box Yang Rusak *</label>
+                                            </div>
+                                            <select class="form-control" id="kode_pju_box" name="kode_pju_box">
+                                                <option>- Pilih -</option>
+                                                <?php
+                                                foreach ($pju as $row) {
+                                                ?>
+                                                <option value="<?php echo $row->kode_pju ?>">
+                                                    <?php echo $row->kode_pju ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
                                         </div>
-                                        <input type="text" class="form-control" id="kode_pju_box" name="kode_pju_box"
-                                            placeholder="Masukan Kode Box / Kode PJU yang mati!"></input><?= form_error('kode_pju_box', ' <small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
 
                                     <div class="form-group">
@@ -117,31 +122,6 @@
                                         </div>
                                         <textarea type="text" class="form-control" rows="2" id="alamat" name="alamat"
                                             placeholder="Contoh : Jl. Hr.Muhammad, Depan Pom Bensin"></textarea><?= form_error('alamat', ' <small class="text-danger pl-3">', '</small>'); ?>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <div class="font-weight-bold">
-                                                <label for="kecamatan">Kecamatan *</label>
-                                            </div>
-                                            <select class="form-control" id="kecamatan" name="kecamatan">
-                                                <option>Pilih Kecamatan</option>
-                                                <option>Sukomanunggal</option>
-                                                <option>Sawahan</option>
-                                                <option>Simomulyo</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <div class="font-weight-bold">
-                                                <label for="kelurahan">Kelurahan *</label>
-                                            </div>
-                                            <select class="form-control" id="kelurahan" name="kelurahan">
-                                                <option>Pilih Kelurahan</option>
-                                                <option>Putat Gede</option>
-                                                <option>Pradah</option>
-                                                <option>Kawal Kali Kendal</option>
-                                            </select>
-                                        </div>
                                     </div>
 
                                     <div class="form-group">

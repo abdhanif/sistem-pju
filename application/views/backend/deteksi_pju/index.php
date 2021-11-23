@@ -36,8 +36,8 @@
                     <tbody>
                         <tr>
                             <td class="text-center" style="vertical-align: middle;"><?php echo $no++; ?></td>
-                            <td><?php echo $row->nama; ?></td>
-                            <td class="text-center"><?php echo $row->kode_pju; ?></td>
+                            <td><?php echo $row->user_name; ?></td>
+                            <td class="text-center"><?php echo $row->kode_pju_box; ?></td>
                             <td><?php echo character_limiter($row->laporan, 20); ?></td>
                             <td class="font-weight-bold text-center"><?php echo $row->verifikasi; ?></td>
 

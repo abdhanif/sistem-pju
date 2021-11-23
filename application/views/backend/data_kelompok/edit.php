@@ -7,7 +7,7 @@ foreach ($kelompok as $kl) {
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header font-weight-bold">
-                    <h5 class="font-weight-bold">EDIT DATA KELOMPOK</h5>
+                    <h5 class="font-weight-bold" style="color: #5777ba">EDIT DATA KELOMPOK</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                 </div>
@@ -15,17 +15,6 @@ foreach ($kelompok as $kl) {
                     <form class="user" method="post" action="<?= base_url('C_kelompok/update') ?>">
                         <input type="hidden" class="form-control" name="id_kelompok"
                             value="<?php echo $kl->id_kelompok; ?>">
-
-                        <div class="row g-3">
-                            <div class="col-md">
-                                <label class="font-weight-bold form-label">Kode Kelompok</label>
-                                <input type="text" class="form-control" id="kode_kelompok" name="kode_kelompok"
-                                    value="<?php echo $kl->kode_kelompok; ?>" readonly>
-                                <?= form_error('kode_kelompok', ' <small class="text-danger pl-3">', '</small>'); ?>
-                            </div>
-                        </div>
-
-                        </br>
 
                         <div class="row g-3">
                             <div class="col-md">

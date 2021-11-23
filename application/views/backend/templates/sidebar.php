@@ -27,65 +27,64 @@
                     <span>Dashboard</span></a>
             </li>
 
+            <?php if ($this->session->userdata('access') == 'Administrator') { ?>
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <?php if ($this->session->userdata('access') == 'Administrator') { ?>
-
-            <!-- Heading -->
             <div class="sidebar-heading">
-                Pengaduan
+                Management
             </div>
 
-            <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('C_deteksi') ?>">
                     <i class="fas fa-fw fa-envelope"></i>
                     <span>Cek Pengaduan</span></a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-envelope"></i>
-                    <span>Jenis Laporan</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <div class="sidebar-heading">
-                Pengelolaan
-            </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('C_kelompok') ?>">
-                    <i class="fas fa-fw fa-layer-group"></i>
-                    <span>Data Kelompok</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('C_data_pju') ?>">
-                    <i class="fas fa-fw fa-database"></i>
-                    <span>Data PJU</span></a>
-            </li>
-
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="far fa-fw fa-calendar-alt"></i>
-                    <span>Maintenance</span></a>
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#maintenance" aria-expanded="true"
+                    aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Maintenance</span>
+                </a>
+                <div id="maintenance" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="py-2 collapse-inner rounded" style="background-color: #f7f7f7;">
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="nav-link" href="#">Data Maintenance</a>
+                        <a class="nav-link" href="<?= base_url('C_mst_mt') ?>">Jenis Maintenance</a>
+                    </div>
+                </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('C_jadwal') ?>">
-                    <i class="far fa-fw fa-calendar-alt"></i>
-                    <span>Jadwal Pengerjaan</span></a>
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#datapju" aria-expanded="true"
+                    aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>PJU</span>
+                </a>
+                <div id="datapju" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="py-2 collapse-inner rounded" style="background-color: #f7f7f7;">
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="nav-link" href="<?= base_url('C_kelompok') ?>">Data Kelompok</a>
+                        <a class="nav-link" href="<?= base_url('C_data_pju') ?>">Data PJU</a>
+                    </div>
+                </div>
             </li>
 
-            <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('C_rute') ?>">
-                    <i class="fas fa-fw fa-map-marked-alt"></i>
-                    <span>Cari Rute</span></a>
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#jadwal" aria-expanded="true"
+                    aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Penjadwalan</span>
+                </a>
+                <div id="jadwal" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="py-2 collapse-inner rounded" style="background-color: #f7f7f7;">
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="nav-link" href="<?= base_url('C_jadwal') ?>">Jadwal Pengerjaan</a>
+                        <a class="nav-link" href="<?= base_url('C_rute') ?>">Cari Rute</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Divider -->
@@ -107,21 +106,14 @@
             <?php }
             if ($this->session->userdata('access') == 'Teknisi') { ?>
 
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
             <!-- Heading -->
             <div class="sidebar-heading">
                 Pengelolaan
             </div>
 
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('C_kelompok') ?>">
-                    <i class="fas fa-fw fa-layer-group"></i>
-                    <span>Data Kelompok</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('C_data_pju') ?>">
-                    <i class="fas fa-fw fa-database"></i>
-                    <span>Data PJU</span></a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('C_jadwal') ?>">
                     <i class="far fa-fw fa-calendar-alt"></i>

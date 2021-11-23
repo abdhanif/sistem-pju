@@ -8,7 +8,7 @@
 
     #map {
         width: 1100px;
-        height: 500px;
+        height: 450px;
     }
     </style>
 </head>
@@ -17,7 +17,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h5 class="m-0 text-info font-weight-bold">PENGELOLAAN / DATA PJU / TAMBAH DATA PJU</h5>
+            <h5 class="m-0 font-weight-bold" style="color: #5777ba">PENGELOLAAN / DATA PJU / TAMBAH DATA PJU</h5>
         </div>
 
         <div class="card-body">
@@ -33,12 +33,12 @@
                             </br>
 
                             <label class="font-weight-bold form-label">Kelompok</label>
-                            <select class="form-control" id="kode_kelompok" name="kode_kelompok" autofocus>
+                            <select class="form-control" id="id_kelompok" name="id_kelompok" autofocus>
                                 <option value="">- Pilih -</option>
                                 <?php
                                 foreach ($data_kelompok as $kl) {
                                 ?>
-                                <option value="<?php echo $kl->kode_kelompok ?>"><?php echo $kl->nama_kelompok ?>
+                                <option value="<?php echo $kl->id_kelompok ?>"><?php echo $kl->nama_kelompok ?>
                                 </option>
                                 <?php
                                 }
@@ -63,6 +63,27 @@
                             <input type="text" class="form-control form-control" id="lng" name="lng" autocomplete="off"
                                 autofocus>
                             <?= form_error('lng', ' <small class="text-danger pl-3">', '</small>'); ?>
+
+                            </br>
+
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-input" for="inlineCheckbox1"><input class="checked-all"
+                                        type="checkbox"> Pilih Semua</label>
+                            </div>
+
+                            <?php
+                            $no = 1;
+                            foreach ($mst_mt as $row) {
+                            ?>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="inlineCheckbox1"><input class="form-check-input"
+                                        id="deskripsi" name="deskripsi"
+                                        type="checkbox"><?php echo $row->deskripsi ?></label>
+                            </div>
+                            <?php
+                            }
+                            ?>
+
                         </div>
 
                         <div class="col-md-6">
@@ -138,3 +159,12 @@
 </div>
 
 </html>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+$('.checked-all').on('change', function(e) {
+    e.preventDefault()
+    $('input[name=deskripsi]').prop('checked', this.checked)
+})
+</script>

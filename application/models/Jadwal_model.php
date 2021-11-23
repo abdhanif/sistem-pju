@@ -4,9 +4,9 @@ class Jadwal_model extends CI_Model
 
     public function getAllJadwal()
     {
-        $this->db->select('jadwal.`id_jadwal`, jadwal.kode_jadwal, jadwal.kode_kelompok, data_kelompok.nama_kelompok, jadwal.kode_pju, jadwal.status, jadwal.create_at');
+        $this->db->select('jadwal.`id_jadwal`, jadwal.kode_jadwal, jadwal.id_kelompok, data_kelompok.nama_kelompok, jadwal.kode_pju, jadwal.status, jadwal.create_at');
         $this->db->from('jadwal');
-        $this->db->join('data_kelompok', 'data_kelompok.kode_kelompok = jadwal.kode_kelompok');
+        $this->db->join('data_kelompok', 'data_kelompok.id_kelompok = jadwal.id_kelompok');
         $this->db->join('data_pju', 'data_pju.kode_pju = jadwal.kode_pju');
         $this->db->order_by("jadwal.kode_jadwal", "DESC");
         $query = $this->db->get();
@@ -16,7 +16,7 @@ class Jadwal_model extends CI_Model
     {
         $data = [
             'kode_jadwal'  => htmlspecialchars($this->input->post('kode_jadwal', true)),
-            'kode_kelompok'  => htmlspecialchars($this->input->post('kode_kelompok', true)),
+            'id_kelompok'  => htmlspecialchars($this->input->post('id_kelompok', true)),
             'kode_pju'  => htmlspecialchars($this->input->post('kode_pju', true)),
             'status'  => htmlspecialchars('BELUM')
         ];
@@ -35,7 +35,7 @@ class Jadwal_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('jadwal');
-        $this->db->join('data_kelompok', 'data_kelompok.kode_kelompok = jadwal.kode_kelompok');
+        $this->db->join('data_kelompok', 'data_kelompok.id_kelompok = jadwal.id_kelompok');
         $this->db->join('data_pju', 'data_pju.kode_pju = jadwal.kode_pju');
         $this->db->like('data_pju.kode_pju', $keyword);
         return $this->db->get()->result();
@@ -46,7 +46,7 @@ class Jadwal_model extends CI_Model
         $id_jadwal =  htmlspecialchars($this->input->post('id_jadwal', true));
         $data = [
             'kode_jadwal'  => htmlspecialchars($this->input->post('kode_jadwal', true)),
-            'kode_kelompok'  => htmlspecialchars($this->input->post('kode_kelompok', true)),
+            'id_kelompok'  => htmlspecialchars($this->input->post('id_kelompok', true)),
             'kode_pju'  => htmlspecialchars($this->input->post('kode_pju', true)),
             'status'  => htmlspecialchars($this->input->post('status', true))
         ];
@@ -75,7 +75,7 @@ class Jadwal_model extends CI_Model
 
     function get_pju_edit($id_kelompok)
     {
-        $query = $this->db->get_where('data_pju', array('kode_kelompok' => $id_kelompok));
+        $query = $this->db->get_where('data_pju', array('id_kelompok' => $id_kelompok));
         return $query;
     }
 
@@ -101,7 +101,7 @@ class Jadwal_model extends CI_Model
     {
         $query = $this->db->query("SELECT *
         FROM `jadwal`
-        JOIN `data_kelompok` ON data_kelompok.`kode_kelompok` = jadwal.`kode_kelompok`
+        JOIN `data_kelompok` ON data_kelompok.`id_kelompok` = jadwal.`id_kelompok`
         JOIN `data_pju` ON data_pju.`kode_pju` = jadwal.`kode_pju`
         WHERE (jadwal.create_at BETWEEN '$mulai' AND '$sampai')");
         return $query->result();

@@ -15,7 +15,6 @@ class C_kelompok extends CI_Controller
     public function index()
     {
         $data['kelompok'] = $this->Kelompok_model->getAllKelompok();
-        $data['kode'] = $this->Kelompok_model->kode();
 
         $this->load->view('backend/templates/header');
         $this->load->view('backend/templates/sidebar');
@@ -41,7 +40,6 @@ class C_kelompok extends CI_Controller
 
     public function tambah()
     {
-        $this->form_validation->set_rules('kode_kelompok', 'Kode Kelompok', 'required');
         $this->form_validation->set_rules('nama_kelompok', 'Nama Kelompok', 'required');
 
         if ($this->form_validation->run() == false) {
@@ -93,7 +91,6 @@ class C_kelompok extends CI_Controller
 
         $data['kelompok'] = $this->Kelompok_model->getKelompokById($id_kelompok);
 
-        $this->form_validation->set_rules('kode_kelompok', 'Kode Kelompok', 'required');
         $this->form_validation->set_rules('nama_kelompok', 'Nama Kelompok', 'required');
 
         if ($this->form_validation->run() == false) {

@@ -9,7 +9,8 @@
                     <h1>PENGADUAN PENERANGAN JALAN UMUM</h1>
                     <h2>Layanan Informasi & Pengaduan Lampu Penerangan Jalan Umum</h2>
 
-                    <a href="C_pengaduan" class="download-btn">LAPOR<i class="bx bxl bi-hand-index-fill"></i></a>
+                    <a href="C_pengaduan" class="download-btn"><i class="fas fa-mouse-pointer"
+                            style="color: white;"></i>LAPOR</a>
                 </div>
             </div>
             <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img"
@@ -28,10 +29,12 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>App Features</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                    sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                    ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <h2>SISTEM INFORMASI DAN PENGADUAN LAMPU JALAN UMUM </h2>
+                <p>adalah sistem untuk mengadukan soal kendala Lampu Penerangan Jalan Umum. Untuk mencapai visi dalam
+                    good governance maka perlu untuk mengintegrasikan sistem pengelolaan pengaduan pelayanan publik
+                    dalam satu pintu. Tujuannya, masyarakat memiliki satu saluran pengaduan secara Nasional.
+                    Dengan sistem ini pengelolaan pengaduan pelayanan publik terkait Lampu Penerangan Jalan Umum akan
+                    terkelola secara efektif dan terintegrasi. </p>
             </div>
 
             <div class="row no-gutters">
@@ -39,44 +42,32 @@
                     <div class="content d-flex flex-column justify-content-center">
                         <div class="row">
                             <div class="col-md-6 icon-box" data-aos="fade-up">
-                                <i class="bx bx-receipt"></i>
-                                <h4>Corporis voluptates sit</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
-                                    aliquip</p>
+                                <i class="far fa-edit"></i>
+                                <h4>Tulis Laporanmu</h4>
+                                <p>Laporkan keluhan atau aspirasi anda dengan jelas dan lengkap</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                                <i class="bx bx-cube-alt"></i>
-                                <h4>Ullamco laboris nisi</h4>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                    deserunt</p>
+                                <i class="fas fa-angle-double-right"></i>
+                                <h4>Proses Verifikasi</h4>
+                                <p>Laporan Anda akan diverifikasi jika memenuhi persyaratan</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                                <i class="bx bx-images"></i>
-                                <h4>Labore consequatur</h4>
-                                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere
+                                <i class="fas fa-tools"></i>
+                                <h4>Proses Tindak Lanjut</h4>
+                                <p>Instansi akan menindaklanjuti dan langsung menjadwalkan laporan anda
                                 </p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                                <i class="bx bx-shield"></i>
-                                <h4>Beatae veritatis</h4>
-                                <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-                            </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                                <i class="bx bx-atom"></i>
-                                <h4>Molestiae dolor</h4>
-                                <p>Et fuga et deserunt et enim. Dolorem architecto ratione tensa raptor marte</p>
-                            </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-                                <i class="bx bx-id-card"></i>
-                                <h4>Explicabo consectetur</h4>
-                                <p>Est autem dicta beatae suscipit. Sint veritatis et sit quasi ab aut inventore</p>
+                                <i class="fas fa-check fa-xs"></i>
+                                <h4>Selesai</h4>
+                                <p>Laporan Anda akan terus ditindaklanjuti hingga terselesaikan</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="image col-xl-5 d-flex align-items-stretch justify-content-center order-1 order-lg-2"
                     data-aos="fade-left" data-aos-delay="100">
-                    <img src="assets/landing-page/img/features.svg" class="img-fluid" alt="">
+                    <img src="assets/landing-page/img/details-1.png" class="img-fluid" alt="">
                 </div>
             </div>
 
@@ -84,114 +75,13 @@
     </section><!-- End App Features Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Testimonials</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                    sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                    ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-            </div>
-
-            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/landing-page/img/testimonials/testimonials-1.jpg" class="testimonial-img"
-                                alt="">
-                            <h3>Saul Goodman</h3>
-                            <h4>Ceo &amp; Founder</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                                rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                risus at semper.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/landing-page/img/testimonials/testimonials-2.jpg" class="testimonial-img"
-                                alt="">
-                            <h3>Sara Wilsson</h3>
-                            <h4>Designer</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
-                                cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
-                                legam anim culpa.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/landing-page/img/testimonials/testimonials-3.jpg" class="testimonial-img"
-                                alt="">
-                            <h3>Jena Karlis</h3>
-                            <h4>Store Owner</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem
-                                veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
-                                minim.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/landing-page/img/testimonials/testimonials-4.jpg" class="testimonial-img"
-                                alt="">
-                            <h3>Matt Brandon</h3>
-                            <h4>Freelancer</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim
-                                fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem
-                                dolore labore illum veniam.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                            <h3>John Larson</h3>
-                            <h4>Entrepreneur</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
-                                veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
-                                culpa fore nisi cillum quid.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </div>
-    </section><!-- End Testimonials Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Contact</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                    sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                    ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <h2>Kontak Kami</h2>
             </div>
 
             <div class="row">
@@ -200,53 +90,31 @@
                     <div class="row">
                         <div class="col-lg-6 info">
                             <i class="bx bx-map"></i>
-                            <h4>Address</h4>
-                            <p>A108 Adam Street,<br>New York, NY 535022</p>
-                        </div>
-                        <div class="col-lg-6 info">
-                            <i class="bx bx-phone"></i>
-                            <h4>Call Us</h4>
-                            <p>+1 5589 55488 55<br>+1 5589 22548 64</p>
-                        </div>
-                        <div class="col-lg-6 info">
-                            <i class="bx bx-envelope"></i>
-                            <h4>Email Us</h4>
-                            <p>contact@example.com<br>info@example.com</p>
+                            <h4>Alamat</h4>
+                            <p>Jl. Raya Menur No.31A, Manyar Sabrangan, Kec. Mulyorejo, Kota SBY, Jawa Timur 60285</p>
                         </div>
                         <div class="col-lg-6 info">
                             <i class="bx bx-time-five"></i>
                             <h4>Working Hours</h4>
-                            <p>Mon - Fri: 9AM to 5PM<br>Sunday: 9AM to 1PM</p>
+                            <p>Senin - Jumat: 07.40 WIB to 16.00 WIB<br>Sabtu: 09.00 WIB to 13.00 WIB</p>
+                        </div>
+                        <div class="col-lg-6 info">
+                            <i class="bx bx-envelope"></i>
+                            <h4>Website</h4>
+                            <p>http://dkp.surabaya.go.id/</p>
+                        </div>
+                        <div class="col-lg-6 info">
+                            <i class="bx bx-phone"></i>
+                            <h4>Telephon</h4>
+                            <p>(031) 5967387</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form"
-                        data-aos="fade-up">
-                        <div class="form-group">
-                            <input placeholder="Your Name" type="text" name="name" class="form-control" id="name"
-                                required>
-                        </div>
-                        <div class="form-group mt-3">
-                            <input placeholder="Your Email" type="email" class="form-control" name="email" id="email"
-                                required>
-                        </div>
-                        <div class="form-group mt-3">
-                            <input placeholder="Subject" type="text" class="form-control" name="subject" id="subject"
-                                required>
-                        </div>
-                        <div class="form-group mt-3">
-                            <textarea placeholder="Message" class="form-control" name="message" rows="5"
-                                required></textarea>
-                        </div>
-                        <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-                        </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
-                    </form>
+                    <iframe style="border:0; width: 100%; height: 408px;"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.669076900772!2d112.76101011477498!3d-7.278443294746495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa32d4cf91c7%3A0xefd98eacd5a0914a!2sDinas%20Kebersihan%20dan%20Ruang%20Terbuka%20Hijau%20Kota%20Surabaya!5e0!3m2!1sid!2sid!4v1637597931884!5m2!1sid!2sid"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
 
             </div>

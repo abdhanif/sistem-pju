@@ -46,7 +46,7 @@ class C_jadwal extends CI_Controller
     public function tambah()
     {
         $this->form_validation->set_rules('kode_jadwal', 'Kode Jadwal', 'required');
-        $this->form_validation->set_rules('kode_kelompok', 'Kode Kelompok', 'required');
+        $this->form_validation->set_rules('id_kelompok', 'Kode Kelompok', 'required');
         $this->form_validation->set_rules('kode_pju', 'Kode_Pju', 'required');
 
         if ($this->form_validation->run() == false) {
@@ -66,8 +66,8 @@ class C_jadwal extends CI_Controller
 
     function get_kode_pju()
     {
-        $kode_kelompok = $this->input->post('id', TRUE);
-        $data = $this->DataPju_model->getDataPjuByKodeKelompok($kode_kelompok)->result();
+        $id_kelompok = $this->input->post('id', TRUE);
+        $data = $this->DataPju_model->getDataPjuByKodeKelompok($id_kelompok)->result();
         echo json_encode($data);
     }
 
@@ -83,7 +83,7 @@ class C_jadwal extends CI_Controller
         $data['jadwal'] = $this->Jadwal_model->getById($id_jadwal)->row();
 
         $this->form_validation->set_rules('kode_jadwal', 'Kode Jadwal', 'required');
-        $this->form_validation->set_rules('kode_kelompok', 'Kode Kelompok', 'required');
+        $this->form_validation->set_rules('id_kelompok', 'Kode Kelompok', 'required');
         $this->form_validation->set_rules('kode_pju', 'Kode_Pju', 'required');
         $this->form_validation->set_rules('status', 'Status', 'required');
         $pju['data_kelompok'] = $this->Kelompok_model->getAllKelompok();
@@ -108,7 +108,7 @@ class C_jadwal extends CI_Controller
     {
         $id_jadwal = $this->input->post('id_jadwal', TRUE);
         $data = $this->Jadwal_model->get_jadwal_by_id($id_jadwal)->result();
-        $dataKelompok = json_encode($data[0]->kode_kelompok);
+        $dataKelompok = json_encode($data[0]->id_kelompok);
         $dataPJU = $this->Jadwal_model->getDataPJU($dataKelompok);
         var_dump(json_encode($dataPJU));
     }
@@ -127,7 +127,7 @@ class C_jadwal extends CI_Controller
         $data['jadwal'] = $this->Jadwal_model->getJadwalById($id_jadwal);
 
         $this->form_validation->set_rules('kode_jadwal', 'Kode Jadwal', 'required');
-        $this->form_validation->set_rules('kode_kelompok', 'Kode Kelompok', 'required');
+        $this->form_validation->set_rules('id_kelompok', 'Kode Kelompok', 'required');
         $this->form_validation->set_rules('kode_pju', 'Kode_Pju', 'required');
         $this->form_validation->set_rules('status', 'Status', 'required');
         $data_pju['data_kelompok'] = $this->Kelompok_model->getAllKelompok();

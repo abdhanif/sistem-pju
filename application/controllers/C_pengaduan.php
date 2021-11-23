@@ -7,6 +7,7 @@ class C_pengaduan extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Deteksi_model');
+        $this->load->model('DataPju_model');
         $this->load->library('form_validation');
         $this->load->helper('url', 'form');
         $this->load->model("Mlogin");
@@ -14,21 +15,22 @@ class C_pengaduan extends CI_Controller
     }
     public function index()
     {
-        $this->load->view('frontend/landingpage/pengaduan', array('error' => ' '));
+        $data['pju'] = $this->DataPju_model->getAllDataPju()->result();
+
+        $this->load->view('frontend/landingpage/pengaduan', $data, array('error' => ' '));
     }
 
     public function insert()
     {
         //Input
-        $nama = $this->input->post('nama');
-        $whatsapp = $this->input->post('whatsapp');
-        $alamat = $this->input->post('alamat');
-        $kecamatan = $this->input->post('kecamatan');
-        $kelurahan = $this->input->post('kelurahan');
+
+        $id = $this->session->id;
+        $no_tlpn = $this->input->post('no_tlpn');
         $kode_pju_box = $this->input->post('kode_pju_box');
+        $alamat = $this->input->post('alamat');
         $laporan = $this->input->post('laporan');
 
-        $key = $nama;
+        $key = $kode_pju_box;
 
         //Config Upload
         $file_ext = pathinfo($_FILES["gambar"]['name'], PATHINFO_EXTENSION);
@@ -62,12 +64,10 @@ class C_pengaduan extends CI_Controller
             // $this->image_lib->resize();
 
             $res = array(
-                'nama' => $nama,
-                'whatsapp' => $whatsapp,
-                'alamat' => $alamat,
-                'kecamatan' => $kecamatan,
-                'kelurahan' => $kelurahan,
+                'id_user' => $id,
+                'no_tlpn' => $no_tlpn,
                 'kode_pju_box' => $kode_pju_box,
+                'alamat' => $alamat,
                 'laporan' => $laporan,
                 'gambar' => $this->upload->data('file_name')
             );

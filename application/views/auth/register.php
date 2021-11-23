@@ -1,32 +1,64 @@
-<body>
-    <div class="login-dark">
-        <form class="user" method="post" action="<?= base_url('auth/register'); ?>">
-            <div class="text-center">
-                <h1 class="h4 text-primary-900 mb-4">Create an Account!</h1>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="Full Name" value="<?= set_value('name'); ?>">
-                <?= form_error('name', ' <small class="text-danger pl-3">', '</small>'); ?>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email Address" value="<?= set_value('email'); ?>">
-                <?= form_error('email', ' <small class="text-danger pl-3">', '</small>'); ?>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="password1" name="password1" placeholder="Password">
-                    <?= form_error('password1', ' <small class="text-danger pl-3">', '</small>'); ?>
+<head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="assets/css/landing.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<main id="main">
+    <!-- ======= Contact Section ======= -->
+    <section>
+        <div class="row">
+            <div class="container-fluid" data-aos="fade-up">
+                <div class="row main-content bg-success text-center">
+                    <div class="col-md-4 text-center company__info">
+                        <span class="company__logo">
+                            <h1><span class="fa fa-sign-in"></span></h1>
+                        </span>
+                        <h4 class="company_title">REGISTER <br> PJU SYSTEM </h4>
+                    </div>
+                    <div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+                        <div class="container-fluid">
+                            <div class="text-center">
+                                <form class="form-group" method="post" action="<?php echo site_url('C_register'); ?>">
+
+                                    <div class="row">
+                                        <input type="text" class="form__input" name="user_name" id="user_name"
+                                            type="text" placeholder="Enter Name...">
+                                        <?= form_error('user_name', ' <small class="text-danger pl-3">', '</small>'); ?>
+                                    </div>
+
+                                    <div class="row">
+                                        <input type="text" class="form__input" name="user_email" id="user_email"
+                                            type="email" placeholder="Enter Email Address...">
+                                        <?= form_error('user_email', ' <small class="text-danger pl-3">', '</small>'); ?>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <input type="password" class="form__input" name="user_password"
+                                            id="user_password" type="password" placeholder="Enter Password...">
+                                        <?= form_error('user_password', ' <small class="text-danger pl-3">', '</small>'); ?>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <a class="small" href="<?= base_url('auth'); ?>">Already have an account?
+                                            Login!</a>
+                                    </div>
+
+                                    <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+                                    <?= $this->session->flashdata('message'); ?>
+
+                                    <div class="text-center">
+                                        <input type="submit" value="Submit" class="btn">
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="password2" name="password2" placeholder="Password">
-                </div>
             </div>
-            <button type="submit" class="btn btn-primary btn-user btn-block">
-                Register Account
-            </button>
-            <hr>
-            <div class="text-center">
-                <a class="small" href="<?= base_url('auth'); ?>">Already have an account? Login!</a>
-            </div>
-        </form>
-    </div>
+        </div>
+    </section><!-- End Contact Section -->
+</main><!-- End #main -->

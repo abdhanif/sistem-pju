@@ -4,7 +4,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="font-weight-bold">TAMBAH DATA KELOMPOK</h5>
+                    <h5 class="font-weight-bold" style="color: #5777ba">TAMBAH DATA KELOMPOK</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                 </div>
@@ -12,17 +12,6 @@
 
                     <?php echo validation_errors(); ?>
                     <form class="user" method="post" action="<?= base_url('C_kelompok/tambah') ?>">
-
-                        <div class="row g-3">
-                            <div class="col-md">
-                                <label class="font-weight-bold form-label">Kode Kelompok</label>
-                                <input type="text" class="form-control" id="kode_kelompok" name="kode_kelompok"
-                                    value="<?php echo $kode; ?>" autocomplete="off" readonly="readonly">
-                            </div>
-                        </div>
-
-                        <br>
-
                         <div class="row g-3">
                             <div class="col-md">
                                 <label class="font-weight-bold form-label">Nama Kelompok</label>
