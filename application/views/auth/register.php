@@ -13,7 +13,7 @@
                 <div class="row main-content bg-success text-center">
                     <div class="col-md-4 text-center company__info">
                         <span class="company__logo">
-                            <h1><span class="fa fa-sign-in"></span></h1>
+                            <h1><span class="fa fa-sign-in" style="color: beige;"></span></h1>
                         </span>
                         <h4 class="company_title">REGISTER <br> PJU SYSTEM </h4>
                     </div>

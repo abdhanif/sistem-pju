@@ -32,9 +32,9 @@ class C_register extends CI_Controller
             $data = [
                 'user_name'  => htmlspecialchars($this->input->post('user_name', true)),
                 'user_email' => htmlspecialchars($this->input->post('user_email', true)),
-                'user_password' => password_hash($this->input->post('user_password'), PASSWORD_DEFAULT),
-                'user_akses' => 3,
-                'user_status' => 0,
+                'user_password' => md5($this->input->post('user_password')),
+                'user_akses' => "Masyarakat",
+                'user_status' => "Tidak Aktif"
             ];
 
             $this->db->insert('table_user', $data);

@@ -13,7 +13,7 @@
                 <div class="row main-content bg-success text-center">
                     <div class="col-md-4 text-center company__info">
                         <span class="company__logo">
-                            <h1><span class="fa fa-sign-in"></span></h1>
+                            <h1><span class="fa fa-sign-in" style="color: beige;"></span></h1>
                         </span>
                         <h4 class="company_title">LOGIN <br> PJU SYSTEM </h4>
                     </div>
@@ -21,7 +21,7 @@
                         <div class="container-fluid">
                             <div class="text-center">
                                 <form class="form-group" method="post"
-                                    action="<?php echo site_url('auth/autentikasi'); ?>">
+                                    action="<?php echo base_url('Auth/autentikasi'); ?>">
 
                                     <div class="row">
                                         <input type="text" class="form__input" name="email" type="email"

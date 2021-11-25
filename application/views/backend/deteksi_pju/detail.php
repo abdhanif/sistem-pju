@@ -64,7 +64,7 @@ foreach ($deteksi_pju as $dt) {
                                 <label for="inputWA">Dibuat</label>
                             </div>
                             <input type="text" class="form-control" readonly
-                                placeholder="<?php echo $dt->create_at; ?>">
+                                placeholder="<?php echo $dt->create_at_pengaduan; ?>">
                         </div>
                     </div>
 

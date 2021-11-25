@@ -12,6 +12,7 @@ class C_pengaduan extends CI_Controller
         $this->load->helper('url', 'form');
         $this->load->model("Mlogin");
         $this->Mlogin->Check_Login();
+        $this->load->library('session');
     }
     public function index()
     {
@@ -30,16 +31,14 @@ class C_pengaduan extends CI_Controller
         $alamat = $this->input->post('alamat');
         $laporan = $this->input->post('laporan');
 
-        $key = $kode_pju_box;
-
         //Config Upload
         $file_ext = pathinfo($_FILES["gambar"]['name'], PATHINFO_EXTENSION);
-        $new_name = $key . "." . $file_ext;
+        $new_name = $id . "_"  .  $kode_pju_box . "." . $file_ext;
 
         $config['file_name'] = $new_name;
         $config['upload_path'] = './upload_dir/';
         $config['allowed_types'] = 'gif|jpg|png|mp4|mkv|jpeg';
-        $config['max_size']  = 100000;
+        $config['max_size']  = 1000000;
         $config['remove_space'] = TRUE;
 
         $this->load->library('upload', $config);
@@ -72,8 +71,8 @@ class C_pengaduan extends CI_Controller
                 'gambar' => $this->upload->data('file_name')
             );
 
+            $this->session->set_flashdata('flash_msg', 'success');
             $this->Deteksi_model->tambah($res);
-            $this->session->set_flashdata('deteksi');
             redirect('C_pengaduan');
         }
     }

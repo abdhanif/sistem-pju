@@ -5,8 +5,7 @@ class Profile_model extends CI_Model
     public function index()
     {
         $query = $this->db->query("SELECT *
-        FROM table_user
-        JOIN user_akses ON table_user.user_akses = user_akses.akses_id");
+        FROM table_user");
         return $query->result();
     }
 
@@ -18,20 +17,13 @@ class Profile_model extends CI_Model
             'user_email' => htmlspecialchars($this->input->post('user_email', true)),
             'user_password' => htmlspecialchars($this->input->post('user_password'), true),
             'user_akses'  => htmlspecialchars($this->input->post('user_akses', true)),
-            'user_status' => 1,
+            'user_status'  => htmlspecialchars($this->input->post('user_status', true)),
         ];
 
         $this->db->where('user_id', $user_id);
         $this->db->update('table_user', $data);
 
         redirect('C_profile');
-    }
-
-    public function getAllUserakses()
-    {
-        $query = $this->db->query("SELECT user_akses.akses_id, user_akses.akses
-        FROM user_akses");
-        return $query->result();
     }
 
     public function getById($user_id)

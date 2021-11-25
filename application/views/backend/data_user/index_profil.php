@@ -28,6 +28,7 @@
                             <th scope="row" class="text-center">Nama</th>
                             <th scope="row" class="text-center">Email</th>
                             <th scope="row" class="text-center">Hak Akses</th>
+                            <th scope="row" class="text-center">Status</th>
                             <th scope="row" class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -41,7 +42,11 @@
                             <td class="text-center"><?php echo $no++; ?></td>
                             <td><?php echo $row->user_name; ?></td>
                             <td class="text-center"><?php echo $row->user_email; ?></td>
-                            <td class="text-center"><?php echo $row->akses; ?></td>
+                            <td class="text-center"><?php echo $row->user_akses; ?></td>
+                            <td class="text-center"><?php echo $row->user_status; ?></td>
+
+
+
                             <td class="text-center">
                                 <a href="<?= base_url(); ?>C_profile/edit/<?php echo $row->user_id; ?>"
                                     class="badge badge-warning" data-toggle="modal"
