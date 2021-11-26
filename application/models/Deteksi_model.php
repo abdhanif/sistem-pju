@@ -81,7 +81,7 @@ class Deteksi_model extends CI_Model
         var_dump($kode_pju_box);
         $dataInsertJadwal = [
             'kode_jadwal'  => $kodetampil,
-            'kode_kelompok'  => $dataPju->kode_kelompok,
+            'id_kelompok'  => $dataPju->id_kelompok,
             'kode_pju'  => $dataPju->kode_pju,
             'status'  => 'BELUM'
         ];

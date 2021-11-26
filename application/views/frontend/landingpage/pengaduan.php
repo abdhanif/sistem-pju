@@ -69,6 +69,7 @@
 
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
+        <div id="flash" data-flash="<?php echo $this->session->flashdata('flash_msg'); ?>"> </div>
         <div class="container">
             <div class="row">
                 <div class="container-fluid">
@@ -196,7 +197,22 @@
 
     <!-- Template Main JS File -->
     <script src="assets/landing-page/js/main.js"></script>
-
+    <!-- Notif -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="<?php echo base_url() . 'assets/sweetalert/sweetalert2.all.min.js' ?>"></script>
+    <script>
+    $(document).ready(function() {
+        var flash = $('#flash').data('flash');
+        console.log(flash);
+        if (flash) {
+            Swal.fire({
+                title: 'Success!',
+                text: 'Laporan Berhasil di Adukan!',
+                icon: 'success'
+            })
+        }
+    });
+    </script>
 </body>
 
 </html>

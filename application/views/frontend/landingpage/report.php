@@ -69,6 +69,7 @@
 
     <main id="main">
         <section id="testimonials" class="testimonials section-bg">
+            </br>
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
@@ -87,13 +88,18 @@
                         <div class="swiper-slide">
                             <div class="testimonial-item">
                                 <img src="assets/img/img_avatar.png" class="testimonial-img" alt="">
-                                <h3><?php echo $row->nama; ?></h3>
-                                <h4>Melaporkan PJU <?php echo $row->kode_pju; ?> </h4>
+                                <h3><?php echo $row->user_name; ?></h3>
+                                <h4>Melaporkan <?php echo $row->kode_pju; ?> </h4>
                                 <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                                     <?php echo $row->laporan; ?>
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
+                                </br>
+                                </br>
+                                </br>
+                                </br>
+                                <h4 style="text-align: right;"><?php echo $row->create_at_pengaduan; ?></h4>
                             </div>
                         </div>
                         <?php

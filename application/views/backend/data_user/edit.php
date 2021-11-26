@@ -39,7 +39,7 @@ foreach ($profile as $pr) {
                         <div class="row g-3">
                             <div class="col-md">
                                 <label class="font-weight-bold form-label">Email</label>
-                                <input type="text" class="form-control" id="user_email" name="user_email"
+                                <input type="email" class="form-control" id="user_email" name="user_email"
                                     value="<?php echo $pr->user_email; ?>">
                                 <?= form_error('email', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
@@ -50,7 +50,7 @@ foreach ($profile as $pr) {
                         <div class="row g-3">
                             <div class="col-md">
                                 <label class="font-weight-bold form-label">Password</label>
-                                <input type="text" class="form-control" id="user_password" name="user_password"
+                                <input type="password" class="form-control" id="user_password" name="user_password"
                                     value="<?php echo $pr->user_password; ?>">
                                 <?= form_error('password', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
@@ -60,21 +60,35 @@ foreach ($profile as $pr) {
 
                         <div class="row g-3">
                             <div class="col-md">
-                                <label for="exampleFormControlSelect1 font-weight-bold">Hak Akses</label>
+                                <label class="font-weight-bold form-label">Hak Akses</label>
                                 <select class="form-control" id="user_akses" name="user_akses">
-                                    <?php
-                                        $user_akses;
-                                        foreach ($user_akses as $ur) {
-                                        ?>
-                                    <?php if ($ur->akses_id == $pr->user_akses) : ?>
-                                    <option value="<?php echo $ur->akses_id ?>" selected><?php echo $ur->akses ?>
-                                    </option>
-                                    <?php else : ?>
-                                    <option value="<?php echo $ur->akses_id ?>"><?php echo $ur->akses ?></option>
-                                    <?php endif; ?>
-                                    <?php
-                                        }
-                                        ?>
+                                    value="<?php echo set_value('user_akses'); ?>">
+                                    <option value="Staf" <?php if ($pr->user_akses == "Staf") {
+                                                                    echo "selected";
+                                                                } ?>>Staf</option>
+                                    <option value="Teknisi" <?php if ($pr->user_akses == "Teknisi") {
+                                                                    echo "selected";
+                                                                } ?>>Teknisi</option>
+                                    <option value="Masyarakat" <?php if ($pr->user_akses == "Masyarakat") {
+                                                                        echo "selected";
+                                                                    } ?>>Masyarakat</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        </br>
+
+                        <div class="row g-3">
+                            <div class="col-md">
+                                <label class="font-weight-bold form-label">Status</label>
+                                <select class="form-control" id="user_status" name="user_status"
+                                    value="<?php echo set_value('user_status'); ?>">
+                                    <option value="Aktif" <?php if ($pr->user_status == "Aktif") {
+                                                                    echo "selected";
+                                                                } ?>>Aktif</option>
+                                    <option value="Tidak Aktif" <?php if ($pr->user_status == "Tidak Aktif") {
+                                                                        echo "selected";
+                                                                    } ?>>Tidak Aktif</option>
                                 </select>
                             </div>
                         </div>

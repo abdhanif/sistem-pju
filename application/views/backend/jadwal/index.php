@@ -96,7 +96,7 @@ foreach ($jadwal as $jdwl) {
         <div class="modal-content">
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal">×</button>
-                <h5>Anda yakin mau menghapus jadwal dengan kode <b><?php echo $jdwl->id_jadwal; ?></b> ?</h5>
+                <h5>Anda yakin mau menghapus jadwal dengan kode <b><?php echo $jdwl->kode_jadwal; ?></b> ?</h5>
             </div>
             <form role="form" method="post" id="delete_data"
                 action="<?php echo base_url(); ?>C_jadwal/hapus/<?php echo $jdwl->id_jadwal; ?>">

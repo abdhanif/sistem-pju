@@ -51,8 +51,6 @@
                                 <a href="<?= base_url(); ?>C_deteksi/detail/<?php echo $row->id_deteksi; ?>"
                                     class="badge badge-info" data-toggle="modal"
                                     data-target="#detail<?php echo $row->id_deteksi; ?>"></i> Detail</a>
-
-                                <!-- <a href="<?php echo base_url(); ?>C_kelompok/hapus/<?php echo $row->id_kelompok; ?>" class="badge badge-danger" data-toggle="modal" data-target="#delete<?php echo $row->id_kelompok; ?>"></i> Hapus</a> -->
                             </td>
                         </tr>
                     </tbody>
