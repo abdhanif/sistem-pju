@@ -11,13 +11,20 @@ class C_jadwal extends CI_Controller
         $this->load->model('DataPju_model');
         $this->load->library('form_validation');
         $this->load->library('session');
+        $this->load->library("pagination");
         $this->load->model("Mlogin");
         $this->Mlogin->Check_Login();
     }
 
     public function index()
     {
-        $data['jadwal'] = $this->Jadwal_model->getAllJadwal();
+        $config['base_url'] = 'http://localhost/sistem-pju/C_jadwal/index';
+        $config['total_rows'] = $this->Jadwal_model->totalRows();
+        $config['per_page'] = 10;
+        $this->pagination->initialize($config);
+        $data['start'] = $this->uri->segment(3);
+
+        $data['jadwal'] = $this->Jadwal_model->getAllJadwal($config['per_page'], $data['start']);
         $data['kode'] = $this->Jadwal_model->kode();
         $data_pju['data_kelompok'] = $this->Kelompok_model->getAllKelompok();
         $data_pju['data_pju'] = $this->DataPju_model->getAllDataPju();

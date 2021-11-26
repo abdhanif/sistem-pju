@@ -4,19 +4,24 @@ class C_maintenance extends CI_Controller
     function __construct()
     {
         parent::__construct();
-
         $this->load->model('Jadwal_model');
         $this->load->model('Kelompok_model');
         $this->load->model('DataPju_model');
         $this->load->model('Maintenance_model');
         $this->load->library('form_validation');
+        $this->load->library("pagination");
         $this->load->model("Mlogin");
         $this->Mlogin->Check_Login();
     }
 
     public function index()
     {
-        $data['maintenance'] = $this->Maintenance_model->getAllMaintenance();
+        $config['base_url'] = 'http://localhost/sistem-pju/C_maintenance/index';
+        $config['total_rows'] = $this->Maintenance_model->totalRows();
+        $config['per_page'] = 10;
+        $this->pagination->initialize($config);
+        $data['start'] = $this->uri->segment(3);
+        $data['maintenance'] = $this->Maintenance_model->getAllMaintenance($config['per_page'], $data['start']);
         $this->load->view('backend/templates/header');
         $this->load->view('backend/templates/sidebar');
         $this->load->view('backend/templates/topbar');

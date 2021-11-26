@@ -10,16 +10,23 @@ class C_data_pju extends CI_Controller
         $this->load->model('DataPju_model');
         $this->load->model('Maintenance_model');
         $this->load->model('Kelompok_model');
-        $this->load->library('form_validation');
         $this->load->model("Mlogin");
+        $this->load->library('form_validation');
+        $this->load->library("pagination");
         $this->Mlogin->Check_Login();
     }
 
     public function index()
     {
-        $data['data_pju'] = $this->DataPju_model->getAllDataPju()->result();
-        $kelompok['data_kelompok'] = $this->Kelompok_model->getAllKelompok();
+        $config['base_url'] = 'http://localhost/sistem-pju/C_data_pju/index';
+        $config['total_rows'] = $this->DataPju_model->totalRows();
+        $config['per_page'] = 10;
+        $this->pagination->initialize($config);
+        $data['start'] = $this->uri->segment(3);
 
+        $data['data_pju'] = $this->DataPju_model->getAllDataPju($config['per_page'], $data['start'])->result();
+        
+        $kelompok['data_kelompok'] = $this->Kelompok_model->getAllKelompok();
         $this->load->view('backend/templates/header');
         $this->load->view('backend/templates/sidebar');
         $this->load->view('backend/templates/topbar', $kelompok);

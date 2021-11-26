@@ -2,16 +2,28 @@
 class Jadwal_model extends CI_Model
 {
 
-    public function getAllJadwal()
+    public function getAllJadwal($limit, $start)
     {
         $this->db->select('jadwal.`id_jadwal`, jadwal.kode_jadwal, jadwal.id_kelompok, data_kelompok.nama_kelompok, jadwal.kode_pju, jadwal.status, jadwal.create_at');
         $this->db->from('jadwal');
         $this->db->join('data_kelompok', 'data_kelompok.id_kelompok = jadwal.id_kelompok');
         $this->db->join('data_pju', 'data_pju.kode_pju = jadwal.kode_pju');
         $this->db->order_by("jadwal.kode_jadwal", "DESC");
+        $this->db->limit($limit, $start);
         $query = $this->db->get();
         return $query->result();
     }
+
+    public function totalRows()
+    {
+        $this->db->select('jadwal.`id_jadwal`, jadwal.kode_jadwal, jadwal.id_kelompok, data_kelompok.nama_kelompok, jadwal.kode_pju, jadwal.status, jadwal.create_at');
+        $this->db->from('jadwal');
+        $this->db->join('data_kelompok', 'data_kelompok.id_kelompok = jadwal.id_kelompok');
+        $this->db->join('data_pju', 'data_pju.kode_pju = jadwal.kode_pju');
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+    
     public function tambah()
     {
         $data = [

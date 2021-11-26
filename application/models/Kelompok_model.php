@@ -2,10 +2,19 @@
 class Kelompok_model extends CI_Model
 {
     private $table = "data_kelompok";
-    public function getAllKelompok()
+    public function getAllKelompok($limit, $start)
     {
         $this->db->order_by("data_kelompok.id_kelompok ASC");
+        $this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
+    }
+
+    public function totalRows()
+    {
+        $this->db->select();
+        $this->db->from('data_kelompok');
+        $query = $this->db->get();
+        return $query->num_rows();
     }
 
     public function search($keyword)

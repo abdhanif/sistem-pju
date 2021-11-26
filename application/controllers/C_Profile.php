@@ -4,16 +4,23 @@ class C_profile extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Profile_model');
-        $this->load->library('form_validation');
         $this->load->helper('text');
         $this->load->model("Mlogin");
+        $this->load->model('Profile_model');
+        $this->load->library("pagination");
+        $this->load->library('form_validation');
         $this->Mlogin->Check_Login();
     }
 
     public function index()
     {
-        $data['profile'] = $this->Profile_model->index();
+        $config['base_url'] = 'http://localhost/sistem-pju/C_profile/index';
+        $config['total_rows'] = $this->Profile_model->totalRows();
+        $config['per_page'] = 10;
+        $this->pagination->initialize($config);
+        $data['start'] = $this->uri->segment(3);
+
+        $data['profile'] = $this->Profile_model->index($config['per_page'], $data['start']);
         $akses['user_akses'] = $this->Profile_model->getAllUserakses();
 
         $this->load->view('backend/templates/header');

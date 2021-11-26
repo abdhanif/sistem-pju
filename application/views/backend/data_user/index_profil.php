@@ -38,7 +38,7 @@
                     ?>
                     <tbody>
                         <tr>
-                            <td class="text-center"><?php echo $no++; ?></td>
+                            <td class="text-center"><?php echo ++$no; ?></td>
                             <td><?php echo $row->user_name; ?></td>
                             <td class="text-center"><?php echo $row->user_email; ?></td>
                             <td class="text-center"><?php echo $row->akses; ?></td>
@@ -58,6 +58,7 @@
                     }
                     ?>
                 </table>
+                <?php $this->pagination->create_links(); ?>
             </div>
         </div>
     </div>

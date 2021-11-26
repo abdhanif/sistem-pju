@@ -43,7 +43,7 @@
                     ?>
                     <tbody>
                         <tr>
-                            <td class="text-center"><?php echo $no++; ?></td>
+                            <td class="text-center"><?php echo ++$no; ?></td>
                             </td>
                             <td class="text-center"><?php echo $row->nama_kelompok; ?>
                             </td>
@@ -62,6 +62,7 @@
                     }
                     ?>
                 </table>
+                <?php $this->pagination->create_links(); ?>
             </div>
         </div>
     </div>

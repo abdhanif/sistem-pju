@@ -2,14 +2,24 @@
 class DataPju_model extends CI_Model
 {
 
-    public function getAllDataPju()
+    public function getAllDataPju($limit, $start)
     {
         $this->db->select();
         $this->db->from('data_pju');
         $this->db->join('data_kelompok', 'data_kelompok.id_kelompok = data_pju.id_kelompok');
         $this->db->order_by("data_pju.kode_pju", "DESC");
+        $this->db->limit($limit, $start);
         $query = $this->db->get();
         return $query;
+    }
+
+    public function totalRows()
+    {
+        $this->db->select();
+        $this->db->from('data_pju');
+        $this->db->join('data_kelompok', 'data_kelompok.id_kelompok = data_pju.id_kelompok');
+        $query = $this->db->get();
+        return $query->num_rows();
     }
 
     public function search($keyword)

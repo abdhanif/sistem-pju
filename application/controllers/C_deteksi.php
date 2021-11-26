@@ -11,14 +11,21 @@ class C_deteksi extends CI_Controller
         $this->load->model('Deteksi_model');
         $this->load->model('DataPju_model');
         $this->load->library('form_validation');
+        $this->load->library("pagination");
         $this->load->helper('text');
         $this->load->model("Mlogin");
         $this->Mlogin->Check_Login();
     }
     public function index()
     {
+        $config['base_url'] = 'http://localhost/sistem-pju/C_deteksi/index';
+        $config['total_rows'] = $this->Deteksi_model->totalRows();
+        $config['per_page'] = 10;
+        $this->pagination->initialize($config);
+        $data['start'] = $this->uri->segment(3);
+
         $data['profile'] = $this->Profile_model->index();
-        $data['deteksi_pju'] = $this->Deteksi_model->getAllDeteksi();
+        $data['deteksi_pju'] = $this->Deteksi_model->getAllDeteksi($config['per_page'], $data['start']);
         $pju['data_pju'] = $this->DataPju_model->getAllDataPju();
 
         $this->load->view('backend/templates/header');

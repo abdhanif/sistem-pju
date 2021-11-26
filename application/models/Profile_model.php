@@ -2,12 +2,22 @@
 class Profile_model extends CI_Model
 {
 
-    public function index()
+    public function index($limit, $start)
     {
-        $query = $this->db->query("SELECT *
-        FROM table_user
-        JOIN user_akses ON table_user.user_akses = user_akses.akses_id");
+        $this->db->select();
+        $this->db->from('table_user');
+        $this->db->join('user_akses', 'table_user.user_akses = user_akses.akses_id');
+        $this->db->limit($limit, $start);
         return $query->result();
+    }
+
+    public function totalRows()
+    {
+        $this->db->select();
+        $this->db->from('table_user');
+        $this->db->join('user_akses', 'table_user.user_akses = user_akses.akses_id');
+        $query = $this->db->get();
+        return $query->num_rows();
     }
 
     public function update()

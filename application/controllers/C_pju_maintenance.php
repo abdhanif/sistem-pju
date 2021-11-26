@@ -9,14 +9,21 @@ class C_pju_maintenance extends CI_Controller
         $this->load->model('DataPju_model');
         $this->load->model('Maintenance_model');
         $this->load->model('Pju_Maintenance_model');
-        $this->load->library('form_validation');
         $this->load->model("Mlogin");
         $this->Mlogin->Check_Login();
+        $this->load->library('form_validation');
+        $this->load->library("pagination");
     }
 
     public function index()
     {
-        $data['pju_maintenance'] = $this->Pju_Maintenance_model->getAllPjuMaintenance();
+        $config['base_url'] = 'http://localhost/sistem-pju/C_pju_maintenance/index';
+        $config['total_rows'] = $this->Pju_Maintenance_model->totalRows();
+        $config['per_page'] = 10;
+        $this->pagination->initialize($config);
+        $data['start'] = $this->uri->segment(3);
+
+        $data['pju_maintenance'] = $this->Pju_Maintenance_model->getAllPjuMaintenance($config['per_page'], $data['start']);
         $this->load->view('backend/templates/header');
         $this->load->view('backend/templates/sidebar');
         $this->load->view('backend/templates/topbar');

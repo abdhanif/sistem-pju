@@ -45,7 +45,7 @@
 
                     <tbody>
                         <tr>
-                            <td class="text-center"><?php echo $no++; ?></td>
+                            <td class="text-center"><?php echo ++$no; ?></td>
                             <td class="text-center"><?php echo $row->deskripsi; ?></td>
                             <td class="text-center">
                                 <a href="<?= base_url(); ?>C_maintenance/edit/<?php echo $row->ID; ?>"
@@ -63,6 +63,7 @@
                     }
                     ?>
                 </table>
+                <?php $this->pagination->create_links(); ?>
             </div>
         </div>
     </div>

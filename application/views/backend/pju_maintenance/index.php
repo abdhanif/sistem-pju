@@ -48,7 +48,7 @@
 
                     <tbody>
                         <tr>
-                            <td class="text-center"><?php echo $no++; ?></td>
+                            <td class="text-center"><?php echo ++$no; ?></td>
                             <td class="text-center"><?php echo $row->kode_pju; ?></td>
                             <td class="text-center"><?php echo $row->deskripsi; ?></td>
                             <td class="text-center"><?php echo $row->tgl_terakhir_maintenance; ?></td>
@@ -68,6 +68,7 @@
                     }
                     ?>
                 </table>
+                <?php $this->pagination->create_links(); ?>
             </div>
         </div>
     </div>

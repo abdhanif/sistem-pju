@@ -1,13 +1,23 @@
 <?php
 class Pju_Maintenance_model extends CI_Model
 {
-    public function getAllPjuMaintenance(){
+    public function getAllPjuMaintenance($limit, $start){
         $this->db->select();
         $this->db->from('pju_data_maintenance');
         $this->db->join('master_data_maintenance', 'pju_data_maintenance.id_mst_maintenance = master_data_maintenance.ID');
         $this->db->order_by("pju_data_maintenance.ID", "DESC");
+        $this->db->limit($limit, $start);
         $query = $this->db->get();
         return $query->result();
+    }
+
+    public function totalRows()
+    {
+        $this->db->select();
+        $this->db->from('pju_data_maintenance');
+        $this->db->join('master_data_maintenance', 'pju_data_maintenance.id_mst_maintenance = master_data_maintenance.ID');
+        $query = $this->db->get();
+        return $query->num_rows();
     }
     
     public function tambah()

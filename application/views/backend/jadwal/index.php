@@ -55,7 +55,7 @@
 
                     <tbody>
                         <tr>
-                            <td class="text-center"><?php echo $no++; ?></td>
+                            <td class="text-center"><?php echo ++$no; ?></td>
                             <td class="text-center"><?php echo $row->kode_jadwal; ?></td>
                             <td class="text-center"><?php echo $row->nama_kelompok; ?></td>
                             <td class="text-center"><?php echo $row->kode_pju; ?></td>
@@ -79,6 +79,8 @@
                     }
                     ?>
                 </table>
+                
+                <?php $this->pagination->create_links(); ?>
             </div>
         </div>
     </div>

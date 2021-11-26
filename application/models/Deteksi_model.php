@@ -1,17 +1,28 @@
 <?php
 class Deteksi_model extends CI_Model
 {
-    public function getAllDeteksi()
+    public function getAllDeteksi($limit, $start)
     {
         $this->db->select('*');
         $this->db->from('deteksi_pju');
         $this->db->join('data_pju', 'data_pju.kode_pju = deteksi_pju.kode_pju_box');
         $this->db->join('table_user', 'table_user.user_id = deteksi_pju.id_user');
         $this->db->order_by("deteksi_pju.id_deteksi", "DESC");
+        $this->db->limit($limit, $start);
         $query = $this->db->get();
         return $query->result();
     }
 
+    public function totalRows()
+    {
+        $this->db->select('*');
+        $this->db->from('deteksi_pju');
+        $this->db->join('data_pju', 'data_pju.kode_pju = deteksi_pju.kode_pju_box');
+        $this->db->join('table_user', 'table_user.user_id = deteksi_pju.id_user');
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+    
     // public function search($keyword)
     // {
     //     $this->db->select('*');

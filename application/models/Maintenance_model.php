@@ -1,13 +1,22 @@
 <?php
 class Maintenance_model extends CI_Model
 {
-    public function getAllMaintenance()
+    public function getAllMaintenance($limit, $start)
     {
         $this->db->select();
         $this->db->from('master_data_maintenance');
         $this->db->order_by("Deskripsi", "DESC");
+        $this->db->limit($limit, $start);
         $query = $this->db->get();
         return $query->result();
+    }
+
+    public function totalRows()
+    {
+        $this->db->select();
+        $this->db->from('master_data_maintenance');
+        $query = $this->db->get();
+        return $query->num_rows();
     }
 
     public function tambah()

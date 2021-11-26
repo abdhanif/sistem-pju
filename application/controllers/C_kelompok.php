@@ -9,12 +9,19 @@ class C_kelompok extends CI_Controller
         parent::__construct();
         $this->load->model('Kelompok_model');
         $this->load->library('form_validation');
+        $this->load->library("pagination");
         $this->load->model("Mlogin");
         $this->Mlogin->Check_Login();
     }
     public function index()
     {
-        $data['kelompok'] = $this->Kelompok_model->getAllKelompok();
+        $config['base_url'] = 'http://localhost/sistem-pju/C_kelompok/index';
+        $config['total_rows'] = $this->Kelompok_model->totalRows();
+        $config['per_page'] = 10;
+        $this->pagination->initialize($config);
+        $data['start'] = $this->uri->segment(3);
+
+        $data['kelompok'] = $this->Kelompok_model->getAllKelompok($config['per_page'], $data['start']);
 
         $this->load->view('backend/templates/header');
         $this->load->view('backend/templates/sidebar');
